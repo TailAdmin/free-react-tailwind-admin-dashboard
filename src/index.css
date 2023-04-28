@@ -71,7 +71,7 @@
 }
 .apexcharts-xaxistooltip-bottom:before {
   @apply dark:!border-b-meta-4;
-  
+
 }
 
 .flatpickr-day.selected {
