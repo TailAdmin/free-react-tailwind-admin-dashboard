@@ -1,39 +1,39 @@
-import jsVectorMap from "jsvectormap";
-import "jsvectormap/dist/css/jsvectormap.css";
-import { useEffect } from "react";
-import "../js/us-aea-en";
+import jsVectorMap from 'jsvectormap';
+import 'jsvectormap/dist/css/jsvectormap.css';
+import { useEffect } from 'react';
+import '../js/us-aea-en';
 
 const MapOne = () => {
   useEffect(() => {
     const mapOne = new jsVectorMap({
-      selector: "#mapOne",
-      map: "us_aea_en",
+      selector: '#mapOne',
+      map: 'us_aea_en',
       zoomButtons: true,
 
       regionStyle: {
         initial: {
-          fill: "#C8D0D8",
+          fill: '#C8D0D8',
         },
         hover: {
           fillOpacity: 1,
-          fill: "#3056D3",
+          fill: '#3056D3',
         },
       },
       regionLabelStyle: {
         initial: {
-          fontFamily: "Satoshi",
-          fontWeight: "semibold",
-          fill: "#fff",
+          fontFamily: 'Satoshi',
+          fontWeight: 'semibold',
+          fill: '#fff',
         },
         hover: {
-          cursor: "pointer",
+          cursor: 'pointer',
         },
       },
 
       labels: {
         regions: {
           render(code) {
-            return code.split("-")[1];
+            return code.split('-')[1];
           },
         },
       },

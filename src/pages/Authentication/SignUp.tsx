@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import Breadcrumb from "../../components/Breadcrumb";
-import LogoDark from "../../images/logo/logo-dark.svg";
-import Logo from "../../images/logo/logo.svg";
-import DefaultLayout from "../../layout/DefaultLayout";
+import { Link } from 'react-router-dom';
+import Breadcrumb from '../../components/Breadcrumb';
+import LogoDark from '../../images/logo/logo-dark.svg';
+import Logo from '../../images/logo/logo.svg';
+import DefaultLayout from '../../layout/DefaultLayout';
 
 const SignUp = () => {
   return (
@@ -338,7 +338,7 @@ const SignUp = () => {
 
                 <div className="mt-6 text-center">
                   <p>
-                    Already have an account?{" "}
+                    Already have an account?{' '}
                     <Link to="/auth/signin" className="text-primary">
                       Sign in
                     </Link>

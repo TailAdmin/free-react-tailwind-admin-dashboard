@@ -1,7 +1,7 @@
-import Breadcrumb from "../components/Breadcrumb";
-import CoverOne from "../images/cover/cover-01.png";
-import userSix from "../images/user/user-06.png";
-import DefaultLayout from "../layout/DefaultLayout";
+import Breadcrumb from '../components/Breadcrumb';
+import CoverOne from '../images/cover/cover-01.png';
+import userSix from '../images/user/user-06.png';
+import DefaultLayout from '../layout/DefaultLayout';
 
 const Profile = () => {
   return (

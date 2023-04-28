@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import userSeven from "../images/user/user-07.png";
-import userEight from "../images/user/user-08.png";
-import userNine from "../images/user/user-09.png";
-import userTen from "../images/user/user-10.png";
+import { useEffect, useRef, useState } from 'react';
+import userSeven from '../images/user/user-07.png';
+import userEight from '../images/user/user-08.png';
+import userNine from '../images/user/user-09.png';
+import userTen from '../images/user/user-10.png';
 
 const TaskHeader = () => {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -22,8 +22,8 @@ const TaskHeader = () => {
         return;
       setPopupOpen(false);
     };
-    document.addEventListener("click", clickHandler);
-    return () => document.removeEventListener("click", clickHandler);
+    document.addEventListener('click', clickHandler);
+    return () => document.removeEventListener('click', clickHandler);
   });
 
   // close if the esc key is pressed
@@ -32,8 +32,8 @@ const TaskHeader = () => {
       if (!popupOpen || keyCode !== 27) return;
       setPopupOpen(false);
     };
-    document.addEventListener("keydown", keyHandler);
-    return () => document.removeEventListener("keydown", keyHandler);
+    document.addEventListener('keydown', keyHandler);
+    return () => document.removeEventListener('keydown', keyHandler);
   });
 
   return (

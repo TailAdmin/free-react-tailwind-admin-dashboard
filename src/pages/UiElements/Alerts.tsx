@@ -1,5 +1,5 @@
-import Breadcrumb from "../../components/Breadcrumb";
-import DefaultLayout from "../../layout/DefaultLayout";
+import Breadcrumb from '../../components/Breadcrumb';
+import DefaultLayout from '../../layout/DefaultLayout';
 
 const Alerts = () => {
   return (

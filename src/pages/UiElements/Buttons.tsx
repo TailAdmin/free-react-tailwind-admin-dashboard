@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-// Components
-import Breadcrumb from "../../components/Breadcrumb";
-import DefaultLayout from "../../layout/DefaultLayout";
+import Breadcrumb from '../../components/Breadcrumb';
+import DefaultLayout from '../../layout/DefaultLayout';
 
 const Buttons = () => {
   return (

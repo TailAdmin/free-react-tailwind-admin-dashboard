@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 type SetValue<T> = T | ((val: T) => T);
 
@@ -26,7 +26,7 @@ function useLocalStorage<T>(
     try {
       // Allow value to be a function so we have same API as useState
       const valueToStore =
-        typeof storedValue === "function"
+        typeof storedValue === 'function'
           ? storedValue(storedValue)
           : storedValue;
       // Save state
