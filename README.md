@@ -30,6 +30,7 @@ ___
 - 30+ Dashboard UI Components
 - 50+ Total UI Elements 
 - 10+ HTML Files
+- TypeScript Support
 - Basic UI Kit Elements and Files
 - Figma Design Source - Free Sample
 ___
