@@ -39,7 +39,7 @@ function App() {
         <Route path="/auth/signin" element={<SignIn />} />
         <Route path="/auth/signup" element={<SignUp />} />
         <Route element={<DefaultLayout />}>
-          <Route path="/" element={<ECommerce />} />
+          <Route index element={<ECommerce />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/forms/form-elements" element={<FormElements />} />
