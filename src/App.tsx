@@ -1,38 +1,31 @@
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import ECommerce from './pages/Dashboard/ECommerce';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
-import Calendar from './pages/Calendar';
-import Chart from './pages/Chart';
-import ECommerce from './pages/Dashboard/ECommerce';
-import FormElements from './pages/Form/FormElements';
-import FormLayout from './pages/Form/FormLayout';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
-import Tables from './pages/Tables';
-import Alerts from './pages/UiElements/Alerts';
-import Buttons from './pages/UiElements/Buttons';
-import DefaultLayout from './layout/DefaultLayout';
+import Loader from './common/Loader';
+
+const Calendar = lazy(() => import('./pages/Calendar'));
+const Chart = lazy(() => import('./pages/Chart'));
+const FormElements = lazy(() => import('./pages/Form/FormElements'));
+const FormLayout = lazy(() => import('./pages/Form/FormLayout'));
+const Profile = lazy(() => import('./pages/Profile'));
+const Settings = lazy(() => import('./pages/Settings'));
+const Tables = lazy(() => import('./pages/Tables'));
+const Alerts = lazy(() => import('./pages/UiElements/Alerts'));
+const Buttons = lazy(() => import('./pages/UiElements/Buttons'));
+const DefaultLayout = lazy(() => import('./layout/DefaultLayout'));
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
-
-  const preloader = document.getElementById('preloader');
-
-  if (preloader) {
-    setTimeout(() => {
-      preloader.style.display = 'none';
-      setLoading(false);
-    }, 2000);
-  }
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
 
   return loading ? (
-    <p className=" text-center text-danger">Failed to lead app</p>
+    <Loader />
   ) : (
     <>
       <Routes>
@@ -40,15 +33,78 @@ function App() {
         <Route path="/auth/signup" element={<SignUp />} />
         <Route element={<DefaultLayout />}>
           <Route index element={<ECommerce />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/forms/form-elements" element={<FormElements />} />
-          <Route path="/forms/form-layout" element={<FormLayout />} />
-          <Route path="/tables" element={<Tables />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/chart" element={<Chart />} />
-          <Route path="/ui/alerts" element={<Alerts />} />
-          <Route path="/ui/buttons" element={<Buttons />} />
+          <Route
+            path="/calendar"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Calendar />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Profile />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/forms/form-elements"
+            element={
+              <Suspense fallback={<Loader />}>
+                <FormElements />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/forms/form-layout"
+            element={
+              <Suspense fallback={<Loader />}>
+                <FormLayout />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/tables"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Tables />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Settings />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/chart"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Chart />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/ui/alerts"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Alerts />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/ui/buttons"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Buttons />
+              </Suspense>
+            }
+          />
         </Route>
       </Routes>
     </>
