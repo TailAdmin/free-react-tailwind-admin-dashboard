@@ -8,11 +8,10 @@ import SwitcherFour from '../../components/SwitcherFour';
 import SwitcherOne from '../../components/SwitcherOne';
 import SwitcherThree from '../../components/SwitcherThree';
 import SwitcherTwo from '../../components/SwitcherTwo';
-import DefaultLayout from '../../layout/DefaultLayout';
 
 const FormElements = () => {
   return (
-    <DefaultLayout>
+    <>
       <Breadcrumb pageName="FormElements" />
 
       <div className="grid grid-cols-1 gap-9 sm:grid-cols-2">
@@ -348,7 +347,7 @@ const FormElements = () => {
           </div>
         </div>
       </div>
-    </DefaultLayout>
+    </>
   );
 };
 

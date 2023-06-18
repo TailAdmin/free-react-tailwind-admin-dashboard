@@ -13,6 +13,7 @@ import Settings from './pages/Settings';
 import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
+import DefaultLayout from './layout/DefaultLayout';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -35,18 +36,20 @@ function App() {
   ) : (
     <>
       <Routes>
-        <Route path="/" element={<ECommerce />} />
-        <Route path="/calendar" element={<Calendar />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/forms/form-elements" element={<FormElements />} />
-        <Route path="/forms/form-layout" element={<FormLayout />} />
-        <Route path="/tables" element={<Tables />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/chart" element={<Chart />} />
-        <Route path="/ui/alerts" element={<Alerts />} />
-        <Route path="/ui/buttons" element={<Buttons />} />
         <Route path="/auth/signin" element={<SignIn />} />
         <Route path="/auth/signup" element={<SignUp />} />
+        <Route element={<DefaultLayout />}>
+          <Route index element={<ECommerce />} />
+          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/forms/form-elements" element={<FormElements />} />
+          <Route path="/forms/form-layout" element={<FormLayout />} />
+          <Route path="/tables" element={<Tables />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/chart" element={<Chart />} />
+          <Route path="/ui/alerts" element={<Alerts />} />
+          <Route path="/ui/buttons" element={<Buttons />} />
+        </Route>
       </Routes>
     </>
   );
