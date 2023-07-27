@@ -1,37 +1,84 @@
 import { useState, useLayoutEffect } from 'react';
 import { API_URL } from '../constants/Constants';
-
+import { createPortal } from 'react-dom';
 const TableThree = () => {
   const [data, setData] = useState({ '': { '': '' } });
-
-  async function fetchData(filter: string = 'cols=Price,Price_Delta') {
-    const response = await fetch(`${API_URL}/data?${filter}`);
-    const jsonData = await response.json();
-    setData(jsonData);
-    console.log('called', `${API_URL}/data?${filter}`);
-  }
+  const [colFilterShow, setColFilterShow] = useState(false);
+  const [colFilter, setColFilter] = useState(['']);
   useLayoutEffect(() => {
     fetchData();
+    setColFilter(Object.keys(Object.values(data)[0]));
   }, []);
+
+  async function fetchData(param: string = '') {
+    // cols=Price,Price_Delta
+    const response = await fetch(`${API_URL}/data?${param}`);
+    const jsonData = await response.json();
+    setData(jsonData);
+    console.log('called', `${API_URL}/data?${param}`);
+  }
+
+  function toggleColFilterShow() {
+    setColFilterShow(!colFilterShow);
+  }
+
   return (
-    <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-      <div className="max-w-full overflow-x-auto">
-        <table className="w-full table-auto">
-          <thead>
+    <div className="relative rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+      <div className="absolute left-5 flex flex-col">
+        <div
+          onClick={() => {
+            toggleColFilterShow();
+          }}
+          className="h-15 w-2 border bg-graydark"
+        ></div>
+        <div
+          className={
+            'max-h-100 overflow-y-auto border-2' +
+            (colFilterShow ? '' : ' hidden')
+          }
+        >
+          {Object.keys(Object.values(data)[0]).map((key) => {
+            return (
+              <div className="bg-gray px-3 py-1">
+                <p>
+                  <input
+                    type="checkbox"
+                    name={'check_' + key}
+                    id={'check_' + key}
+                    className="mr-2"
+                    checked
+                  />
+                  {key}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="borderpy-4 absolute w-1">
+        <p>&nbsp;</p>
+      </div>
+      <div className="max-h-[75vh] max-w-full overflow-x-auto overflow-y-auto">
+        <table className="w-full">
+          <thead className="">
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
-                  <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
-                    <h4>BondID</h4>
+                  <th className="sticky top-0">
+                    <div className=" min-w-[220px] bg-gray-2 py-4 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-11 flex flex-col">
+                      <h4 className='block px-4'>BondID</h4>
+                    </div>
                   </th>
               {Object.keys(Object.values(data)[0]).map((key) => {
                 return (
-                  <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
-                    <h4>{key}</h4>
+                  <th className="sticky top-0">
+                    <div className=" min-w-[220px] bg-gray-2 py-4 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-11 flex flex-col">
+                      <h4 className='block px-4'>{key}</h4>
+                    </div>
                   </th>
                 );
               })}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="">
             {Object.keys(data).map((bond_id) => {
               return (
                 <tr>
@@ -43,7 +90,7 @@ const TableThree = () => {
                       <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
                         <h5>{value}</h5>
                       </td>
-                    )
+                    );
                   })}
                 </tr>
               );
