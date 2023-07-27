@@ -2,13 +2,13 @@ import { useState, useLayoutEffect } from 'react';
 import { API_URL } from '../constants/Constants';
 
 const TableThree = () => {
-  const [data, setData] = useState({'':{'':''}});
+  const [data, setData] = useState({ '': { '': '' } });
 
   async function fetchData(filter: string = '') {
     const response = await fetch(`${API_URL}/data?${filter}`);
     const jsonData = await response.json();
     setData(jsonData);
-    console.log('called')
+    console.log('called');
   }
   useLayoutEffect(() => {
     fetchData();
@@ -19,18 +19,43 @@ const TableThree = () => {
         <table className="w-full table-auto">
           <thead>
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
+                  <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
+                    <h4>BondID</h4>
+                  </th>
               {Object.keys(Object.values(data)[0]).map((key) => {
                 return (
                   <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
-                    {key}
+                    <h4>{key}</h4>
                   </th>
                 );
               })}
             </tr>
           </thead>
           <tbody>
-            <tr>
-              {/* <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+            {Object.keys(data).map((bond_id) => {
+              return (
+                <tr>
+                  <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+                    <h5>{bond_id}</h5>
+                  </td>
+                  {Object.values(data[bond_id]).map((value) => {
+                    return (
+                      <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+                        <h5>{value}</h5>
+                      </td>
+                    )
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+/* <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
                 <h5 className="font-medium text-black dark:text-white">
                   Free Package
                 </h5>
@@ -112,13 +137,5 @@ const TableThree = () => {
                     </svg>
                   </button>
                 </div>
-              </td> */}
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
-
+              </td> */
 export default TableThree;
