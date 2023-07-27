@@ -4,11 +4,11 @@ import { API_URL } from '../constants/Constants';
 const TableThree = () => {
   const [data, setData] = useState({ '': { '': '' } });
 
-  async function fetchData(filter: string = '') {
+  async function fetchData(filter: string = 'cols=Price,Price_Delta') {
     const response = await fetch(`${API_URL}/data?${filter}`);
     const jsonData = await response.json();
     setData(jsonData);
-    console.log('called');
+    console.log('called', `${API_URL}/data?${filter}`);
   }
   useLayoutEffect(() => {
     fetchData();
