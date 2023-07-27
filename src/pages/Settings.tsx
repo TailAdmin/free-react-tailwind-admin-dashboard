@@ -1,12 +1,13 @@
 import Breadcrumb from '../components/Breadcrumb';
 import userThree from '../images/user/user-03.png';
-import fireToast from '../hooks/fireToast';
+import generateAlerts from '../hooks/generateAlerts';
 import { Table } from "../components/TableSettings";
 import { Modal } from "../components/ModalSettings";
 import { useState,useEffect } from "react";
 const Settings = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [rows, setRows] = useState(localStorage.getItem("alertSettings")?JSON.parse(localStorage.getItem("alertSettings")):[]);
+ 
   useEffect(() => {
     // storing input name
     localStorage.setItem("alertSettings", JSON.stringify(rows));
@@ -19,7 +20,6 @@ const Settings = () => {
 
   const handleEditRow = (idx) => {
     setRowToEdit(idx);
-
     setModalOpen(true);
   };
 
@@ -36,6 +36,7 @@ const Settings = () => {
   };
 
   return (
+    
     <>
      <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <button className="btn inline-flex items-center justify-center rounded-full bg-primary py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
@@ -47,7 +48,7 @@ const Settings = () => {
       <Table rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
       <br />
       <button className="btn inline-flex items-center justify-center rounded-full bg-primary py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
-           onClick={ fireToast} >
+           onClick={ generateAlerts} >
         Show Alerts
       </button>
       {modalOpen && (
@@ -262,7 +263,6 @@ const Settings = () => {
                     <button
                       className="flex justify-center rounded bg-primary py-2 px-6 font-medium text-gray hover:shadow-1"
                       type="submit"
-                      onClick={fireToast}
                     >
                       Save
                     </button>

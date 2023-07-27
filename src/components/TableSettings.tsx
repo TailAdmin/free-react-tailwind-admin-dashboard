@@ -1,9 +1,9 @@
 import React from "react";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
-import dataJSON from '../../public/data.json';
+// import dataJSON from '../../public/data.json';
 
 export const Table = ({ rows, deleteRow, editRow }) => {
-  const fields=Object.keys(Object.values(dataJSON)[0]).filter((item:any)=>!(item.startsWith("delta_")));
+  
   
   return (
    
@@ -15,7 +15,8 @@ export const Table = ({ rows, deleteRow, editRow }) => {
             <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">Paramter</th>
             <th className="py-4 px-4 font-medium text-black dark:text-white">Criterion</th>
             <th className="py-4 px-4 font-medium text-black dark:text-white">Value to give alert</th>
-            <th className="py-4 px-4 font-medium text-black dark:text-white">Alert type</th>
+            <th className="py-4 px-4 font-medium text-black dark:text-white">Alert Color</th>
+            <th className="py-4 px-4 font-medium text-black dark:text-white">Alert Notis</th>
             <th className="py-4 px-4 font-medium text-black dark:text-white">Actions</th>
           </tr>
         </thead>
@@ -38,12 +39,26 @@ export const Table = ({ rows, deleteRow, editRow }) => {
                   </span>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">{row.value}</td>
-                <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
-                  <span>
-                    {row.type==0?'Info':row.type==1?"Warning":"Alert"}
-                  </span>
+                <td className="border-b border-[#eee] py-5 px-2 dark:border-strokedark">
+                  {(<span className={`${row.color=="Green"?"bg-[#04b20c]":row.color=="Yellow"?"bg-[#eab90f]":"bg-[#e13f32]"} m-1.5 flex items-center justify-center rounded border-[.5px] border-stroke py-1.5 px-2.5 text-white font-medium dark:border-strokedark`}>
+                      {row.color}
+                      
+                            
+                    </span>)}
                 </td>
+                <td className="border-b border-[#eee] py-5 px-2 dark:border-strokedark">
+                {    row.notiArr.map((n)=>(
+                      <span
+                      
+                          className="z-50 w-fit m-1.5 flex items-center justify-center rounded border-[.5px] border-stroke dark:border-strokedark bg-gray dark:bg-white/30 py-1.5 px-2.5 text-sm font-medium">
+                          {n}
+                          
+                        </span>
+                      )
+             )
                 
+              }
+                </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <span className="actions flex grid-cols-2 gap-4">
                     <BsFillTrashFill

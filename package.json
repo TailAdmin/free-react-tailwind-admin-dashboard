@@ -14,10 +14,12 @@
     "url": "https://tailadmin.com"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@windmill/react-ui": "^0.6.0",
     "angular": "^1.8.3",
     "apexcharts": "^3.37.0",
     "boostrap": "^2.0.0",
+    "emailjs": "^4.0.2",
     "headlessui": "^0.0.0",
     "jsvectormap": "^1.5.1",
     "localforage": "^1.10.0",
