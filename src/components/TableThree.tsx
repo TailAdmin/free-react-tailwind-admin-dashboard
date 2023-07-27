@@ -99,8 +99,8 @@ function handleSelectedOption(event: any) {
         <table className="w-full">
           <thead className="">
             <tr className="text-left dark:bg-meta-4">
-              <th className="sticky top-0">
-                <div className=" flex min-w-[220px] flex-col bg-gray-2 py-4 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-11">
+              <th className="sticky top-0 left-0 z-99">
+                <div className=" flex flex-col bg-gray-2 py-4 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-11">
                   <h4 className="block px-4">BondID</h4>
                   <div
                     className={
@@ -184,7 +184,7 @@ function handleSelectedOption(event: any) {
             {Object.keys(data).map((bond_id) => {
               return (
                 <tr>
-                  <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+                  <td className="sticky bg-white dark:bg-boxdark left-0 border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
                     <h5>{bond_id}</h5>
                   </td>
                   {Object.values(data[bond_id]).map((value) => {
