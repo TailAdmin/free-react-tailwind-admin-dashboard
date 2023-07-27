@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import Breadcrumb from '../components/Breadcrumb';
 import userThree from '../images/user/user-03.png';
 
 const Settings = () => {
 
-  const [file, setFile] = useState();
+  const [file, setFile] = useState<File | undefined>();
   const fileReader = new FileReader();
+  const fileInputRef = useRef<HTMLInputElement>(null); // Create a ref for the file input
 
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setFile(event.target.files[0]);
+    }
   };
 
   const handleFileUpload = () => {
     if (file) {
       fileReader.onload = function (event) {
-        const csvOutput = event.target.result;
+        const csvOutput = event.target.result as string;
         // Process and use the csvOutput data as needed
         console.log(csvOutput);
 
@@ -24,6 +27,14 @@ const Settings = () => {
       };
 
       fileReader.readAsText(file);
+    }
+  };
+
+  const clearFile = () => {
+    // Clear the selected file and reset the input field
+    setFile(undefined);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ""; // Reset the input value using the ref
     }
   };
 
@@ -218,10 +229,11 @@ const Settings = () => {
                   </div>
 
                   <div className="flex justify-end gap-4.5">
-                    <button
-                      className="flex justify-center rounded border border-stroke py-2 px-6 font-medium text-black hover:shadow-1 dark:border-strokedark dark:text-white"
-                      type="submit"
-                    >
+                  <button
+                    className="flex justify-center rounded border border-stroke py-2 px-6 font-medium text-black hover:shadow-1 dark:border-strokedark dark:text-white"
+                    type="button"
+                    onClick={clearFile} // Add the onClick event handler for the cancel button
+                  >
                       Cancel
                     </button>
                     <button
@@ -268,24 +280,25 @@ const Settings = () => {
                     className="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border-2 border-dashed border-primary bg-gray py-4 px-4 dark:bg-meta-4 sm:py-7.5"
                   >
                     <input
-                        type="file"
-                        accept=".csv"
-                        className="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none"
-                        onChange={handleFileChange}
-                      />
-                      <div className="flex flex-col items-center justify-center space-y-3">
-                        <span className="text-primary">
-                          {file ? file.name : "Click to upload"}
-                        </span>
-                        <p>CSV files only</p>
-                        {/* You can show more information about the selected file if needed */}
-                      </div>
+                      ref={fileInputRef} // Attach the ref to the file input
+                      type="file"
+                      accept=".csv"
+                      className="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none"
+                      onChange={handleFileChange}
+                    />
+                    <div className="flex flex-col items-center justify-center space-y-3">
+                      <span className="text-primary">
+                        {file ? file.name : "Click to upload"}
+                      </span>
+                      <p>CSV files only</p>
                     </div>
+                  </div>
 
                   <div className="flex justify-end gap-4.5">
                     <button
                       className="flex justify-center rounded border border-stroke py-2 px-6 font-medium text-black hover:shadow-1 dark:border-strokedark dark:text-white"
                       type="button"
+                      onClick={clearFile}
                     >
                       Cancel
                     </button>
