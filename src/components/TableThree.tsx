@@ -5,7 +5,7 @@ const TableThree = () => {
   // data fetching
   const [data, setData] = useState({ '': { '': '' } });
 
-  async function fetchData(param: string = 'cols=Price,ISIN') {
+  async function fetchData(param: string = '') {
     const response = await fetch(`${API_URL}/data?${param}`);
     const jsonData = await response.json();
     setData(jsonData);
