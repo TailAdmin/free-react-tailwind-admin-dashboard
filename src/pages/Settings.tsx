@@ -6,6 +6,8 @@ import userThree from '../images/user/user-03.png';
 const Settings = () => {
 
   const [file, setFile] = useState<File | undefined>();
+  const [array, setArray] = useState([]);
+
   const fileReader = new FileReader();
   const fileInputRef = useRef<HTMLInputElement>(null); // Create a ref for the file input
 
@@ -13,6 +15,22 @@ const Settings = () => {
     if (event.target.files && event.target.files.length > 0) {
       setFile(event.target.files[0]);
     }
+  };
+
+  const csvFileToArray = string => {
+    const csvHeader = string.slice(0, string.indexOf("\n")).split(",");
+    const csvRows = string.slice(string.indexOf("\n") + 1).split("\n");
+
+    const array = csvRows.map(i => {
+      const values = i.split(",");
+      const obj = csvHeader.reduce((object, header, index) => {
+        object[header] = values[index];
+        return object;
+      }, {});
+      return obj;
+    });
+
+    setArray(array);
   };
 
   const handleFileUpload = () => {
@@ -24,11 +42,14 @@ const Settings = () => {
 
         // Save the CSV data to local storage
         localStorage.setItem("csvData", csvOutput);
+        csvFileToArray(csvOutput);
       };
 
       fileReader.readAsText(file);
     }
   };
+
+  const headerKeys = Object.keys(Object.assign({}, ...array));
 
   const clearFile = () => {
     // Clear the selected file and reset the input field
@@ -311,6 +332,28 @@ const Settings = () => {
                     </button>
                   </div>
                 </form>
+
+                <br />
+
+                <table>
+                  <thead>
+                    <tr key={"header"}>
+                      {headerKeys.map((key) => (
+                        <th>{key}</th>
+                      ))}
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {array.map((item) => (
+                      <tr key={item.id}>
+                        {Object.values(item).map((val) => (
+                          <td>{val}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
