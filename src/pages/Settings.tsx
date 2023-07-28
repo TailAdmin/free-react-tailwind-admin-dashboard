@@ -190,11 +190,11 @@ const Settings = () => {
 
                 <br />
 
-                <table>
+                <table className='w-full'>
                   <thead>
-                    <tr key={"header"}>
+                    <tr key={"header"} className="text-left dark:bg-meta-4">
                       {headerKeys.map((key) => (
-                        <th>{key}</th>
+                        <th className="min-w-[5rem] bg-gray-2 py-1 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-2">{key}</th>
                       ))}
                     </tr>
                   </thead>
@@ -203,7 +203,7 @@ const Settings = () => {
                     {array.map((item) => (
                       <tr key={item.id}>
                         {Object.values(item).map((val) => (
-                          <td>{val}</td>
+                          <td className="border-b border-[#eee] bg-white py-1 px-4 pl-3 dark:border-strokedark dark:bg-boxdark">{val}</td>
                         ))}
                       </tr>
                     ))}
