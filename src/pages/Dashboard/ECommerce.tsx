@@ -7,7 +7,7 @@ import ChartThree from '../../components/ChartThree.tsx';
 import ChartTwo from '../../components/ChartTwo.tsx';
 import ChatCard from '../../components/ChatCard.tsx';
 import MapOne from '../../components/MapOne.tsx';
-import TableOne from '../../components/TableOne.tsx';
+import TableThree from '../../components/TableThree.tsx';
 
 const ECommerce = () => {
   return (
@@ -25,7 +25,7 @@ const ECommerce = () => {
         <ChartThree />
         <MapOne />
         <div className="col-span-12 xl:col-span-8">
-          <TableOne />
+          <TableThree />
         </div>
         <ChatCard />
       </div>

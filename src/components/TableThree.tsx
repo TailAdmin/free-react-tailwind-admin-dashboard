@@ -1,5 +1,8 @@
 import { useState, useLayoutEffect } from 'react';
 import { API_URL } from '../constants/Constants';
+import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
+import { BsDash } from 'react-icons/bs';
+
 const TableThree = () => {
   // data fetching
   const [data, setData] = useState({ '': { '': '' } });
@@ -11,7 +14,7 @@ const TableThree = () => {
   const [filterValues, setFilterValues] = useState({});
   const [showFilterBox, setShowFilterBox] = useState(false);
 
-  async function fetchData(route: string='data?', param: string = '') {
+  async function fetchData(route: string = 'data?', param: string = '') {
     const response = await fetch(`${API_URL}/${route}${param}`);
     if (!response.ok) {
       return null;
@@ -26,14 +29,13 @@ const TableThree = () => {
       const apiData = await fetchData();
       setData(apiData);
       setFilteredData(apiData);
-      const availableCols = await fetchData('available_cols','')
+      const availableCols = await fetchData('available_cols', '');
       let colFilters = {};
-      (availableCols).map((col: string) => {
+      availableCols.map((col: string) => {
         colFilters = { ...colFilters, [col]: true };
       });
-      setColFilter(colFilters)
+      setColFilter(colFilters);
 
-    
       let filters = {};
       Object.keys(Object.values(apiData)[0]).map((col) => {
         filters = { ...filters, [col]: '' };
@@ -41,8 +43,6 @@ const TableThree = () => {
       setFilterValues(filters);
     }
     initData();
-    
-
   }, []);
 
   // column filter
@@ -92,10 +92,10 @@ const TableThree = () => {
 
     Object.keys(colFilter).map((col) => {
       if (colFilter[col]) {
-        colFilterQuery = colFilterQuery + col + ','
+        colFilterQuery = colFilterQuery + col + ',';
       }
-    })
-    colFilterQuery="&cols="+colFilterQuery.slice(0,-1)
+    });
+    colFilterQuery = '&cols=' + colFilterQuery.slice(0, -1);
 
     let param: string = '';
     if (filterQuery) {
@@ -103,20 +103,32 @@ const TableThree = () => {
     }
     param = param + bondidQuery;
     async function getFilteredData() {
-      const filtered = await fetchData('data?',param);
+      const filtered = await fetchData('data?', param);
       setFilteredData(filtered);
     }
 
-
     getFilteredData();
   }
+
   function toggleColFilter(col: string) {
     if (col === 'BondID') {
-      return
+      return;
     }
     const updateColFilter = { ...colFilter };
     updateColFilter[col] = !colFilter[col];
     setColFilter(updateColFilter);
+  }
+
+  // render icons for rating_delta
+  function renderRatingDeltaIcon(value: int) {
+    switch (value) {
+      case 1:
+        return <BiSolidUpArrow className="text-success" />;
+      case 0:
+        return <BsDash className="text-gray-400" />;
+      case -1:
+        return <BiSolidDownArrow className="text-danger" />;
+    }
   }
   return (
     <div className="relative rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
@@ -128,31 +140,35 @@ const TableThree = () => {
           Toggle Filter Box
         </button>
       </div>
-      <div className="absolute left-5 flex flex-col">
+      <div className="absolute left-5 flex flex-col cursor-pointer">
         <div
           onClick={() => {
             toggleColFilterShow();
           }}
-          className="absolute -left-5 top-5 -rotate-90 transform border-0 text-xs text-graydark"
+          className="absolute -left-8 top-5 -rotate-90 transform border-0 text-xs px-4"
         >
-          cols
+          <p className="pointer-events-none select-none">cols</p>
         </div>
         <div
           onClick={() => {
             toggleColFilterShow();
           }}
-          className="h-15 w-2 border bg-graydark"
+          className="h-15 w-2 border bg-graydark dark:border-strokedark"
         ></div>
         <div
           className={
-            'z-99 max-h-100 overflow-y-auto border-2' +
+            'z-99 max-h-100 overflow-y-auto border-2 dark:border-[0.3rem] dark:border-graydark' +
             (colFilterShow ? '' : ' hidden')
           }
         >
           {Object.keys(colFilter).map((col) => {
             return (
-              <div className="bg-gray px-3 py-1">
-                <div onClick={() => {toggleColFilter(col)}}>
+              <div className="bg-gray dark:bg-boxdark px-3 py-1">
+                <div
+                  onClick={() => {
+                    toggleColFilter(col);
+                  }}
+                >
                   <input
                     type="checkbox"
                     name={'check_' + col}
@@ -160,7 +176,12 @@ const TableThree = () => {
                     className="mr-2"
                     checked={colFilter[col]}
                   />
-                  <label htmlFor={'check_' + col} className='pointer-events-none'>{col}</label>
+                  <label
+                    htmlFor={'check_' + col}
+                    className="pointer-events-none"
+                  >
+                    {col}
+                  </label>
                 </div>
               </div>
             );
@@ -175,7 +196,7 @@ const TableThree = () => {
           <thead className="">
             <tr className="text-left dark:bg-meta-4">
               <th className="sticky top-0 left-0 z-50">
-                <div className=" flex min-w-[13rem] flex-col bg-gray-2 py-4 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-11">
+                <div className="flex flex-col bg-gray-2 py-1 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-2">
                   <h4 className="block px-4">BondID</h4>
                   <div
                     className={
@@ -212,7 +233,7 @@ const TableThree = () => {
               {Object.keys(Object.values(data)[0]).map((col) => {
                 return (
                   <th className="sticky top-0">
-                    <div className=" flex min-w-[13rem] flex-col bg-gray-2 py-4 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-11">
+                    <div className=" flex min-w-[5rem] flex-col bg-gray-2 py-1 font-medium text-black dark:bg-meta-4 dark:text-white xl:pl-2">
                       <h4 className="block px-4">{col}</h4>
                       <div
                         className={
@@ -265,14 +286,20 @@ const TableThree = () => {
             {filteredData
               ? Object.keys(filteredData).map((bond_id) => {
                   return (
-                    <tr>
-                      <td className="sticky left-0 border-b border-[#eee] bg-white py-5 px-4 pl-9 dark:border-strokedark dark:bg-boxdark xl:pl-11">
+                    <tr className='overflow-x-clip'>
+                      <td className="sticky left-0 border-b border-[#eee] bg-white py-1 px-4 pl-3 dark:border-strokedark dark:bg-boxdark">
                         <h5>{bond_id}</h5>
                       </td>
-                      {Object.values(filteredData[bond_id]).map((value) => {
+                      {Object.keys(filteredData[bond_id]).map((key) => {
                         return (
-                          <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
-                            <h5>{value}</h5>
+                          <td className="border-b border-[#eee] py-1 px-4 pl-4 dark:border-strokedark xl:pl-2 min-w-[10rem]">
+                            <h5>
+                              {key.includes('Rating_Delta')
+                                ? renderRatingDeltaIcon(
+                                    filteredData[bond_id][key]
+                                  )
+                                : filteredData[bond_id][key]}
+                            </h5>
                           </td>
                         );
                       })}
