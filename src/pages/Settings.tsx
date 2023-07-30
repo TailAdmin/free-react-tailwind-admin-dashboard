@@ -37,33 +37,6 @@ const Settings = () => {
 
   return (
     <>
-     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-      <button className="btn inline-flex items-center justify-center rounded-full bg-primary py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
-           onClick={() => setModalOpen(true)} >
-        Add New Alert
-      </button>
-      <br />
-      <br />
-      <Table rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
-      <br />
-      <button className="btn inline-flex items-center justify-center rounded-full bg-primary py-4 px-10 text-center font-medium text-white hover:bg-opacity-90 lg:px-8 xl:px-10"
-           onClick={ fireToast} >
-        Show Alerts
-      </button>
-      {modalOpen && (
-        <div className="modal-container bg-white fixed z-40 flex top-0 w-full content-center items-center"
-        onclick={() =>setModalOpen(false)}>
-        <Modal 
-          closeModal={() => {
-            setModalOpen(false);
-            setRowToEdit(null);
-          }}
-          onSubmit={handleSubmit}
-          defaultValue={rowToEdit !== null && rows[rowToEdit]}
-        />
-        </div>
-      )}
-    </div>
       <div className="mx-auto max-w-270">
         
         <Breadcrumb pageName="Settings" />
