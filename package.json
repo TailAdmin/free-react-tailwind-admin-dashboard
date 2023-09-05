@@ -14,15 +14,10 @@
     "url": "https://tailadmin.com"
   },
   "dependencies": {
-    "@windmill/react-ui": "^0.6.0",
-    "angular": "^1.6.10",
     "apexcharts": "^3.41.0",
-    "boostrap": "^2.0.0",
     "headlessui": "^0.0.0",
     "jsvectormap": "^1.5.3",
-    "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
-    "nebular": "^0.0.1",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
@@ -30,8 +25,7 @@
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.2",
     "react-toastify": "^9.1.3",
-    "sort-by": "^0.0.2",
-    "windmill": "^0.1.3"
+    "sort-by": "^0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.17",
