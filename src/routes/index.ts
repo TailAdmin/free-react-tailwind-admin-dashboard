@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 
 const Calendar = lazy(() => import('../pages/Calendar'));
+const SumitCalendar = lazy(() => import('../pages/SumitCalendar'));
 const Chart = lazy(() => import('../pages/Chart'));
 const FormElements = lazy(() => import('../pages/Form/FormElements'));
 const FormLayout = lazy(() => import('../pages/Form/FormLayout'));
@@ -17,10 +18,20 @@ const coreRoutes = [
     component: Calendar,
   },
   {
+    path: '/sumitnewcal',
+    title: 'SK_Calender',
+    component: SumitCalendar,
+  },
+  {
     path: '/profile',
     title: 'Profile',
     component: Profile,
   },
+  // {
+  //   path: '/sumitprofile',
+  //   title: 'Sumit Profile',
+  //   component: SumitPro,
+  // },
   {
     path: '/forms/form-elements',
     title: 'Forms Elements',
