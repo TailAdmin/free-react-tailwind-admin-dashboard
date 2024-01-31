@@ -1,10 +1,15 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
+import DefaultLayout from '../../layout/DefaultLayout';
 
-const SignUp = () => {
+const SignUp: React.FC = () => {
   return (
-    <>
+    <DefaultLayout>
+      <Breadcrumb pageName="Sign Up" />
+
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
@@ -159,7 +164,7 @@ const SignUp = () => {
                     <input
                       type="text"
                       placeholder="Enter your full name"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -194,7 +199,7 @@ const SignUp = () => {
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -225,7 +230,7 @@ const SignUp = () => {
                     <input
                       type="password"
                       placeholder="Enter your password"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -260,7 +265,7 @@ const SignUp = () => {
                     <input
                       type="password"
                       placeholder="Re-enter your password"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -345,7 +350,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-    </>
+    </DefaultLayout>
   );
 };
 

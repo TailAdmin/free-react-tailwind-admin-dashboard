@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "apexcharts": "^3.41.0",
+    "flatpickr": "^4.6.13",
     "headlessui": "^0.0.0",
     "jsvectormap": "^1.5.3",
     "match-sorter": "^6.3.1",
@@ -36,7 +37,7 @@
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.4.1",
     "vite": "^4.4.7",
     "webpack": "^5.88.2"
   }

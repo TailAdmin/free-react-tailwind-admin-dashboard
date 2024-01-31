@@ -1,44 +1,11 @@
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
 import userThree from '../images/user/user-03.png';
-import fireToast from '../hooks/fireToast';
-import { Table } from "../components/TableSettings";
-import { Modal } from "../components/ModalSettings";
-import { useState,useEffect } from "react";
+import DefaultLayout from '../layout/DefaultLayout';
+
 const Settings = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [rows, setRows] = useState(localStorage.getItem("alertSettings")?JSON.parse(localStorage.getItem("alertSettings")):[]);
-  useEffect(() => {
-    // storing input name
-    localStorage.setItem("alertSettings", JSON.stringify(rows));
-  }, [rows]);
-  const [rowToEdit, setRowToEdit] = useState(null);
-
-  const handleDeleteRow = (targetIndex) => {
-    setRows(rows.filter((_, idx) => idx !== targetIndex));
-  };
-
-  const handleEditRow = (idx) => {
-    setRowToEdit(idx);
-
-    setModalOpen(true);
-  };
-
-  const handleSubmit = (newRow) => {
-    rowToEdit === null
-      ? setRows([...rows, newRow])
-      : setRows(
-          rows.map((currRow, idx) => {
-            if (idx !== rowToEdit) return currRow;
-
-            return newRow;
-          })
-        );
-  };
-
   return (
-    <>
+    <DefaultLayout>
       <div className="mx-auto max-w-270">
-        
         <Breadcrumb pageName="Settings" />
 
         <div className="grid grid-cols-5 gap-8">
@@ -233,9 +200,8 @@ const Settings = () => {
                       Cancel
                     </button>
                     <button
-                      className="flex justify-center rounded bg-primary py-2 px-6 font-medium text-gray hover:shadow-1"
+                      className="flex justify-center rounded bg-primary py-2 px-6 font-medium text-gray hover:bg-opacity-90"
                       type="submit"
-                      onClick={fireToast}
                     >
                       Save
                     </button>
@@ -274,7 +240,7 @@ const Settings = () => {
 
                   <div
                     id="FileUpload"
-                    className="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border-2 border-dashed border-primary bg-gray py-4 px-4 dark:bg-meta-4 sm:py-7.5"
+                    className="relative mb-5.5 block w-full cursor-pointer appearance-none rounded border border-dashed border-primary bg-gray py-4 px-4 dark:bg-meta-4 sm:py-7.5"
                   >
                     <input
                       type="file"
@@ -327,7 +293,7 @@ const Settings = () => {
                       Cancel
                     </button>
                     <button
-                      className="flex justify-center rounded bg-primary py-2 px-6 font-medium text-gray hover:bg-opacity-70"
+                      className="flex justify-center rounded bg-primary py-2 px-6 font-medium text-gray hover:bg-opacity-90"
                       type="submit"
                     >
                       Save
@@ -339,7 +305,7 @@ const Settings = () => {
           </div>
         </div>
       </div>
-    </>
+    </DefaultLayout>
   );
 };
 

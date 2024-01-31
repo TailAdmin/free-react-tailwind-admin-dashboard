@@ -1,10 +1,12 @@
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
+import DefaultLayout from '../layout/DefaultLayout';
 import CoverOne from '../images/cover/cover-01.png';
 import userSix from '../images/user/user-06.png';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
   return (
-    <>
+    <DefaultLayout>
       <Breadcrumb pageName="Profile" />
 
       <div className="overflow-hidden rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -17,7 +19,7 @@ const Profile = () => {
           <div className="absolute bottom-1 right-1 z-10 xsm:bottom-4 xsm:right-4">
             <label
               htmlFor="cover"
-              className="flex cursor-pointer items-center justify-center gap-2 rounded bg-primary py-1 px-2 text-sm font-medium text-white hover:bg-opacity-80 xsm:px-4"
+              className="flex cursor-pointer items-center justify-center gap-2 rounded bg-primary py-1 px-2 text-sm font-medium text-white hover:bg-opacity-90 xsm:px-4"
             >
               <input type="file" name="cover" id="cover" className="sr-only" />
               <span>
@@ -129,8 +131,8 @@ const Profile = () => {
                 Follow me on
               </h4>
               <div className="flex items-center justify-center gap-3.5">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="hover:text-primary"
                   aria-label="social-icon"
                 >
@@ -154,9 +156,9 @@ const Profile = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="hover:text-primary"
                   aria-label="social-icon"
                 >
@@ -185,9 +187,9 @@ const Profile = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="hover:text-primary"
                   aria-label="social-icon"
                 >
@@ -216,9 +218,9 @@ const Profile = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="hover:text-primary"
                   aria-label="social-icon"
                 >
@@ -242,9 +244,9 @@ const Profile = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="#"
                   className="hover:text-primary"
                   aria-label="social-icon"
                 >
@@ -273,13 +275,13 @@ const Profile = () => {
                       </clipPath>
                     </defs>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </DefaultLayout>
   );
 };
 

@@ -1,10 +1,15 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
+import DefaultLayout from '../../layout/DefaultLayout';
 
-const SignIn = () => {
+const SignIn: React.FC = () => {
   return (
-    <>
+    <DefaultLayout>
+      <Breadcrumb pageName="Sign In" />
+
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
@@ -160,7 +165,7 @@ const SignIn = () => {
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -191,7 +196,7 @@ const SignIn = () => {
                     <input
                       type="password"
                       placeholder="6+ Characters, 1 Capital letter"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -276,7 +281,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-    </>
+    </DefaultLayout>
   );
 };
 

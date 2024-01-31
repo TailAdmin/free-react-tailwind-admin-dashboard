@@ -1,8 +1,9 @@
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
+import DefaultLayout from '../layout/DefaultLayout';
 
 const Calendar = () => {
   return (
-    <>
+    <DefaultLayout>
       <Breadcrumb pageName="Calendar" />
 
       {/* <!-- ====== Calendar Section Start ====== --> */}
@@ -266,7 +267,7 @@ const Calendar = () => {
         </table>
       </div>
       {/* <!-- ====== Calendar Section End ====== --> */}
-    </>
+    </DefaultLayout>
   );
 };
 

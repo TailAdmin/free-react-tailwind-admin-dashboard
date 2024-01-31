@@ -70,3 +70,25 @@ This command will generate a dist as build folder in the root of your template t
 
 ## Tons of React Tailwind Components for Dashboard
 React and Tailwind are two popular technologies that have taken the web development world by storm. React is a JavaScript library for building user interfaces, while Tailwind is a utility-first CSS framework that makes it easy to style web applications. TailAdmin React Offers 200+ Essential React + Tailwind CSS UI Components that you copy-paste and use with your dashboard projects. That includes - charts, graphs, navbars, tabs, buttons, cards, tables, profile, tabs, forms, modals, app pages, calender, web apps example templates and more... for React and Styled using Tailwind CSS
+
+
+
+## Update Logs
+
+### Version 1.0.6 - [Jan 31, 2024]
+
+#### Enhancements
+
+- **Enhancement 01:** Integrate flatpickr in [Date Picker/Form Elements]
+- **Enhancement 02:** Change color after select an option [Select Element/Form Elements].
+- **Enhancement 03:** Make it functional [Multiselect Dropdown/Form Elements].
+- **Enhancement 04:** Make best value editable [Pricing Table One/Pricing Table].
+- **Enhancement 05:** Rearrange Folder structure.
+
+### Version 1.0.0 - [Apr 28, 2023]
+
+- Add Typescript in TailAdmin React.
+
+### Version 1.0.0 - Initial Release - [Mar 13, 2023]
+
+- Initial release of TailAdmin React.
