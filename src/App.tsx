@@ -16,6 +16,19 @@ import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 
+// This variable represents whether the user is authenticated or not.
+// In this example, it's hardcoded to true for demonstration purposes.
+// In a real-world scenario, you would replace this with logic to determine
+// whether the user is authenticated, such as checking for a valid session or token.
+const RequireAuth: React.FC = () => {
+  let isAuthenticated: boolean = true;
+
+  // If the user is authenticated, render the child routes.
+  // Otherwise, redirect to the signin page.
+  return isAuthenticated ? <Outlet /> : <Navigate to="/auth/signin" />;
+};
+
+
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
@@ -27,19 +40,6 @@ function App() {
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
-
-  
-  // This variable represents whether the user is authenticated or not.
-  // In this example, it's hardcoded to true for demonstration purposes.
-  // In a real-world scenario, you would replace this with logic to determine
-  // whether the user is authenticated, such as checking for a valid session or token.
-  const RequireAuth: React.FC = () => {
-    let isAuthenticated: boolean = true;
-
-    // If the user is authenticated, render the child routes.
-    // Otherwise, redirect to the signin page.
-    return isAuthenticated ? <Outlet /> : <Navigate to="/auth/signin" />;
-  };
 
   return loading ? (
     <Loader />
