@@ -7,6 +7,7 @@ import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
 import Calendar from './pages/Calendar';
 import Chart from './pages/Chart';
+import EventForm from './pages/Form/EventForm';
 import ECommerce from './pages/Dashboard/ECommerce';
 import FormElements from './pages/Form/FormElements';
 import FormLayout from './pages/Form/FormLayout';
@@ -15,6 +16,7 @@ import Settings from './pages/Settings';
 import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
+import UserForm from './pages/Form/UserForm';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -57,6 +59,24 @@ function App() {
             <>
               <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
               <Profile />
+            </>
+          }
+        />
+        <Route
+          path="/Event"
+          element={
+            <>
+              <PageTitle title="Event" />
+              <EventForm />
+            </>
+          }
+        />
+            <Route
+          path="/User"
+          element={
+            <>
+              <PageTitle title="User" />
+              <UserForm />
             </>
           }
         />
