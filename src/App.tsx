@@ -17,6 +17,7 @@ import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 import UserForm from './pages/Form/UserForm';
+import UserTables from './pages/UserTable';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -68,6 +69,15 @@ function App() {
             <>
               <PageTitle title="Event" />
               <EventForm />
+            </>
+          }
+        />
+          <Route
+          path="/UserTable"
+          element={
+            <>
+              <PageTitle title="UserTable" />
+              <UserTables />
             </>
           }
         />
