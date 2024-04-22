@@ -23,10 +23,10 @@ export async function createUser(nom: string, prenom: string, email: string, pas
           throw new Error('Failed to create user');
       }
 
-      return await response.json();
+      return true;
   } catch (error) {
       console.error('Error creating user:', error);
-      throw error;
+      throw "user already exists";
   }
 }
 

@@ -14,7 +14,7 @@ const TableThree = () => {
   
       await DeleteUsers(id);
      
-      window.location.reload();
+      fetchUsers();
     } catch (error) {
       console.error('Error deleting user:', error);
     }

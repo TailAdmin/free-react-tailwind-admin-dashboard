@@ -2,8 +2,9 @@ import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import DefaultLayout from '../../layout/DefaultLayout';
 import { createUser } from '../../components/BACKEND-hookes/userapi';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
-
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const UserForm = () => {
@@ -13,6 +14,7 @@ const UserForm = () => {
     email: '',
     password: ''
   });
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -24,19 +26,18 @@ const UserForm = () => {
 
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission behavior
-
+  
     try {
-      const createdUser = await createUser(formData.nom, formData.prenom, formData.email, formData.password);
-     
-      console.log('User created:', createdUser);
-      
-      
-
-
-    } catch (error) {
-      console.error('Error creating user:', error);
+     const user =  await createUser(formData.nom, formData.prenom, formData.email, formData.password);
+    if(user){
+      toast.success('User created successfully!');
     }
-  };
+    } catch (error) {
+      toast.error('Error creating user: ' + error);
+
+    }
+    
+  }
 
   return (
     <DefaultLayout>
@@ -111,6 +112,18 @@ const UserForm = () => {
                 <button type="submit" className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
                   Create user
                 </button>
+                              <ToastContainer
+              position="bottom-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+              />
               </div>
             </form>
           </div>
