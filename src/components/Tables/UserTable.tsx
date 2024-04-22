@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { ListUsers , DeleteUsers } from '../../components/BACKEND-hookes/userapi';
 import ConfirmationDialog from '../../components/ALERTS/confirmationdialog';
 import UserFormUpdate from '../ALERTS/UpdateUser';
+import { ToastContainer, toast } from 'react-toastify';
+
 const TableThree = () => {
   const [users, setUsers] = useState([]);
   const [deleteUserId, setDeleteUserId] = useState(null);
@@ -15,6 +17,7 @@ const TableThree = () => {
       await DeleteUsers(id);
      
       fetchUsers();
+      toast.success('User deleted successfully!');
     } catch (error) {
       console.error('Error deleting user:', error);
     }
@@ -157,6 +160,18 @@ const TableThree = () => {
                         />
                       </svg>
                     </button>
+                    <ToastContainer
+              position="bottom-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+              />
                  
                   </div>
                 </td>

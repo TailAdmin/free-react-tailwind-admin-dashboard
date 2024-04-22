@@ -3,7 +3,7 @@ import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import { updateUser } from '../../components/BACKEND-hookes/userapi';
 import SelectRole from '../Forms/SelectGroup/RoleSelect';
 import { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
 const UserFormUpdate = (props) => {
   const [formData, setFormData] = useState({
     id: props.id,
@@ -32,10 +32,11 @@ const UserFormUpdate = (props) => {
 
     try {
       await updateUser(formData.id, formData.nom, formData.prenom,selectedRole, formData.email, formData.password);
-      
+     
     } catch (error) {
       console.error('Error updating user:', error);
     }
+    toast.success('User updated successfully!');
     setShowUpdateForm(false);
   };
 
@@ -110,6 +111,18 @@ const UserFormUpdate = (props) => {
                   <button type="button" style={{ backgroundColor: 'red' }} className="w-1/2 rounded p-3 font-medium text-gray hover:bg-opacity-90" onClick={handleCancel}>Cancel</button>
 
                 </div>
+                <ToastContainer
+              position="bottom-center"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              
+              theme="light"
+              />
               </div>
             </form>
           </div>
