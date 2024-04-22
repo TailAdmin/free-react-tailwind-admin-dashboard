@@ -6,40 +6,51 @@ import { useState } from 'react';
 
 
 
-
-const handleSubmit = async () => {
-
-  try {
-    
-    const createdUser = await createUser(nom ,prenom ,email,password);
-    console.log('User created:', createdUser);
-   
-  } catch (error) {
-    // Handle error
-  }
-};
-
-const [nom, setNom] = useState('');
-const [prenom, setPrenom] = useState('');
-const [email, setEmail] = useState(''); 
-const [password, setPaswword] = useState(''); 
-
 const UserForm = () => {
+  const [formData, setFormData] = useState({
+    nom: '',
+    prenom: '',
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    try {
+      const createdUser = await createUser(formData.nom, formData.prenom, formData.email, formData.password);
+     
+      console.log('User created:', createdUser);
+      
+      
+
+
+    } catch (error) {
+      console.error('Error creating user:', error);
+    }
+  };
+
   return (
     <DefaultLayout>
       <Breadcrumb pageName="User" />
 
       <div className="grid grid-cols-1 gap-9 sm:grid-cols-1">
         <div className="flex flex-col gap-9">
-          {/* <!-- Contact Form --> */}
-         
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
               <h3 className="font-medium text-black dark:text-white">
                 User form
               </h3>
             </div>
-            <form action="#" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <div className="p-6.5">
                 <div className="mb-4.5 flex flex-col gap-6 xl:flex-row">
                   <div className="w-full xl:w-1/2">
@@ -48,10 +59,11 @@ const UserForm = () => {
                     </label>
                     <input
                       type="text"
+                      name="nom"
                       placeholder="Enter user name "
-                      value={nom}
+                      value={formData.nom}
+                      onChange={handleChange} 
                       className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                      onChange={e => setNom(e.target.value)} 
                     />
                   </div>
 
@@ -61,8 +73,9 @@ const UserForm = () => {
                     </label>
                     <input
                       type="text" 
-                      value={prenom}
-                      onChange={e => setPrenom(e.target.value)} 
+                      name="prenom"
+                      value={formData.prenom}
+                      onChange={handleChange} 
                       className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
                   </div>
@@ -74,8 +87,9 @@ const UserForm = () => {
                   </label>
                   <input
                     type="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)} 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange} 
                     placeholder="Enter user Email "
                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                   />
@@ -87,23 +101,21 @@ const UserForm = () => {
                   </label>
                   <input
                     type="password"
-                    value={password}
-                    onChange={e => setPaswword(e.target.value)} 
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange} 
                     placeholder="enter Password"
                     className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                   />
                 </div>  
-                <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
+                <button type="submit" className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
                   Create user
                 </button>
               </div>
             </form>
           </div>
         </div>
-
-       
-        
-          </div>
+      </div>
     </DefaultLayout>
   );
 };

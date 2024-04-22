@@ -1,8 +1,8 @@
 
-const BASE_URL = 'http://your-java-ee-backend-url';
+const BASE_URL = 'http://localhost:8080/Jee-Backend-1.0-SNAPSHOT/api';
 
 
-export async function createUser(nom, prenom, email, password) {
+export async function createUser(nom: string, prenom: string, email: string, password: string) {
   try {
   
       const user = {
@@ -29,4 +29,25 @@ export async function createUser(nom, prenom, email, password) {
       throw error;
   }
 }
+
+export async function ListUsers() {
+    try {
+    
+    
+        const response = await fetch(`http://localhost:8080/Jee-Backend-1.0-SNAPSHOT/api/users`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
   
+        if (!response.ok) {
+            throw new Error('Failed to create user');
+        }
+  
+        return await response.json();
+    } catch (error) {
+        console.error('Error creating user:', error);
+        throw error;
+    }
+  }
