@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-const SelectGroupOne: React.FC = () => {
+interface TopicSelectProps {
+  onTopicChange: (topic: string) => void;
+}
+
+const TopicSelect: React.FC<TopicSelectProps> = ({ onTopicChange }) => {
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
 
@@ -8,20 +12,20 @@ const SelectGroupOne: React.FC = () => {
     setIsOptionSelected(true);
   };
 
-  return (
-    <div className="mb-4.5">
-      <label className="mb-2.5 block text-black dark:text-white">
-        {' '}
-        type{' '}
-      </label>
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(e.target.value);
+    changeTextColor();
+    // Pass the selected topic value to the parent component
+    onTopicChange(e.target.value);
+  };
 
+  return (
+    <div className="mb-4.5 flex-shrink-0"> {/* Added flex-shrink-0 */}
+      <label className="mb-2.5 block text-black dark:text-white">Topic</label>
       <div className="relative z-20 bg-transparent dark:bg-form-input">
         <select
           value={selectedOption}
-          onChange={(e) => {
-            setSelectedOption(e.target.value);
-            changeTextColor();
-          }}
+          onChange={handleSelectChange}
           className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary ${
             isOptionSelected ? 'text-black dark:text-white' : ''
           }`}
@@ -29,19 +33,19 @@ const SelectGroupOne: React.FC = () => {
           <option value="" disabled className="text-body dark:text-bodydark">
             Select your topic
           </option>
-          <option value="conference" className="text-body dark:text-bodydark">
-          Music
+          <option value="Music" className="text-body dark:text-bodydark">
+            Music
           </option>
-          <option value="reunion" className="text-body dark:text-bodydark">
+          <option value="  Workshops or breakout sessions" className="text-body dark:text-bodydark">
           Workshops or breakout sessions
           </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
+          <option value="   Sponsorship and exhibitor information" className="text-body dark:text-bodydark">
           Sponsorship and exhibitor information
           </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
+          <option value=" Venue details and logistics" className="text-body dark:text-bodydark">
           Venue details and logistics
           </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
+          <option value=" other" className="text-body dark:text-bodydark">
           other
           </option>
         </select>
@@ -70,4 +74,4 @@ const SelectGroupOne: React.FC = () => {
   );
 };
 
-export default SelectGroupOne;
+export default TopicSelect;

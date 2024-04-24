@@ -18,6 +18,7 @@ import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 import UserForm from './pages/Form/UserForm';
 import UserTables from './pages/UserTable';
+import ProgramsForm from './pages/Form/ProgramsForm';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -90,12 +91,22 @@ function App() {
             </>
           }
         />
+          
         <Route
           path="/forms/form-elements"
           element={
             <>
               <PageTitle title="Form Elements | TailAdmin - Tailwind CSS Admin Dashboard Template" />
               <FormElements />
+            </>
+          }
+        />
+         <Route
+          path="/programs"
+          element={
+            <>
+              <PageTitle title="programs" />
+              <ProgramsForm />
             </>
           }
         />

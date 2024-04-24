@@ -14,6 +14,10 @@
     "url": "https://tailadmin.com"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.15",
+    "@mui/x-date-pickers": "^7.2.0",
     "apexcharts": "^3.41.0",
     "flatpickr": "^4.6.13",
     "headlessui": "^0.0.0",

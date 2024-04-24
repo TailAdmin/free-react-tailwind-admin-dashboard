@@ -1,51 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { ListEvents } from '../../BACKEND-hookes/Eventapi';
 
-const SelectGroupOne: React.FC = () => {
+const EventSelect: React.FC<{ onEventChange: (event: string) => void }> = ({ onEventChange }) => {
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
+  const [events, setEvents] = useState([]);
 
-  const changeTextColor = () => {
+  const changeTextColor = (event: string) => {
     setIsOptionSelected(true);
+    onEventChange(event);
   };
+
+  useEffect(() => {
+    fetchEvent();
+  }, []);
+
+  async function fetchEvent() {
+    try {
+      const eventList = await ListEvents();
+      setEvents(eventList);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+    }
+  }
 
   return (
     <div className="mb-4.5">
-      <label className="mb-2.5 block text-black dark:text-white">
-        {' '}
-        type{' '}
-      </label>
-
+      <label className="mb-2.5 block text-black dark:text-white">Event</label>
       <div className="relative z-20 bg-transparent dark:bg-form-input">
         <select
           value={selectedOption}
           onChange={(e) => {
             setSelectedOption(e.target.value);
-            changeTextColor();
+            changeTextColor(e.target.value);
           }}
           className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary ${
             isOptionSelected ? 'text-black dark:text-white' : ''
           }`}
         >
           <option value="" disabled className="text-body dark:text-bodydark">
-            Select your topic
+            Select your event
           </option>
-          <option value="conference" className="text-body dark:text-bodydark">
-          Music
-          </option>
-          <option value="reunion" className="text-body dark:text-bodydark">
-          Workshops or breakout sessions
-          </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
-          Sponsorship and exhibitor information
-          </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
-          Venue details and logistics
-          </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
-          other
-          </option>
+          {events.map((event) => (
+            <option key={event.id} value={event.id} className="text-body dark:text-bodydark">
+              {event.title}
+            </option>
+          ))}
         </select>
-
         <span className="absolute top-1/2 right-4 z-30 -translate-y-1/2">
           <svg
             className="fill-current"
@@ -70,4 +71,4 @@ const SelectGroupOne: React.FC = () => {
   );
 };
 
-export default SelectGroupOne;
+export default EventSelect;
