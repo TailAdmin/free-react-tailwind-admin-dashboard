@@ -1,19 +1,18 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import SelectGroupOne from '../../components/Forms/SelectGroup/SelectGroupOne';
-import DefaultLayout from '../../layout/DefaultLayout';
-import { createEvent } from '../../components/BACKEND-hookes/Eventapi';// Update the path accordingly
+import { updateEvent } from '../../components/BACKEND-hookes/Eventapi';// Update the path accordingly
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const EventForm = () => {
+const UpdateEVent = (props) => {
   const [eventData, setEventData] = useState({
-    title: '',
-    description: '',
-    dateTime: '',
-    type: ''
+    id: props.id,
+    title: props.title,
+    description:  props.description,
+    dateTime: props.dateTime,
+    type: props.type,
   });
+  const { setShowUpdateForm } = props;  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,33 +30,28 @@ const EventForm = () => {
 
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const success = await createEvent(eventData);
-      if (success) {
-        toast.success('Event created successfully!');
-        setEventData({
-          title: '',
-          description: '',
-          dateTime: '',
-          type: ''
-        });
-      }
-    } catch (error) {
-      toast.error('Error creating Event select a Event Type and a Title: ' + error);
-
-    }
+  
+        updateEvent(eventData);
+     
+        toast.success('Event updated successfully!');
+    setShowUpdateForm(false);
+   
   };
+  const handleCancel = () => {
+  
+    setShowUpdateForm(false);
+ };
+
 
   return (
-    <DefaultLayout>
-      <Breadcrumb pageName="Event" />
-
+    
+  
       <div className="grid grid-cols-1 gap-9 sm:grid-cols-1">
         <div className="flex flex-col gap-9">
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
             <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
               <h3 className="font-medium text-black dark:text-white">
-                Event form
+                Event update form
               </h3>
             </div>
             <form onSubmit={handleSubmit}>
@@ -106,9 +100,13 @@ const EventForm = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
-                  Upload Event
-                </button>
+                <div className="flex justify-between">
+  <button type="submit" className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">
+    Upload Event
+  </button>
+  <button type="button" style={{ backgroundColor: 'red' }} className="w-1/2 rounded p-3 font-medium text-gray hover:bg-opacity-90" onClick={handleCancel}>Cancel</button>
+</div>
+
                 <ToastContainer
               position="bottom-center"
               autoClose={5000}
@@ -126,8 +124,8 @@ const EventForm = () => {
           </div>
         </div>
       </div>
-    </DefaultLayout>
+   
   );
 };
 
-export default EventForm;
+export default UpdateEVent;

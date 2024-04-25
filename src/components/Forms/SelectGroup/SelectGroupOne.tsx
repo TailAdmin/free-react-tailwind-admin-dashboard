@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 
-const SelectGroupOne: React.FC = () => {
+const SelectGroupOne: React.FC<{ onSelectType: (type: string) => void }> = ({ onSelectType }) => {
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
 
   const changeTextColor = () => {
     setIsOptionSelected(true);
+  };
+
+  const handleTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(e.target.value);
+    onSelectType(e.target.value);
+    changeTextColor();
   };
 
   return (
@@ -18,30 +24,28 @@ const SelectGroupOne: React.FC = () => {
       <div className="relative z-20 bg-transparent dark:bg-form-input">
         <select
           value={selectedOption}
-          onChange={(e) => {
-            setSelectedOption(e.target.value);
-            changeTextColor();
-          }}
+          onChange={handleTypeChange}
+
           className={`relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary ${
             isOptionSelected ? 'text-black dark:text-white' : ''
           }`}
         >
           <option value="" disabled className="text-body dark:text-bodydark">
-            Select your topic
+            Select Event type
           </option>
-          <option value="conference" className="text-body dark:text-bodydark">
-          Music
+          <option value="MEETING" className="text-body dark:text-bodydark">
+          MEETING
           </option>
-          <option value="reunion" className="text-body dark:text-bodydark">
-          Workshops or breakout sessions
+          <option value="SEMINAR" className="text-body dark:text-bodydark">
+          SEMINAR
           </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
-          Sponsorship and exhibitor information
+          <option value="WORKSHOP" className="text-body dark:text-bodydark">
+          WORKSHOP
           </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
-          Venue details and logistics
+          <option value="CONFERENCE" className="text-body dark:text-bodydark">
+          CONFERENCE
           </option>
-          <option value="seminaire" className="text-body dark:text-bodydark">
+          <option value="OTHER" className="text-body dark:text-bodydark">
           other
           </option>
         </select>

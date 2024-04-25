@@ -31,3 +31,18 @@ export async function createPrograms(ProgramsData) {
       throw "Failed to create event";
     }
   }
+
+  export async function fetchProgramCount (eventId) {
+    try {
+      const response = await fetch(`${BASE_URL}/programs/Event/${eventId}`)
+      if (!response.ok) {
+        throw new Error('Failed to fetch program count');
+      }
+      const data = await response.json();
+      console.log(data);
+      return data;
+      
+    } catch (error) {
+     
+    }
+  }

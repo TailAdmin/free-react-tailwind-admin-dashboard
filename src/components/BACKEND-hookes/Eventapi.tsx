@@ -24,12 +24,11 @@ export async function  ListEvents()  {
 export async function createEvent(eventData) {
     try {
       const event = {
-        schedules: eventData.schedules,
-        speakers: eventData.speakers,
-        event: eventData.event,
-        topics: eventData.topics,
-        images: eventData.images,
-        details: eventData.details
+        title: eventData.title,
+        description: eventData.description,
+        dateTime: eventData.dateTime,
+        type: eventData.type,
+       
       };
   
       const response = await fetch(`${BASE_URL}/events`, {
@@ -48,5 +47,46 @@ export async function createEvent(eventData) {
     } catch (error) {
       console.error('Error creating event:', error);
       throw "Failed to create event";
+    }
+  }
+
+  export async function updateEvent(Event) {
+    try {
+       
+        const response = await fetch(`${BASE_URL}/events/${Event.id}`, {
+          
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(Event) 
+        });
+  
+        if (!response.ok) {
+            throw new Error('Failed to update Event');
+        }
+  
+        return await response.json();
+    } catch (error) {
+        console.error('Error updating Event:', error);
+        throw error;
+    }
+  }export async function DeleteEvent(id: string) {
+    try {
+      const response = await fetch(`${BASE_URL}/users/${id}`, { // Corrected interpolation
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to DELETE Event');
+      }
+  
+      
+    } catch (error) {
+      console.error('Error DELETING Event:', error);
+      throw error;
     }
   }

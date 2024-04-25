@@ -19,6 +19,7 @@ import Buttons from './pages/UiElements/Buttons';
 import UserForm from './pages/Form/UserForm';
 import UserTables from './pages/UserTable';
 import ProgramsForm from './pages/Form/ProgramsForm';
+import EventTables from './pages/EventTable';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -70,6 +71,15 @@ function App() {
             <>
               <PageTitle title="Event" />
               <EventForm />
+            </>
+          }
+        />
+          <Route
+          path="/ListEvents"
+          element={
+            <>
+              <PageTitle title="ListEvents" />
+              <EventTables />
             </>
           }
         />
