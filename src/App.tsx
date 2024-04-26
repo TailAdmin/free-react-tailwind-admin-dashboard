@@ -20,6 +20,7 @@ import UserForm from './pages/Form/UserForm';
 import UserTables from './pages/UserTable';
 import ProgramsForm from './pages/Form/ProgramsForm';
 import EventTables from './pages/EventTable';
+import ProgramsTable from './pages/ProgrammeTable';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -121,11 +122,11 @@ function App() {
           }
         />
         <Route
-          path="/forms/form-layout"
+          path="/programsList"
           element={
             <>
               <PageTitle title="Form Layout | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <FormLayout />
+              <ProgramsTable />
             </>
           }
         />

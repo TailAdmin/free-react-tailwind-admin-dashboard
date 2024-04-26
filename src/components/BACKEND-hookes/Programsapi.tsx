@@ -2,6 +2,27 @@
 const BASE_URL = 'http://localhost:8080/Jee-Backend-1.0-SNAPSHOT/api';
 
 
+
+
+
+export async function  ListPrograms()  {
+  try {
+
+    const response = await fetch(`${BASE_URL}/programs`, {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+  });
+    if (!response.ok) {
+      throw new Error('Failed to fetch Programms');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching Programms:', error);
+  }
+};
+
 export async function createPrograms(ProgramsData) {
     try {
       const PROGRAMS = {
