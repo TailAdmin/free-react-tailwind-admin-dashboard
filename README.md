@@ -75,7 +75,14 @@ React and Tailwind are two popular technologies that have taken the web developm
 
 ## Update Logs
 
-### Version 1.0.6 - [Jan 31, 2024]
+### Version 1.3.7 - [June 20, 2024]
+
+#### Enhancements
+
+- **Enhancement 01:** Remove Repetition of DefaultLayout in every Pages
+- **Enhancement 02:** Add ClickOutside Component for reduce repeated functionality in Header Message, Notification and User Dropdowns.
+
+### Version 1.3.6 - [Jan 31, 2024]
 
 #### Enhancements
 
@@ -85,7 +92,7 @@ React and Tailwind are two popular technologies that have taken the web developm
 - **Enhancement 04:** Make best value editable [Pricing Table One/Pricing Table].
 - **Enhancement 05:** Rearrange Folder structure.
 
-### Version 1.0.0 - [Apr 28, 2023]
+### Version 1.2.0 - [Apr 28, 2023]
 
 - Add Typescript in TailAdmin React.
 

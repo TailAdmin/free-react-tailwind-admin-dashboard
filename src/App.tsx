@@ -15,6 +15,7 @@ import Settings from './pages/Settings';
 import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
+import DefaultLayout from './layout/DefaultLayout';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -31,7 +32,7 @@ function App() {
   return loading ? (
     <Loader />
   ) : (
-    <>
+    <DefaultLayout>
       <Routes>
         <Route
           index
@@ -142,7 +143,7 @@ function App() {
           }
         />
       </Routes>
-    </>
+    </DefaultLayout>
   );
 }
 

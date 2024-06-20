@@ -8,7 +8,6 @@ import SwitcherFour from '../../components/Switchers/SwitcherFour';
 import SwitcherOne from '../../components/Switchers/SwitcherOne';
 import SwitcherThree from '../../components/Switchers/SwitcherThree';
 import SwitcherTwo from '../../components/Switchers/SwitcherTwo';
-import DefaultLayout from '../../layout/DefaultLayout';
 import DatePickerOne from '../../components/Forms/DatePicker/DatePickerOne';
 import DatePickerTwo from '../../components/Forms/DatePicker/DatePickerTwo';
 import SelectGroupTwo from '../../components/Forms/SelectGroup/SelectGroupTwo';
@@ -16,7 +15,7 @@ import MultiSelect from '../../components/Forms/MultiSelect';
 
 const FormElements = () => {
   return (
-    <DefaultLayout>
+    <>
       <Breadcrumb pageName="Form Elements" />
 
       <div className="grid grid-cols-1 gap-9 sm:grid-cols-2">
@@ -199,7 +198,7 @@ const FormElements = () => {
           </div>
         </div>
       </div>
-    </DefaultLayout>
+    </>
   );
 };
 
