@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
+import DefaultLayout from './layout/DefaultLayout';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
 import Calendar from './pages/Calendar';
@@ -10,12 +11,12 @@ import Chart from './pages/Chart';
 import ECommerce from './pages/Dashboard/ECommerce';
 import FormElements from './pages/Form/FormElements';
 import FormLayout from './pages/Form/FormLayout';
+import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
-import DefaultLayout from './layout/DefaultLayout';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -34,6 +35,15 @@ function App() {
   ) : (
     <DefaultLayout>
       <Routes>
+        <Route
+          path="/*"
+          element={
+            <>
+              <PageTitle title="Page Not Found | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <NotFound />
+            </>
+          }
+        />
         <Route
           index
           element={
