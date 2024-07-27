@@ -2,10 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
 
 const NotFound = () => {
-  const naviagate = useNavigate();
+  const navigate = useNavigate();
 
   const goBack = () => {
-    naviagate(-1);
+    navigate(-1);
   };
 
   return (
