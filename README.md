@@ -16,7 +16,7 @@ With TailAdmin, you get access to all the necessary dashboard UI components, ele
 ### TailAdmin React PRO vs TailAdmin React FREE Comparison 📊
 
 #### [TailAdmin React PRO](https://react-demo.tailadmin.com/)
-- 4 Unique Dashboards: Analytics, Ecommerce, Marketing, and CRM (More will be added)
+- 5 Unique Dashboards: Analytics, Ecommerce, Marketing, and CRM (More will be added)
 - 120+ Dashboard UI Components
 - 200+ Total UI Elements
 - 45+ HTML Files
