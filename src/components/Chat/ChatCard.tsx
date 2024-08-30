@@ -1,104 +1,90 @@
 import { Link } from 'react-router-dom';
-import { Chat } from '../../types/chat';
-import UserOne from '../../images/user/user-01.png';
-import UserTwo from '../../images/user/user-02.png';
-import UserThree from '../../images/user/user-03.png';
-import UserFour from '../../images/user/user-04.png';
-import UserFive from '../../images/user/user-05.png';
+import { Expert } from '../../types/expert';
+import ExpertOne from '../../images/logo/logo.png';
+import ExpertTwo from '../../images/logo/logo.png';
+import ExpertThree from '../../images/logo/logo.png';
+import ExpertFour from '../../images/logo/logo.png';
+import ExpertFive from '../../images/logo/logo.png';
 
-const chatData: Chat[] = [
+const expertData: Expert[] = [
   {
-    avatar: UserOne,
+    avatar: ExpertOne,
     name: 'Devid Heilo',
-    text: 'How are you?',
-    time: 12,
-    textCount: 3,
+    specialty: 'Cybersecurity',
+    status: 'Available',
     color: '#10B981',
   },
   {
-    avatar: UserTwo,
+    avatar: ExpertTwo,
     name: 'Henry Fisher',
-    text: 'Waiting for you!',
-    time: 12,
-    textCount: 0,
+    specialty: 'Data Privacy',
+    status: 'In a meeting',
     color: '#DC3545',
   },
   {
-    avatar: UserFour,
-    name: 'Jhon Doe',
-    text: "What's up?",
-    time: 32,
-    textCount: 0,
+    avatar: ExpertFour,
+    name: 'John Doe',
+    specialty: 'Compliance',
+    status: 'Available',
     color: '#10B981',
   },
   {
-    avatar: UserFive,
+    avatar: ExpertFive,
     name: 'Jane Doe',
-    text: 'Great',
-    time: 32,
-    textCount: 2,
+    specialty: 'Forensics',
+    status: 'On a call',
     color: '#FFBA00',
   },
   {
-    avatar: UserOne,
-    name: 'Jhon Doe',
-    text: 'How are you?',
-    time: 32,
-    textCount: 0,
+    avatar: ExpertOne,
+    name: 'Alice Smith',
+    specialty: 'Network Security',
+    status: 'Available',
     color: '#10B981',
   },
   {
-    avatar: UserThree,
-    name: 'Jhon Doe',
-    text: 'How are you?',
-    time: 32,
-    textCount: 3,
+    avatar: ExpertThree,
+    name: 'John White',
+    specialty: 'Cloud Security',
+    status: 'Busy',
     color: '#FFBA00',
   },
 ];
 
-const ChatCard = () => {
+const AuditExpertCard = () => {
   return (
     <div className="col-span-12 rounded-sm border border-stroke bg-white py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
       <h4 className="mb-6 px-7.5 text-xl font-semibold text-black dark:text-white">
-        Chats
+        Audit Experts
       </h4>
 
       <div>
-        {chatData.map((chat, key) => (
+        {expertData.map((expert, key) => (
           <Link
             to="/"
             className="flex items-center gap-5 py-3 px-7.5 hover:bg-gray-3 dark:hover:bg-meta-4"
             key={key}
           >
             <div className="relative h-14 w-14 rounded-full">
-              <img src={chat.avatar} alt="User" />
+              <img src={expert.avatar} alt="Expert" />
               <span
                 className="absolute right-0 bottom-0 h-3.5 w-3.5 rounded-full border-2 border-white"
-                style={{backgroundColor: chat.color}}
+                style={{ backgroundColor: expert.color }}
               ></span>
             </div>
 
             <div className="flex flex-1 items-center justify-between">
               <div>
                 <h5 className="font-medium text-black dark:text-white">
-                  {chat.name}
+                  {expert.name}
                 </h5>
                 <p>
                   <span className="text-sm text-black dark:text-white">
-                    {chat.text}
+                    {expert.specialty}
                   </span>
-                  <span className="text-xs"> . {chat.time} min</span>
+                  <span className="text-xs"> - {expert.status}</span>
                 </p>
               </div>
-              {chat.textCount !== 0 && (
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary">
-                  <span className="text-sm font-medium text-white">
-                    {' '}
-                    {chat.textCount}
-                  </span>
-                </div>
-              )}
             </div>
           </Link>
         ))}
@@ -107,4 +93,4 @@ const ChatCard = () => {
   );
 };
 
-export default ChatCard;
+export default AuditExpertCard;
