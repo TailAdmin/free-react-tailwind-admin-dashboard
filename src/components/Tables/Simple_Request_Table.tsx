@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const auditData = [
   {
     id: 1,
@@ -51,7 +51,7 @@ const SimpleRequestTable = () => {
     auditor: '',
     projectType: '',
   });
-
+  const navigate = useNavigate();
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prev) => ({
@@ -59,7 +59,9 @@ const SimpleRequestTable = () => {
       [name]: value,
     }));
   };
-
+  const handleRowClick = (id) => {
+    navigate(`/audit-details/${id}`); // Navigate to the details page with the audit ID
+  };
   const filteredData = auditData.filter((audit) => {
     return (
       (filters.organization === '' ||
@@ -225,6 +227,7 @@ const SimpleRequestTable = () => {
               <tr
                 key={audit.id}
                 className="hover:bg-gray-100 dark:hover:bg-meta-4"
+                onClick={() => handleRowClick(audit.id)}
               >
                 <td className="px-6 py-4 text-sm text-black dark:text-white">
                   {audit.id}

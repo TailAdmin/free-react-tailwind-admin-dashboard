@@ -8,9 +8,10 @@ import SignUp from './pages/Authentication/SignUp';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Tables from './pages/Tables';
+import OrganizationAuditTable from './components/Tables/OrganizationAuditTable';
 import DefaultLayout from './layout/DefaultLayout';
 import AuditDashBoard from './pages/Dashboard/AuditDahsBoard';
-
+import AuditDetails from './pages/audit-details';
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
@@ -46,6 +47,8 @@ function App() {
             </>
           }
         />
+        <Route path="/" element={<OrganizationAuditTable />} />
+        <Route path="/audit-details/:id" element={<AuditDetails />} />
         <Route
           path="/profile"
           element={

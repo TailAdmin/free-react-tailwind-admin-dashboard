@@ -6,6 +6,7 @@ const auditData = [
     findings: 'Outdated systems, Non-compliance',
     recommendations: 'Update systems, Implement standards',
     auditor: 'John Doe',
+    status: 'Pending',
     auditDate: '2024-01-15',
   },
   {
@@ -15,6 +16,7 @@ const auditData = [
     findings: 'Insufficient resources, Capacity issues',
     recommendations: 'Increase resources, Improve training',
     auditor: 'Jane Smith',
+    status: 'Pending',
     auditDate: '2024-02-10',
   },
   {
@@ -22,6 +24,7 @@ const auditData = [
     auditType: 'Cyber Products',
     riskLevel: 'Low',
     findings: 'Lack of policies',
+    status: 'Pending',
     recommendations: 'Develop and enforce policies',
     auditor: 'Emily Johnson',
     auditDate: '2024-03-05',

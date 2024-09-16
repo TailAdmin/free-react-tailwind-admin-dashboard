@@ -91,7 +91,7 @@ const Profile = () => {
               <h4 className="text-xl font-semibold">{project.name}</h4>
               <p className="text-gray-600">Status: {project.status}</p>
               <p className="text-gray-600">Deadline: {project.deadline}</p>
-              <Link to={`/projects/${project.id}`} className="text-primary">
+              <Link to={`/audit-details/${project.id}`} className="text-primary">
                 View Project
               </Link>
             </div>
