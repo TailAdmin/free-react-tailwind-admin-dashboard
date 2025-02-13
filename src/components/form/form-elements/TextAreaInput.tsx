@@ -30,7 +30,7 @@ export default function TextAreaInput() {
           <Label>Description</Label>
           <TextArea
             rows={6}
-            value=""
+            value={messageTwo}
             error
             onChange={(value) => setMessageTwo(value)}
             hint="Please enter a valid message."

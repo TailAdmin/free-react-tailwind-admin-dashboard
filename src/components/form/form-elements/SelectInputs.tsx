@@ -42,6 +42,10 @@ export default function SelectInputs() {
             onChange={(values) => setSelectedValues(values)}
           />
         </div>
+        <div>
+          <Label>Selected Values:</Label>
+          <p>{selectedValues.join(", ")}</p>
+        </div>
       </div>
     </ComponentCard>
   );

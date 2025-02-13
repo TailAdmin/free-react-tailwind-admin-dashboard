@@ -1,4 +1,3 @@
-import Dropzone from "react-dropzone/.";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import DefaultInputs from "../../components/form/form-elements/DefaultInputs";
 import InputGroup from "../../components/form/form-elements/InputGroup";
