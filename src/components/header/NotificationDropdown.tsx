@@ -95,11 +95,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400">
-                  <span className="font-medium text-gray-800 dark:text-white/90">
+                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
+                  <span className="font-medium text-gray-800 dark:text-white/90 ">
                     Terry Franci
                   </span>
-                  requests permission to change
+                  <span>requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -131,11 +131,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Alena Franci
                   </span>
-                  requests permission to change
+                  <span>requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -154,7 +154,6 @@ export default function NotificationDropdown() {
             <DropdownItem
               onItemClick={closeDropdown}
               className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
-              href="#"
             >
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
                 <img
@@ -168,11 +167,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block space-x-1 text-theme-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Jocelyn Kenter
                   </span>
-                  requests permission to change
+                  <span>requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -191,7 +190,7 @@ export default function NotificationDropdown() {
             <DropdownItem
               onItemClick={closeDropdown}
               className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
-              href="#"
+              href="/"
             >
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
                 <img
@@ -205,11 +204,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Brandon Philips
                   </span>
-                  requests permission to change
+                  <span> requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -241,11 +240,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Terry Franci
                   </span>
-                  requests permission to change
+                  <span> requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -277,11 +276,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Alena Franci
                   </span>
-                  requests permission to change
+                  <span> requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -313,11 +312,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Jocelyn Kenter
                   </span>
-                  requests permission to change
+                  <span> requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -336,7 +335,6 @@ export default function NotificationDropdown() {
             <DropdownItem
               onItemClick={closeDropdown}
               className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
-              href="#"
             >
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
                 <img
@@ -350,11 +348,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Brandon Philips
                   </span>
-                  requests permission to change
+                  <span> requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
