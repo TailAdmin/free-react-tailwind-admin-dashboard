@@ -44,7 +44,7 @@ export default function UserInfoCard() {
                 Email address
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                emirhanboruch55@gmail.com
+                randomuser@pimjo.com
               </p>
             </div>
 
