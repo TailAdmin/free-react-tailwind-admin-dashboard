@@ -64,7 +64,7 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
 
 ## Components
 
-TailAdmin is a pre-designed starting point for building a web-based dashboard using Next.js and Tailwind CSS. The template includes:
+TailAdmin is a pre-designed starting point for building a web-based dashboard using React.js and Tailwind CSS. The template includes:
 
 - Sophisticated and accessible sidebar
 - Data visualization components
@@ -147,7 +147,7 @@ A major update with comprehensive redesign and modern React patterns implementat
 
 ## License
 
-TailAdmin Next.js Free Version is released under the MIT License.
+TailAdmin React.js Free Version is released under the MIT License.
 
 ## Support
 
