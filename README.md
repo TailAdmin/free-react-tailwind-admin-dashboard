@@ -68,7 +68,7 @@ TailAdmin is a pre-designed starting point for building a web-based dashboard us
 
 - Sophisticated and accessible sidebar
 - Data visualization components
-- Profile management and custom 404 page
+- Prebuilt profile management and 404 page
 - Tables and Charts(Line and Bar)
 - Authentication forms and input elements
 - Alerts, Dropdowns, Modals, Buttons and more
@@ -87,7 +87,7 @@ All components are built with React and styled using Tailwind CSS for easy custo
 
 ### Pro Version
 - 5 Unique Dashboards: Analytics, Ecommerce, Marketing, CRM, Stocks (more coming soon)
-- 200+ dashboard components and UI elements
+- 400+ dashboard components and UI elements
 - Complete Figma design file
 - Email support
 
