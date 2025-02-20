@@ -1,5 +1,3 @@
-import React from "react";
-
 type BadgeVariant = "light" | "solid";
 type BadgeSize = "sm" | "md";
 type BadgeColor =

@@ -1,9 +1,9 @@
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { useState } from "react";
-import { MoreDotIcon } from "../../icons";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
+import { MoreDotIcon } from "../../icons";
 
 export default function MonthlyTarget() {
   const series = [75.55];
@@ -76,8 +76,8 @@ export default function MonthlyTarget() {
             </p>
           </div>
           <div className="relative inline-block">
-            <button onClick={toggleDropdown}>
-              <MoreDotIcon className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300" />
+            <button className="dropdown-toggle" onClick={toggleDropdown}>
+              <MoreDotIcon className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 size-6" />
             </button>
             <Dropdown
               isOpen={isOpen}
@@ -100,7 +100,7 @@ export default function MonthlyTarget() {
           </div>
         </div>
         <div className="relative ">
-          <div className="max-h-[330px]">
+          <div className="max-h-[330px]" id="chartDarkStyle">
             <Chart
               options={options}
               series={series}

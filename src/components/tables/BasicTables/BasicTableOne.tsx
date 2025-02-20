@@ -1,13 +1,12 @@
-import React from "react";
 import {
   Table,
   TableBody,
   TableCell,
   TableHeader,
   TableRow,
-} from "../ui/table";
+} from "../../ui/table";
 
-import Badge from "../ui/badge/Badge";
+import Badge from "../../ui/badge/Badge";
 
 interface Order {
   id: number;
@@ -136,7 +135,7 @@ export default function BasicTableOne() {
                   className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
                 >
                   Team
-                </TableCell>{" "}
+                </TableCell>
                 <TableCell
                   isHeader
                   className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
@@ -159,7 +158,12 @@ export default function BasicTableOne() {
                   <TableCell className="px-5 py-4 sm:px-6 text-start">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 overflow-hidden rounded-full">
-                        <img src={order.user.image} alt={order.user.name} />
+                        <img
+                          width={40}
+                          height={40}
+                          src={order.user.image}
+                          alt={order.user.name}
+                        />
                       </div>
                       <div>
                         <span className="block font-medium text-gray-800 text-theme-sm dark:text-white/90">
@@ -177,11 +181,16 @@ export default function BasicTableOne() {
                   <TableCell className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
                     <div className="flex -space-x-2">
                       {order.team.images.map((teamImage, index) => (
-                        <div className="w-6 h-6 overflow-hidden border-2 border-white rounded-full dark:border-gray-900">
+                        <div
+                          key={index}
+                          className="w-6 h-6 overflow-hidden border-2 border-white rounded-full dark:border-gray-900"
+                        >
                           <img
-                            key={index}
+                            width={24}
+                            height={24}
                             src={teamImage}
                             alt={`Team member ${index + 1}`}
+                            className="w-full size-6"
                           />
                         </div>
                       ))}

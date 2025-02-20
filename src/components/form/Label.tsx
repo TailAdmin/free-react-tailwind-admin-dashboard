@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface LabelProps {

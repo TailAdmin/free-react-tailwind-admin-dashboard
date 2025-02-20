@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ComponentCard from "../../common/ComponentCard";
 import Input from "../input/InputField";
 import Label from "../Label";
-
 export default function InputStates() {
   const [email, setEmail] = useState("");
+  const [emailTwo, setEmailTwo] = useState("");
   const [error, setError] = useState(false);
 
   // Simulate a validation check
@@ -18,6 +18,11 @@ export default function InputStates() {
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmail(value);
+    validateEmail(value);
+  };
+  const handleEmailTwoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmailTwo(value);
     validateEmail(value);
   };
   return (
@@ -44,11 +49,11 @@ export default function InputStates() {
           <Label>Email</Label>
           <Input
             type="email"
-            value={email}
+            value={emailTwo}
             success={!error}
-            onChange={handleEmailChange}
+            onChange={handleEmailTwoChange}
             placeholder="Enter your email"
-            hint={!error ? "Valid email!" : ""}
+            hint={!error ? "This is an success message." : ""}
           />
         </div>
 
@@ -60,7 +65,6 @@ export default function InputStates() {
             value="disabled@example.com"
             disabled={true}
             placeholder="Disabled email"
-            hint="This field is disabled."
           />
         </div>
       </div>

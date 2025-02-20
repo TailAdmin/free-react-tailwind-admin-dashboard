@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function TwentyOneIsToNine() {
   return (
     <div className="aspect-[21/9] overflow-hidden rounded-lg">

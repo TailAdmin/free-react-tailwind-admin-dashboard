@@ -1,4 +1,3 @@
-import React from "react";
 import { useModal } from "../../hooks/useModal";
 import { Modal } from "../ui/modal";
 import Button from "../ui/button/Button";
@@ -35,7 +34,12 @@ export default function UserMetaCard() {
               </div>
             </div>
             <div className="flex items-center order-2 gap-2 grow xl:order-3 xl:justify-end">
-              <button className="flex h-11 w-11 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200">
+              <a
+                href="https://www.facebook.com/PimjoHQ"
+                target="_blank"
+                rel="noopener"
+                className="flex h-11 w-11 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200"
+              >
                 <svg
                   className="fill-current"
                   width="20"
@@ -49,9 +53,14 @@ export default function UserMetaCard() {
                     fill=""
                   />
                 </svg>
-              </button>
+              </a>
 
-              <button className="flex h-11 w-11 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200">
+              <a
+                href="https://x.com/PimjoHQ"
+                target="_blank"
+                rel="noopener"
+                className="flex h-11 w-11 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200"
+              >
                 <svg
                   className="fill-current"
                   width="20"
@@ -65,9 +74,14 @@ export default function UserMetaCard() {
                     fill=""
                   />
                 </svg>
-              </button>
+              </a>
 
-              <button className="flex h-11 w-11 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200">
+              <a
+                href="https://www.linkedin.com/company/pimjo"
+                target="_blank"
+                rel="noopener"
+                className="flex h-11 w-11 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200"
+              >
                 <svg
                   className="fill-current"
                   width="20"
@@ -81,9 +95,14 @@ export default function UserMetaCard() {
                     fill=""
                   />
                 </svg>
-              </button>
+              </a>
 
-              <button className="flex h-11 w-11 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200">
+              <a
+                href="https://instagram.com/PimjoHQ"
+                target="_blank"
+                rel="noopener"
+                className="flex h-11 w-11 items-center justify-center gap-2 rounded-full border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200"
+              >
                 <svg
                   className="fill-current"
                   width="20"
@@ -97,7 +116,7 @@ export default function UserMetaCard() {
                     fill=""
                   />
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
           <button
@@ -134,7 +153,7 @@ export default function UserMetaCard() {
             </p>
           </div>
           <form className="flex flex-col">
-            <div className="custom-scrollbar h-[450px] pb-3 overflow-y-auto px-2">
+            <div className="custom-scrollbar h-[450px] overflow-y-auto px-2 pb-3">
               <div>
                 <h5 className="mb-5 text-lg font-medium text-gray-800 dark:text-white/90 lg:mb-6">
                   Social Links

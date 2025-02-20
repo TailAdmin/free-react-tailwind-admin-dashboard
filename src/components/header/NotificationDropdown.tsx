@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 import { Link } from "react-router";
@@ -22,7 +22,7 @@ export default function NotificationDropdown() {
   return (
     <div className="relative">
       <button
-        className="relative flex items-center justify-center text-gray-500 transition-colors bg-white border border-gray-200 rounded-full hover:text-gray-700 h-11 w-11 hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+        className="relative flex items-center justify-center text-gray-500 transition-colors bg-white border border-gray-200 rounded-full dropdown-toggle hover:text-gray-700 h-11 w-11 hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
         onClick={handleClick}
       >
         <span
@@ -95,11 +95,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
-                  <span className="font-medium text-gray-800 dark:text-white/90 ">
+                <span className="mb-1.5 block  text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
+                  <span className="font-medium text-gray-800 dark:text-white/90">
                     Terry Franci
                   </span>
-                  <span>requests permission to change</span>
+                  <span> requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -131,7 +131,7 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
+                <span className="mb-1.5 block space-x-1 text-theme-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Alena Franci
                   </span>
@@ -171,7 +171,7 @@ export default function NotificationDropdown() {
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Jocelyn Kenter
                   </span>
-                  <span>requests permission to change</span>
+                  <span> requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -190,7 +190,7 @@ export default function NotificationDropdown() {
             <DropdownItem
               onItemClick={closeDropdown}
               className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
-              href="/"
+              to="/"
             >
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
                 <img
@@ -204,11 +204,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
+                <span className="mb-1.5 space-x-1 block text-theme-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Brandon Philips
                   </span>
-                  <span> requests permission to change</span>
+                  <span>requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>
@@ -240,7 +240,7 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
+                <span className="mb-1.5 block space-x-1 text-theme-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Terry Franci
                   </span>
@@ -276,7 +276,7 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
+                <span className="mb-1.5 block space-x-1 text-theme-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Alena Franci
                   </span>
@@ -312,7 +312,7 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
+                <span className="mb-1.5 block  space-x-1 text-theme-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Jocelyn Kenter
                   </span>
@@ -348,11 +348,11 @@ export default function NotificationDropdown() {
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block text-theme-sm text-gray-500 dark:text-gray-400 space-x-1">
+                <span className="mb-1.5 block space-x-1 text-theme-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Brandon Philips
                   </span>
-                  <span> requests permission to change</span>
+                  <span>requests permission to change</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
                     Project - Nganter App
                   </span>

@@ -1,4 +1,3 @@
-import React from "react";
 // react plugin for creating vector maps
 import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";

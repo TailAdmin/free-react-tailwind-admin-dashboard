@@ -1,4 +1,3 @@
-import React from "react";
 import { useModal } from "../../hooks/useModal";
 import { Modal } from "../ui/modal";
 import Button from "../ui/button/Button";
@@ -144,17 +143,17 @@ export default function UserInfoCard() {
                 <div className="grid grid-cols-1 gap-x-6 gap-y-5 lg:grid-cols-2">
                   <div className="col-span-2 lg:col-span-1">
                     <Label>First Name</Label>
-                    <Input type="text" value="Emirhan" />
+                    <Input type="text" value="Musharof" />
                   </div>
 
                   <div className="col-span-2 lg:col-span-1">
                     <Label>Last Name</Label>
-                    <Input type="text" value="Boruch" />
+                    <Input type="text" value="Chowdhury" />
                   </div>
 
                   <div className="col-span-2 lg:col-span-1">
                     <Label>Email Address</Label>
-                    <Input type="text" value="emirhanboruch55@gmail.com" />
+                    <Input type="text" value="randomuser@pimjo.com" />
                   </div>
 
                   <div className="col-span-2 lg:col-span-1">

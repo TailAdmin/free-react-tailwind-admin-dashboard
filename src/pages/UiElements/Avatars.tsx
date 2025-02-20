@@ -1,4 +1,3 @@
-import React from "react";
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import ComponentCard from "../../components/common/ComponentCard";
 import Avatar from "../../components/ui/avatar/Avatar";
