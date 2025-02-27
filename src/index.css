@@ -765,8 +765,12 @@ span.flatpickr-weekday,
   @apply min-h-screen;
 }
 
-.simplebar-scrollbar:before {
+.simplebar-scrollbar::before {
   @apply bg-gray-200! rounded-full! dark:bg-gray-700! opacity-100!;
+}
+
+.dark .simplebar-scrollbar::before {
+  @apply bg-gray-700!;
 }
 
 .simplebar-scrollbar.simplebar-visible:before {
