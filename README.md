@@ -1,6 +1,6 @@
 # TailAdmin React - Free React Tailwind Admin Dashboard Template
 
-TailAdmin is a free and open-source admin dashboard template built on **React and Tailwind CSS**, providing developers with everything they need to create a comprehensive, data-driven back-end, 
+TailAdmin is a free and open-source admin dashboard template built on **React and Tailwind CSS**, providing developers with everything they need to create a comprehensive, data-driven back-end,
 dashboard, or admin panel solution for upcoming web projects.
 
 With TailAdmin, you get access to all the necessary dashboard UI components, elements, and pages required to build a feature-rich and complete dashboard or admin panel. Whether you're building dashboard or admin panel for a complex web application or a simple website, TailAdmin is the perfect solution to help you get up and running quickly.
@@ -16,6 +16,7 @@ TailAdmin provides essential UI components and layouts for building feature-rich
 - Tailwind CSS
 
 ### Quick Links
+
 - [✨ Visit Website](https://tailadmin.com)
 - [📄 Documentation](https://tailadmin.com/docs)
 - [⬇️ Download](https://tailadmin.com/download)
@@ -23,23 +24,26 @@ TailAdmin provides essential UI components and layouts for building feature-rich
 - [⚡ Get PRO Version](https://tailadmin.com/pricing)
 
 ### Demos
+
 - [Free Version](https://free-react-demo.tailadmin.com/)
 - [Pro Version](https://react-demo.tailadmin.com)
 
 ### Other Versions
+
 - [HTML Version](https://github.com/TailAdmin/tailadmin-free-tailwind-dashboard-template)
 - [Next.js Version](https://github.com/TailAdmin/free-nextjs-admin-dashboard)
 - [Vue.js Version](https://github.com/TailAdmin/vue-tailwind-admin-dashboard)
 
-
 ## Installation
 
 ### Prerequisites
+
 To get started with TailAdmin, ensure you have the following prerequisites installed and set up:
 
 - Node.js 18.x or later (recommended to use Node.js 20.x or later)
 
 ### Cloning the Repository
+
 Clone the repository using the following command:
 
 ```bash
@@ -49,21 +53,23 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
 > Windows Users: place the repository near the root of your drive if you face issues while cloning.
 
 1. Install dependencies:
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
-    > On `npm` some included packages can cause peer-deps issue with React 18 while installing.
-    >
-    > Use the `--legacy-peer-deps` flag, at the end of the installation command, as a workaround for that.
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+   > On `npm` some included packages can cause peer-deps issue with React 18 while installing.
+   >
+   > Use the `--legacy-peer-deps` flag, at the end of the installation command, as a workaround for that.
 
 2. Start the development server:
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    ```
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
 ## Components
 
@@ -82,6 +88,7 @@ All components are built with React and styled using Tailwind CSS for easy custo
 ## Feature Comparison
 
 ### Free Version
+
 - 1 Unique Dashboard
 - 30+ dashboard components
 - 50+ UI elements
@@ -89,6 +96,7 @@ All components are built with React and styled using Tailwind CSS for easy custo
 - Community support
 
 ### Pro Version
+
 - 5 Unique Dashboards: Analytics, Ecommerce, Marketing, CRM, Stocks (more coming soon)
 - 400+ dashboard components and UI elements
 - Complete Figma design file
@@ -98,16 +106,34 @@ To learn more about pro version features and pricing, visit our [pricing page](h
 
 ## Changelog
 
+### Version 2.0.1 - [February 27, 2025]
+
+#### Update Overview
+
+- Upgraded to Tailwind CSS v4 for better performance and efficiency.
+- Updated class usage to match the latest syntax and features.
+- Replaced deprecated class and optimized styles.
+
+#### Next Steps
+
+- Run npm install or yarn install to update dependencies.
+- Check for any style changes or compatibility issues.
+- Refer to the Tailwind CSS v4 [Migration Guide](https://tailwindcss.com/docs/upgrade-guide) on this release. if needed.
+- This update keeps the project up to date with the latest Tailwind improvements. 🚀
+
 ### Version 2.0.0 - [February 2025]
+
 A major update with comprehensive redesign and modern React patterns implementation.
 
 #### Major Improvements
+
 - Complete UI redesign with modern React patterns
 - New features: collapsible sidebar, chat, and calendar
 - Improved performance and accessibility
 - Updated data visualization using ApexCharts
 
 #### Key Features
+
 - Redesigned dashboards (Ecommerce, Analytics, Marketing, CRM)
 - Enhanced navigation with React Router integration
 - Advanced tables with sorting and filtering
@@ -115,6 +141,7 @@ A major update with comprehensive redesign and modern React patterns implementat
 - New UI components and improved existing ones
 
 #### Breaking Changes
+
 - Updated sidebar component API
 - Migrated charts to ApexCharts
 - Revised authentication system
@@ -145,8 +172,6 @@ A major update with comprehensive redesign and modern React patterns implementat
 ### Version 1.0.0 - Initial Release - [Mar 13, 2023]
 
 - Initial release of TailAdmin React.
-
-
 
 ## License
 
