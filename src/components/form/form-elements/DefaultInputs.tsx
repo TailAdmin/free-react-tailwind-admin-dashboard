@@ -3,8 +3,8 @@ import ComponentCard from "../../common/ComponentCard";
 import Label from "../Label";
 import Input from "../input/InputField";
 import Select from "../Select";
-import { CalenderIcon, EyeCloseIcon, EyeIcon, TimeIcon } from "../../../icons";
-import Flatpickr from "react-flatpickr";
+import { EyeCloseIcon, EyeIcon, TimeIcon } from "../../../icons";
+import DatePicker from "../date-picker.tsx";
 
 export default function DefaultInputs() {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,11 +16,7 @@ export default function DefaultInputs() {
   const handleSelectChange = (value: string) => {
     console.log("Selected value:", value);
   };
-  const [dateOfBirth, setDateOfBirth] = useState("");
 
-  const handleDateChange = (date: Date[]) => {
-    setDateOfBirth(date[0].toLocaleDateString()); // Handle selected date and format it
-  };
   return (
     <ComponentCard title="Default Inputs">
       <div className="space-y-6">
@@ -60,25 +56,21 @@ export default function DefaultInputs() {
             </button>
           </div>
         </div>
+
         <div>
-          <Label htmlFor="datePicker">Date Picker Input</Label>
-          <div className="relative w-full flatpickr-wrapper">
-            <Flatpickr
-              value={dateOfBirth} // Set the value to the state
-              onChange={handleDateChange} // Handle the date change
-              options={{
-                dateFormat: "Y-m-d", // Set the date format
-              }}
-              placeholder="Select an option"
-              className="h-11 w-full rounded-lg border appearance-none px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3  dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30  bg-transparent text-gray-800 border-gray-300 focus:border-brand-300 focus:ring-brand-500/20 dark:border-gray-700  dark:focus:border-brand-800"
-            />
-            <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none right-3 top-1/2 dark:text-gray-400">
-              <CalenderIcon className="size-6" />
-            </span>
-          </div>
+          <DatePicker
+            id="date-picker"
+            label="Date Picker Input"
+            placeholder="Select a date"
+            onChange={(dates, currentDateString) => {
+              // Handle your logic
+              console.log({ dates, currentDateString });
+            }}
+          />
         </div>
+
         <div>
-          <Label htmlFor="tm">Date Picker Input</Label>
+          <Label htmlFor="tm">Time Picker Input</Label>
           <div className="relative">
             <Input
               type="time"
