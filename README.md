@@ -1,17 +1,21 @@
 # TailAdmin React - Free React Tailwind Admin Dashboard Template
 
-TailAdmin is a free and open-source admin dashboard template built on **React and Tailwind CSS**, providing developers with everything they need to create a comprehensive, data-driven back-end,
+TailAdmin is a free and open-source admin dashboard template built on **React and Tailwind CSS**, providing developers
+with everything they need to create a comprehensive, data-driven back-end,
 dashboard, or admin panel solution for upcoming web projects.
 
-With TailAdmin, you get access to all the necessary dashboard UI components, elements, and pages required to build a feature-rich and complete dashboard or admin panel. Whether you're building dashboard or admin panel for a complex web application or a simple website, TailAdmin is the perfect solution to help you get up and running quickly.
+With TailAdmin, you get access to all the necessary dashboard UI components, elements, and pages required to build a
+feature-rich and complete dashboard or admin panel. Whether you're building dashboard or admin panel for a complex web
+application or a simple website, TailAdmin is the perfect solution to help you get up and running quickly.
 
 ![TailAdmin React.js Dashboard Preview](./banner.png)
 
 ## Overview
 
-TailAdmin provides essential UI components and layouts for building feature-rich, data-driven admin dashboards and control panels. It's built on:
+TailAdmin provides essential UI components and layouts for building feature-rich, data-driven admin dashboards and
+control panels. It's built on:
 
-- React 18 (create-react-app)
+- React 19
 - TypeScript
 - Tailwind CSS
 
@@ -60,9 +64,7 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
    yarn install
    ```
 
-   > On `npm` some included packages can cause peer-deps issue with React 18 while installing.
-   >
-   > Use the `--legacy-peer-deps` flag, at the end of the installation command, as a workaround for that.
+   > Use the `--legacy-peer-deps` flag, if you face issues while installing.
 
 2. Start the development server:
    ```bash
@@ -73,7 +75,8 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
 
 ## Components
 
-TailAdmin is a pre-designed starting point for building a web-based dashboard using React.js and Tailwind CSS. The template includes:
+TailAdmin is a pre-designed starting point for building a web-based dashboard using React.js and Tailwind CSS. The
+template includes:
 
 - Sophisticated and accessible sidebar
 - Data visualization components
@@ -105,6 +108,12 @@ All components are built with React and styled using Tailwind CSS for easy custo
 To learn more about pro version features and pricing, visit our [pricing page](https://tailadmin.com/pricing).
 
 ## Changelog
+
+### Version 2.0.2 - [March 25, 2025]
+
+- Upgraded to React 19
+- Included overrides for packages to prevent peer dependency errors.
+- Migrated from react-flatpickr to flatpickr package for React 19 support
 
 ### Version 2.0.1 - [February 27, 2025]
 
@@ -179,4 +188,5 @@ TailAdmin React.js Free Version is released under the MIT License.
 
 ## Support
 
-If you find this project helpful, please consider giving it a star on GitHub. Your support helps us continue developing and maintaining this template.
+If you find this project helpful, please consider giving it a star on GitHub. Your support helps us continue developing
+and maintaining this template.
