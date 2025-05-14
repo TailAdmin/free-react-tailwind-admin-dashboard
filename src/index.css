@@ -212,7 +212,7 @@ layer(base);
 
 @utility menu-item-icon-size {
   & svg {
-    @apply size-6!;
+    @apply !size-6;
   }
 }
 
@@ -300,15 +300,15 @@ layer(base);
 
 /* third-party libraries CSS */
 .apexcharts-legend-text {
-  @apply text-gray-700! dark:text-gray-400!;
+  @apply !text-gray-700 !dark:text-gray-400;
 }
 
 .apexcharts-text {
-  @apply fill-gray-700! dark:fill-gray-400!;
+  @apply !fill-gray-700 !dark:fill-gray-400;
 }
 
 .apexcharts-tooltip.apexcharts-theme-light {
-  @apply gap-1 rounded-lg! border-gray-200! p-3 shadow-theme-sm! dark:border-gray-800! dark:bg-gray-900!;
+  @apply gap-1 !rounded-lg !border-gray-200 p-3 !shadow-theme-sm !dark:border-gray-800 !dark:bg-gray-900;
 }
 
 .apexcharts-tooltip-marker {
