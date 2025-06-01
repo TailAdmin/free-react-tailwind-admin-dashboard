@@ -22,6 +22,8 @@ import { ReactComponent as DollarLineIcon } from "./dollar-line.svg?react";
 import { ReactComponent as TrashBinIcon } from "./trash.svg?react";
 import { ReactComponent as AngleUpIcon } from "./angle-up.svg?react";
 import { ReactComponent as AngleDownIcon } from "./angle-down.svg?react";
+import { ReactComponent as AngleLeftIcon } from "./angle-left.svg?react";
+import { ReactComponent as AngleRightIcon } from "./angle-right.svg?react";
 import { ReactComponent as PencilIcon } from "./pencil.svg?react";
 import { ReactComponent as CheckLineIcon } from "./check-line.svg?react";
 import { ReactComponent as CloseLineIcon } from "./close-line.svg?react";
@@ -108,4 +110,6 @@ export {
   HorizontaLDots,
   ChevronUpIcon,
   ChatIcon,
+  AngleLeftIcon,
+  AngleRightIcon,
 };
