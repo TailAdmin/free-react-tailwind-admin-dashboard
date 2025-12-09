@@ -17,7 +17,7 @@ control panels. It's built on:
 
 - React 19
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS v4
 
 ### Quick Links
 
@@ -37,6 +37,8 @@ control panels. It's built on:
 - [HTML Version](https://github.com/TailAdmin/tailadmin-free-tailwind-dashboard-template)
 - [Next.js Version](https://github.com/TailAdmin/free-nextjs-admin-dashboard)
 - [Vue.js Version](https://github.com/TailAdmin/vue-tailwind-admin-dashboard)
+- [Angular Version](https://github.com/TailAdmin/free-angular-tailwind-dashboard)
+- [Laravel Version](https://github.com/TailAdmin/tailadmin-laravel)
 
 ## Installation
 
@@ -64,7 +66,6 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
    yarn install
    ```
 
-   > Use the `--legacy-peer-deps` flag, if you face issues while installing.
 
 2. Start the development server:
    ```bash
