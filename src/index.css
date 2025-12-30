@@ -394,7 +394,13 @@ layer(base);
   @apply w-full;
 }
 .flatpickr-calendar {
-  @apply mt-2 !bg-white !rounded-xl !p-5 !border !border-gray-200 !text-gray-500 dark:!bg-gray-dark dark:!border-gray-700 dark:!text-gray-400 dark:!shadow-theme-xl 2xsm:!w-auto;
+  @apply mt-2 !bg-white !rounded-xl !p-5 !border !border-gray-200 !shadow-theme-md dark:!border-white/5 !text-gray-500 dark:!bg-gray-dark dark:!text-gray-400 dark:!shadow-theme-xl 2xsm:!w-auto;
+  box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0px 2px 4px -2px rgba(16, 24, 40, 0.06) !important;
+}
+.dark .flatpickr-calendar {
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03) !important;
 }
 
 .flatpickr-months .flatpickr-prev-month:hover svg,
@@ -539,6 +545,14 @@ span.flatpickr-weekday,
 
 .flatpickr-calendar.static {
   @apply right-0;
+}
+
+@media (max-width: 639px) {
+  .flatpickr-calendar.static {
+    left: auto !important;
+    right: 0 !important;
+    margin-right: -70px;
+  }
 }
 
 .fc .fc-view-harness {

@@ -66,7 +66,6 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
    yarn install
    ```
 
-
 2. Start the development server:
    ```bash
    npm run dev
@@ -85,6 +84,7 @@ template includes:
 - Tables and Charts(Line and Bar)
 - Authentication forms and input elements
 - Alerts, Dropdowns, Modals, Buttons and more
+- FAQ & Accordion, Testimonials, and Carousels
 - Can't forget Dark Mode 🕶️
 
 All components are built with React and styled using Tailwind CSS for easy customization.
@@ -94,7 +94,7 @@ All components are built with React and styled using Tailwind CSS for easy custo
 ### Free Version
 
 - 1 Unique Dashboard
-- 30+ dashboard components
+- 35+ dashboard components
 - 50+ UI elements
 - Basic Figma design files
 - Community support
@@ -109,6 +109,10 @@ All components are built with React and styled using Tailwind CSS for easy custo
 To learn more about pro version features and pricing, visit our [pricing page](https://tailadmin.com/pricing).
 
 ## Changelog
+
+### Version 2.1.0 - [Dec 30, 2025]
+
+- Resolved Date Picker positioning and input issues in Charts.
 
 ### Version 2.0.2 - [March 25, 2025]
 
