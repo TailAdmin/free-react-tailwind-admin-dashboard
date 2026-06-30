@@ -10,8 +10,8 @@ export default function Videos() {
   return (
     <>
       <PageMeta
-        title="React.js Videos Tabs | TailAdmin - React.js Admin Dashboard Template"
-        description="This is React.js Videos page for TailAdmin - React.js Tailwind CSS Admin Dashboard Template"
+        title="React.js Videos Tabs  | MeraWard Dashboard"
+        description="This is React.js Videos page  for MeraWard Dashboard"
       />
       <PageBreadcrumb pageTitle="Videos" />
       <div className="grid grid-cols-1 gap-5 sm:gap-6 xl:grid-cols-2">
