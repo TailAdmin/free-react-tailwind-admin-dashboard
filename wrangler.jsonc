@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "admin",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-11",
+  "ai": {
+    "binding": "AI"
+  },
+  "d1_databases": [
+    {
+      "binding": "flydb_d1",
+      "database_name": "flytripvisa-db",
+      "database_id": "YOUR_DATABASE_ID_HERE"
+    }
+  ]
+}
