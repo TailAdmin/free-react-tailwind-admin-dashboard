@@ -1,3 +1,4 @@
+import { cn } from "@/utils";
 import type React from "react";
 import { useEffect, useRef } from "react";
 
@@ -38,7 +39,10 @@ export const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div
       ref={dropdownRef}
-      className={`absolute z-40  right-0 mt-2  rounded-xl border border-gray-200 bg-white  shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark ${className}`}
+      className={cn(
+        "absolute inset-e-0 z-40 mbs-2 rounded-xl border border-gray-200 bg-white shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark",
+        className,
+      )}
     >
       {children}
     </div>

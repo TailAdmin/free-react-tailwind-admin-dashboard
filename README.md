@@ -46,7 +46,7 @@ control panels. It's built on:
 
 To get started with TailAdmin, ensure you have the following prerequisites installed and set up:
 
-- Node.js 18.x or later (recommended to use Node.js 20.x or later)
+- Node.js 20.x or later
 
 ### Cloning the Repository
 
@@ -60,18 +60,18 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
 
 1. Install dependencies:
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
 2. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
 ## Components
 
@@ -110,7 +110,29 @@ To learn more about pro version features and pricing, visit our [pricing page](h
 
 ## Changelog
 
+### Version 2.4.0 - [September 13, 2026]
+
+- Added Internationalization (Multi Language) support.
+- Updated complete template styles to support RTL.
+- Added Yearly View into calendar page.
+- Updated `maplibre-gl` implementation with `react-map-gl`.
+- Replaced `@react-jvectormap` with `jsvectormap`.
+- Added new requested components and fixed noted accessibility issues.
+- Updated project structure and component compositions for easy adaption.
+- Added AGENTS.md to easily work with AI Agents.
+- Updated all the packages and libraries to the latest versions. Also removed unused packages.
+
+### Version 2.3.1 - [May 23, 2026]
+
+- Added AI Settings page to configure models, keys, and token limits.
+- Added Maps page with MapLibre GL, Leaflet, and iframe styles.
+- Added Vector Maps page powered by AmCharts 5 geodata (World & USA).
+- Added Radar Charts page with 3 unique formats.
+- Added Radial Progress Charts page featuring 4 custom layout templates.
+- Introduced new Bar Charts Five & Six and Pie Charts Four & Five.
+
 ### Version 2.3.0 - [April 28, 2026]
+
 - Added **AI Dashboard** with token usage and revenue tracking.
 - Added **Sales Dashboard** with retention and multi-channel analytics.
 - Added **Finance Dashboard** with cashflow and balance management.

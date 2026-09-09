@@ -1,8 +1,9 @@
-import ComponentCard from "../../common/ComponentCard";
-import Label from "../Label";
-import Input from "../input/InputField";
-import { EnvelopeIcon } from "../../../icons";
-import PhoneInput from "../group-input/PhoneInput";
+import ComponentCard from "@/components/common/ComponentCard";
+import PhoneInput from "@/components/form/group-input/PhoneInput";
+import Input from "@/components/form/input/InputField";
+import Label from "@/components/form/Label";
+import { EnvelopeIcon } from "@/icons";
+import { cn } from "@/utils";
 
 export default function InputGroup() {
   const countries = [
@@ -16,17 +17,18 @@ export default function InputGroup() {
   };
   return (
     <ComponentCard title="Input Group">
-      <div className="space-y-6">
+      <div className={cn("space-y-6")}>
         <div>
-          <Label>Email</Label>
-          <div className="relative">
+          <Label htmlFor="email-group">Email</Label>
+          <div className={cn("relative")}>
             <Input
+              id="email-group"
               placeholder="info@gmail.com"
               type="text"
-              className="pl-[62px]"
+              className="ps-[62px]"
             />
-            <span className="absolute left-0 top-1/2 -translate-y-1/2 border-r border-gray-200 px-3.5 py-3 text-gray-500 dark:border-gray-800 dark:text-gray-400">
-              <EnvelopeIcon className="size-6" />
+            <span className={cn("absolute start-0 top-1/2 -translate-y-1/2 border-e border-gray-200 px-3.5 py-3 text-gray-500 dark:border-gray-800 dark:text-gray-400")}>
+              <EnvelopeIcon className={cn("size-6")} />
             </span>
           </div>
         </div>
@@ -38,7 +40,7 @@ export default function InputGroup() {
             placeholder="+1 (555) 000-0000"
             onChange={handlePhoneNumberChange}
           />
-        </div>{" "}
+        </div>
         <div>
           <Label>Phone</Label>
           <PhoneInput
@@ -52,3 +54,4 @@ export default function InputGroup() {
     </ComponentCard>
   );
 }
+
