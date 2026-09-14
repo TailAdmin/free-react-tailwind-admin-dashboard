@@ -1,5 +1,6 @@
-import ComponentCard from "../../common/ComponentCard";
-import Switch from "../switch/Switch";
+import ComponentCard from "@/components/common/ComponentCard";
+import Switch from "@/components/form/switch/Switch";
+import { cn } from "@/utils";
 
 export default function ToggleSwitch() {
   const handleSwitchChange = (checked: boolean) => {
@@ -7,7 +8,7 @@ export default function ToggleSwitch() {
   };
   return (
     <ComponentCard title="Toggle switch input">
-      <div className="flex gap-4">
+      <div className={cn("flex flex-wrap gap-4")}>
         <Switch
           label="Default"
           defaultChecked={true}
@@ -19,8 +20,8 @@ export default function ToggleSwitch() {
           onChange={handleSwitchChange}
         />
         <Switch label="Disabled" disabled={true} />
-      </div>{" "}
-      <div className="flex gap-4">
+      </div>
+      <div className={cn("mt-4 flex flex-wrap gap-4")}>
         <Switch
           label="Default"
           defaultChecked={true}
@@ -38,3 +39,4 @@ export default function ToggleSwitch() {
     </ComponentCard>
   );
 }
+

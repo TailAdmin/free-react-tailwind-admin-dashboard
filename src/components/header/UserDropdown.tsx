@@ -1,31 +1,61 @@
-import { useState } from "react";
-import { DropdownItem } from "../ui/dropdown/DropdownItem";
-import { Dropdown } from "../ui/dropdown/Dropdown";
+import { useLanguage } from "@/context/LanguageContext";
+import { useClickOutside } from "@/hooks/useClickOutside";
+import { getLanguage, languages, type Locale } from "@/i18n/languages";
+import { cn } from "@/utils";
+import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { Dropdown } from "../ui/dropdown/Dropdown";
+import { DropdownItem } from "../ui/dropdown/DropdownItem";
 
 export default function UserDropdown() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubDropdownOpen, setIsSubDropdownOpen] = useState(false);
+  const subDropdownRef = useRef<HTMLLIElement>(null);
+  const { t } = useTranslation();
+  const { language: locale, setLanguage } = useLanguage();
+  const currentLang = getLanguage(locale as Locale);
+  const CurrentFlagIcon = currentLang.FlagIcon;
 
-  function toggleDropdown() {
-    setIsOpen(!isOpen);
-  }
+  useClickOutside(subDropdownRef, () => {
+    setIsSubDropdownOpen(false);
+  });
 
-  function closeDropdown() {
+  const handleSelectLanguage = (langId: Locale) => {
+    setLanguage(langId);
+    setIsSubDropdownOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+    setIsSubDropdownOpen(false);
+  };
+
+  const closeDropdown = () => {
     setIsOpen(false);
-  }
+    setIsSubDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    return () => {
+      setIsOpen(false);
+      setIsSubDropdownOpen(false);
+    };
+  }, []);
+
   return (
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="flex items-center text-gray-700 dropdown-toggle dark:text-gray-400"
+        className="dropdown-toggle flex items-center text-gray-700 dark:text-gray-400"
       >
-        <span className="mr-3 overflow-hidden rounded-full h-11 w-11">
-          <img src="/images/user/owner.jpg" alt="User" />
+        <span className="me-3 h-11 w-11 overflow-hidden rounded-full">
+          <img src="/images/user/owner.png" alt="User" />
         </span>
 
-        <span className="block mr-1 font-medium text-theme-sm">Musharof</span>
+        <span className="me-1 block text-theme-sm font-medium">Musharof</span>
         <svg
-          className={`stroke-gray-500 dark:stroke-gray-400 transition-transform duration-200 ${
+          className={`stroke-gray-500 transition-transform duration-200 dark:stroke-gray-400 ${
             isOpen ? "rotate-180" : ""
           }`}
           width="18"
@@ -47,24 +77,24 @@ export default function UserDropdown() {
       <Dropdown
         isOpen={isOpen}
         onClose={closeDropdown}
-        className="absolute right-0 mt-[17px] flex w-[260px] flex-col rounded-2xl border border-gray-200 bg-white p-3 shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
+        className="absolute inset-e-0 mt-4.25 flex w-65 flex-col rounded-2xl border border-gray-200 bg-white p-3 shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
       >
         <div>
-          <span className="block font-medium text-gray-700 text-theme-sm dark:text-gray-400">
+          <span className="block text-theme-sm font-medium text-gray-700 no-underline dark:text-gray-400">
             Musharof Chowdhury
           </span>
-          <span className="mt-0.5 block text-theme-xs text-gray-500 dark:text-gray-400">
+          <span className="mt-0.5 block text-theme-xs text-gray-500 no-underline dark:text-gray-400">
             randomuser@pimjo.com
           </span>
         </div>
 
-        <ul className="flex flex-col gap-1 pt-4 pb-3 border-b border-gray-200 dark:border-gray-800">
+        <ul className="flex flex-col gap-1 border-b border-gray-200 pt-4 pb-3 dark:border-gray-800">
           <li>
             <DropdownItem
               onItemClick={closeDropdown}
               tag="a"
               to="/profile"
-              className="flex items-center gap-3 px-3 py-2 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+              className="group flex items-center gap-3 rounded-lg px-3 py-2 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
             >
               <svg
                 className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300"
@@ -81,7 +111,7 @@ export default function UserDropdown() {
                   fill=""
                 />
               </svg>
-              Edit profile
+              {t("userDropdown.editProfile")}
             </DropdownItem>
           </li>
           <li>
@@ -89,7 +119,7 @@ export default function UserDropdown() {
               onItemClick={closeDropdown}
               tag="a"
               to="/profile"
-              className="flex items-center gap-3 px-3 py-2 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+              className="group flex items-center gap-3 rounded-lg px-3 py-2 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
             >
               <svg
                 className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300"
@@ -106,7 +136,7 @@ export default function UserDropdown() {
                   fill=""
                 />
               </svg>
-              Account settings
+              {t("userDropdown.accountSettings")}
             </DropdownItem>
           </li>
           <li>
@@ -114,7 +144,7 @@ export default function UserDropdown() {
               onItemClick={closeDropdown}
               tag="a"
               to="/profile"
-              className="flex items-center gap-3 px-3 py-2 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+              className="group flex items-center gap-3 rounded-lg px-3 py-2 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
             >
               <svg
                 className="fill-gray-500 group-hover:fill-gray-700 dark:fill-gray-400 dark:group-hover:fill-gray-300"
@@ -131,13 +161,99 @@ export default function UserDropdown() {
                   fill=""
                 />
               </svg>
-              Support
+              {t("userDropdown.support")}
             </DropdownItem>
+          </li>
+          <li className="relative" ref={subDropdownRef}>
+            <button
+              type="button"
+              onClick={() => setIsSubDropdownOpen((prev) => !prev)}
+              className={cn(
+                "group flex max-h-10 w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-theme-sm font-medium transition-colors",
+                isSubDropdownOpen
+                  ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-white"
+                  : "text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300",
+              )}
+            >
+              <span className="flex items-center gap-3 text-theme-sm">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M12.001 2.75C17.1091 2.75 21.2501 6.89178 21.2501 11.9999C21.2501 17.108 17.1091 21.2498 12.001 21.2498M12.001 2.75C6.89289 2.75 2.75195 6.89178 2.75195 11.9999C2.75195 17.108 6.8929 21.2498 12.001 21.2498M12.001 2.75C14.2097 2.75 16.0005 6.8914 16.0005 11.9993C16.0005 17.1073 14.2098 21.2498 12.001 21.2498M12.001 2.75C9.79226 2.75 8.00195 6.89141 8.00195 11.9994C8.00195 17.1073 9.79226 21.2498 12.001 21.2498M3.24561 8.99976H20.7544M3.24561 14.9998H20.7544"
+                    stroke="#667085"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+
+                <span>{t("userDropdown.language")}</span>
+              </span>
+
+              <span className="flex items-center gap-1.5 rounded-lg border border-gray-200 bg-gray-50 px-2 py-1 text-theme-xs font-medium text-gray-700 dark:border-gray-800 dark:bg-white/3 dark:text-gray-300">
+                <span>{currentLang.shortName}</span>
+                <CurrentFlagIcon className="size-3.5 shrink-0 overflow-hidden rounded-full" />
+              </span>
+            </button>
+
+            {isSubDropdownOpen && (
+              <div className="absolute -inset-s-2 top-11 w-62.5 rounded-2xl border border-gray-200 bg-white p-2 shadow-theme-lg md:inset-s-auto md:inset-e-[calc(100%+14px)] md:top-0 dark:border-gray-800 dark:bg-gray-dark">
+                <ul className="flex flex-col gap-1">
+                  {languages.map((language) => {
+                    const isSelected = locale === language.id;
+                    const FlagIcon = language.FlagIcon;
+
+                    return (
+                      <li key={language.id}>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleSelectLanguage(language.id);
+                            closeDropdown();
+                          }}
+                          className={cn(
+                            "flex w-full items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-start text-theme-sm font-medium transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white",
+                            isSelected
+                              ? "bg-brand-50 dark:bg-brand-500/15"
+                              : "hover:bg-gray-100 dark:hover:bg-white/5",
+                          )}
+                        >
+                          <span className="flex items-center gap-2">
+                            <span
+                              className={cn(
+                                "size-1.5 shrink-0 rounded-full transition-opacity",
+                                isSelected
+                                  ? "bg-brand-500 opacity-100 dark:bg-brand-400"
+                                  : "opacity-0",
+                              )}
+                            />
+                            <FlagIcon className="size-5 shrink-0 overflow-hidden rounded-full" />
+                            <span className="truncate">{language.name}</span>
+                          </span>
+
+                          {language.badge && (
+                            <span className="rounded bg-warning-50 px-1.5 py-0.5 text-theme-xs font-semibold text-warning-600 dark:bg-warning-500/15 dark:text-warning-400">
+                              {language.badge}
+                            </span>
+                          )}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
           </li>
         </ul>
         <Link
           to="/signin"
-          className="flex items-center gap-3 px-3 py-2 mt-3 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
+          className="group mt-3 flex items-center gap-3 rounded-lg px-3 py-2 text-theme-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
         >
           <svg
             className="fill-gray-500 group-hover:fill-gray-700 dark:group-hover:fill-gray-300"
@@ -154,7 +270,7 @@ export default function UserDropdown() {
               fill=""
             />
           </svg>
-          Sign out
+          {t("userDropdown.signOut")}
         </Link>
       </Dropdown>
     </div>

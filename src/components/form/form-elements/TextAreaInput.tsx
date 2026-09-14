@@ -1,14 +1,15 @@
+import ComponentCard from "@/components/common/ComponentCard";
+import TextArea from "@/components/form/input/TextArea";
+import Label from "@/components/form/Label";
+import { cn } from "@/utils";
 import { useState } from "react";
-import ComponentCard from "../../common/ComponentCard";
-import TextArea from "../input/TextArea";
-import Label from "../Label";
 
 export default function TextAreaInput() {
   const [message, setMessage] = useState("");
   const [messageTwo, setMessageTwo] = useState("");
   return (
     <ComponentCard title="Textarea input field">
-      <div className="space-y-6">
+      <div className={cn("space-y-6")}>
         {/* Default TextArea */}
         <div>
           <Label>Description</Label>
@@ -40,3 +41,4 @@ export default function TextAreaInput() {
     </ComponentCard>
   );
 }
+
