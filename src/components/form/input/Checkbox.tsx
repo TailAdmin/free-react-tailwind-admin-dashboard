@@ -1,4 +1,5 @@
 import type React from "react";
+import { cn } from "@/utils";
 
 interface CheckboxProps {
   label?: string;
@@ -19,23 +20,26 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }) => {
   return (
     <label
-      className={`flex items-center space-x-3 group cursor-pointer ${
-        disabled ? "cursor-not-allowed opacity-60" : ""
-      }`}
+      className={cn(
+        "flex items-center gap-3 group cursor-pointer",
+        disabled && "cursor-not-allowed opacity-60"
+      )}
     >
-      <div className="relative w-5 h-5">
+      <div className="relative flex items-center justify-center w-5 h-5">
         <input
           id={id}
           type="checkbox"
-          className={`w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60 
-          ${className}`}
+          className={cn(
+            "w-5 h-5 appearance-none cursor-pointer dark:border-gray-700 border border-gray-300 checked:border-transparent rounded-md checked:bg-brand-500 disabled:opacity-60",
+            className
+          )}
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
           disabled={disabled}
         />
         {checked && (
           <svg
-            className="absolute transform -translate-x-1/2 -translate-y-1/2 pointer-events-none top-1/2 left-1/2"
+            className="pointer-events-none absolute inset-0 m-auto"
             xmlns="http://www.w3.org/2000/svg"
             width="14"
             height="14"
@@ -53,7 +57,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         )}
         {disabled && (
           <svg
-            className="absolute transform -translate-x-1/2 -translate-y-1/2 pointer-events-none top-1/2 left-1/2"
+            className="pointer-events-none absolute inset-0 m-auto"
             xmlns="http://www.w3.org/2000/svg"
             width="14"
             height="14"

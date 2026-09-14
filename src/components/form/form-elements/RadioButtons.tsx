@@ -1,6 +1,7 @@
+import ComponentCard from "@/components/common/ComponentCard";
+import Radio from "@/components/form/input/Radio";
+import { cn } from "@/utils";
 import { useState } from "react";
-import ComponentCard from "../../common/ComponentCard";
-import Radio from "../input/Radio";
 
 export default function RadioButtons() {
   const [selectedValue, setSelectedValue] = useState<string>("option2");
@@ -10,7 +11,7 @@ export default function RadioButtons() {
   };
   return (
     <ComponentCard title="Radio Buttons">
-      <div className="flex flex-wrap items-center gap-8">
+      <div className={cn("flex flex-wrap items-center gap-8")}>
         <Radio
           id="radio1"
           name="group1"
@@ -40,3 +41,4 @@ export default function RadioButtons() {
     </ComponentCard>
   );
 }
+
