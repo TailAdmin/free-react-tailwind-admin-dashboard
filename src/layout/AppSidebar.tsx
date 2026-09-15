@@ -3,24 +3,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router";
 import {
-  AiIcon,
   BoxCubeIcon,
   CalenderIcon,
-  CallIcon,
-  CartIcon,
-  ChatIcon,
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
-  LayoutIcon,
   ListIcon,
-  MailIcon,
-  MapIcon,
   PageIcon,
   PieChartIcon,
   PlugInIcon,
   TableIcon,
-  TaskIcon,
   UserCircleIcon,
 } from "../icons";
 import { cn } from "../utils";
@@ -45,88 +37,27 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    icon: <GridIcon />,
+    icon: <GridIcon fontSize={24} />,
     name: "Dashboard",
     key: "dashboard",
-    subItems: [
-      { name: "Ecommerce", key: "ecommerceHome", path: "/" },
-      { name: "Analytics", key: "analytics", path: "/analytics" },
-      { name: "Marketing", key: "marketing", path: "/marketing" },
-      { name: "CRM", key: "crm", path: "/crm" },
-      { name: "Stocks", key: "stocks", path: "/stocks" },
-      { name: "SaaS", key: "saas", path: "/saas" },
-      { name: "Logistics", key: "logistics", path: "/logistics" },
-      { name: "AI", key: "ai", path: "/ai", new: true },
-      { name: "Sales", key: "sales", path: "/sales", new: true },
-      { name: "Finance", key: "finance", path: "/finance", new: true },
-    ],
+    subItems: [{ name: "Ecommerce", key: "ecommerceHome", path: "/" }],
   },
   {
-    name: "AI Assistant",
-    key: "aiAssistant",
-    icon: <AiIcon />,
-    new: true,
-    subItems: [
-      { name: "Text Generator", key: "textGenerator", path: "/text-generator" },
-      {
-        name: "Image Generator",
-        key: "imageGenerator",
-        path: "/image-generator",
-      },
-      { name: "Code Generator", key: "codeGenerator", path: "/code-generator" },
-      {
-        name: "Video Generator",
-        key: "videoGenerator",
-        path: "/video-generator",
-      },
-      { name: "AI Settings", key: "aiSettings", path: "/ai-settings" },
-    ],
-  },
-  {
-    name: "E-commerce",
-    key: "ecommerce",
-    icon: <CartIcon />,
-    new: false,
-    subItems: [
-      { name: "Products", key: "products", path: "/products-list" },
-      { name: "Add Product", key: "addProduct", path: "/add-product" },
-      { name: "Billing", key: "billing", path: "/billing" },
-      { name: "Invoices", key: "invoices", path: "/invoices" },
-      { name: "Single Invoice", key: "singleInvoice", path: "/single-invoice" },
-      { name: "Create Invoice", key: "createInvoice", path: "/create-invoice" },
-      { name: "Transactions", key: "transactions", path: "/transactions" },
-      {
-        name: "Single Transaction",
-        key: "singleTransaction",
-        path: "/single-transaction",
-      },
-    ],
-  },
-  {
-    icon: <CalenderIcon />,
+    icon: <CalenderIcon fontSize={24} />,
     name: "Calendar",
     key: "calendar",
     path: "/calendar",
   },
   {
-    icon: <UserCircleIcon />,
+    icon: <UserCircleIcon fontSize={24} />,
     name: "User Profile",
     key: "userProfile",
     path: "/profile",
   },
   {
-    name: "Task",
-    key: "task",
-    icon: <TaskIcon />,
-    subItems: [
-      { name: "List", key: "taskList", path: "/task-list", pro: true },
-      { name: "Kanban", key: "kanban", path: "/task-kanban", pro: true },
-    ],
-  },
-  {
     name: "Forms",
     key: "forms",
-    icon: <ListIcon />,
+    icon: <ListIcon fontSize={24} />,
     subItems: [
       {
         name: "Form Elements",
@@ -134,18 +65,12 @@ const navItems: NavItem[] = [
         path: "/form-elements",
         pro: false,
       },
-      {
-        name: "Form Layout",
-        key: "formLayout",
-        path: "/form-layout",
-        pro: true,
-      },
     ],
   },
   {
     name: "Tables",
     key: "tables",
-    icon: <TableIcon />,
+    icon: <TableIcon fontSize={24} />,
     subItems: [
       {
         name: "Basic Tables",
@@ -153,213 +78,46 @@ const navItems: NavItem[] = [
         path: "/basic-tables",
         pro: false,
       },
-      {
-        name: "Data Tables",
-        key: "dataTables",
-        path: "/data-tables",
-        pro: true,
-      },
     ],
   },
   {
     name: "Pages",
     key: "pages",
-    icon: <PageIcon />,
-    subItems: [
-      { name: "File Manager", key: "fileManager", path: "/file-manager" },
-      { name: "Pricing Tables", key: "pricingTables", path: "/pricing-tables" },
-      { name: "FAQ", key: "faq", path: "/faq" },
-      { name: "API Keys", key: "apiKeys", path: "/api-keys", new: true },
-      {
-        name: "Integrations",
-        key: "integrations",
-        path: "/integrations",
-        new: true,
-      },
-      { name: "Blank Page", key: "blankPage", path: "/blank" },
-      { name: "404 Error", key: "error404", path: "/error-404" },
-      { name: "500 Error", key: "error500", path: "/error-500" },
-      { name: "503 Error", key: "error503", path: "/error-503" },
-      { name: "Coming Soon", key: "comingSoon", path: "/coming-soon" },
-      { name: "Maintenance", key: "maintenance", path: "/maintenance" },
-      { name: "Success", key: "successPage", path: "/success" },
-    ],
-  },
-  {
-    name: "Layouts",
-    key: "layouts",
-    icon: <LayoutIcon />,
-    new: true,
-    subItems: [
-      {
-        name: "Layout One",
-        key: "layoutOne",
-        path: "/layout-one",
-        target: "_blank",
-      },
-      {
-        name: "Layout Two",
-        key: "layoutTwo",
-        path: "/layout-two",
-        target: "_blank",
-      },
-      {
-        name: "Layout Three",
-        key: "layoutThree",
-        path: "/layout-three",
-        target: "_blank",
-      },
-      {
-        name: "Layout Four",
-        key: "layoutFour",
-        path: "/layout-four",
-        target: "_blank",
-      },
-      {
-        name: "Layout Five",
-        key: "layoutFive",
-        path: "/layout-five",
-        target: "_blank",
-      },
-      {
-        name: "Layout Six",
-        key: "layoutSix",
-        path: "/layout-six",
-        target: "_blank",
-      },
-    ],
+    icon: <PageIcon fontSize={24} />,
+    subItems: [{ name: "Blank Page", key: "blankPage", path: "/blank" }],
   },
 ];
 
 const othersItems: NavItem[] = [
   {
-    icon: <PieChartIcon />,
+    icon: <PieChartIcon fontSize={24} />,
     name: "Charts",
     key: "charts",
-    new: true,
     subItems: [
       { name: "Line Chart", key: "lineChart", path: "/line-chart" },
       { name: "Bar Chart", key: "barChart", path: "/bar-chart" },
-      { name: "Pie Chart", key: "pieChart", path: "/pie-chart" },
-      { name: "Radar Chart", key: "radarChart", path: "/radar-chart" },
-      { name: "Radial Chart", key: "radialChart", path: "/radial-chart" },
     ],
   },
   {
-    icon: <MapIcon />,
-    name: "Maps",
-    key: "maps",
-    new: true,
-    subItems: [
-      { name: "Maps", key: "mapsGoogle", path: "/maps" },
-      { name: "Vector Map", key: "vectorMap", path: "/vector-map" },
-    ],
-  },
-  {
-    icon: <BoxCubeIcon />,
+    icon: <BoxCubeIcon fontSize={24} />,
     name: "UI Elements",
     key: "uiElements",
     subItems: [
       { name: "Alerts", key: "alerts", path: "/alerts", pro: false },
       { name: "Avatar", key: "avatar", path: "/avatars", pro: false },
       { name: "Badge", key: "badge", path: "/badge", pro: false },
-      {
-        name: "Breadcrumb",
-        key: "breadcrumb",
-        path: "/breadcrumb",
-        pro: false,
-      },
       { name: "Buttons", key: "buttons", path: "/buttons", pro: false },
-      {
-        name: "Buttons Group",
-        key: "buttonsGroup",
-        path: "/buttons-group",
-        pro: false,
-      },
-      { name: "Cards", key: "cards", path: "/cards", pro: false },
-      { name: "Carousel", key: "carousel", path: "/carousel", pro: false },
-      { name: "Dropdowns", key: "dropdowns", path: "/dropdowns", pro: false },
       { name: "Images", key: "images", path: "/images", pro: false },
-      { name: "Links", key: "links", path: "/links", pro: false },
-      { name: "List", key: "listView", path: "/list", pro: false },
-      { name: "Modals", key: "modals", path: "/modals", pro: false },
-      {
-        name: "Notification",
-        key: "notificationUi",
-        path: "/notifications",
-        pro: false,
-      },
-      {
-        name: "Pagination",
-        key: "pagination",
-        path: "/pagination",
-        pro: false,
-      },
-      { name: "Popovers", key: "popovers", path: "/popovers", pro: false },
-      {
-        name: "Progressbar",
-        key: "progressbar",
-        path: "/progress-bar",
-        pro: false,
-      },
-      { name: "Ribbons", key: "ribbons", path: "/ribbons", pro: false },
-      { name: "Spinners", key: "spinners", path: "/spinners", pro: false },
-      { name: "Tabs", key: "tabs", path: "/tabs", pro: false },
-      { name: "Tooltips", key: "tooltips", path: "/tooltips", pro: false },
       { name: "Videos", key: "videos", path: "/videos", pro: false },
     ],
   },
   {
-    icon: <PlugInIcon />,
+    icon: <PlugInIcon fontSize={24} />,
     name: "Authentication",
     key: "authentication",
     subItems: [
       { name: "Sign In", key: "signIn", path: "/signin", pro: false },
       { name: "Sign Up", key: "signUp", path: "/signup", pro: false },
-      {
-        name: "Reset Password",
-        key: "resetPassword",
-        path: "/reset-password",
-        pro: false,
-      },
-      {
-        name: "Two Step Verification",
-        key: "twoStepVerification",
-        path: "/two-step-verification",
-        pro: false,
-      },
-    ],
-  },
-];
-
-const supportItems: NavItem[] = [
-  {
-    icon: <ChatIcon />,
-    name: "Chat",
-    key: "chat",
-    path: "/chat",
-  },
-  {
-    icon: <CallIcon />,
-    name: "Support Ticket",
-    key: "supportMenu",
-    new: true,
-    subItems: [
-      { name: "Ticket List", key: "supportList", path: "/support-tickets" },
-      {
-        name: "Ticket Reply",
-        key: "supportReply",
-        path: "/support-ticket-reply",
-      },
-    ],
-  },
-  {
-    icon: <MailIcon />,
-    name: "Email",
-    key: "email",
-    subItems: [
-      { name: "Inbox", key: "inbox", path: "/inbox" },
-      { name: "Details", key: "inboxDetails", path: "/inbox-details" },
     ],
   },
 ];
@@ -370,7 +128,7 @@ const AppSidebar: React.FC = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const [openSubmenu, setOpenSubmenu] = useState<{
-    type: "main" | "support" | "others";
+    type: "main" | "others";
     index: number;
   } | null>(null);
   const [subMenuHeight, setSubMenuHeight] = useState<Record<string, number>>(
@@ -395,20 +153,15 @@ const AppSidebar: React.FC = () => {
   useEffect(() => {
     let submenuMatched = false;
 
-    ["main", "support", "others"].forEach((menuType) => {
-      const items =
-        menuType === "main"
-          ? navItems
-          : menuType === "support"
-            ? supportItems
-            : othersItems;
+    ["main", "others"].forEach((menuType) => {
+      const items = menuType === "main" ? navItems : othersItems;
 
       items.forEach((nav, index) => {
         if (nav.subItems) {
           nav.subItems.forEach((subItem) => {
             if (isActive(subItem.path)) {
               setOpenSubmenu({
-                type: menuType as "main" | "support" | "others",
+                type: menuType as "main" | "others",
                 index,
               });
               submenuMatched = true;
@@ -435,10 +188,7 @@ const AppSidebar: React.FC = () => {
     }
   }, [openSubmenu]);
 
-  const handleSubmenuToggle = (
-    index: number,
-    menuType: "main" | "support" | "others",
-  ) => {
+  const handleSubmenuToggle = (index: number, menuType: "main" | "others") => {
     setOpenSubmenu((prevOpenSubmenu) => {
       if (
         prevOpenSubmenu &&
@@ -451,10 +201,7 @@ const AppSidebar: React.FC = () => {
     });
   };
 
-  const renderMenuItems = (
-    items: NavItem[],
-    menuType: "main" | "support" | "others",
-  ) => (
+  const renderMenuItems = (items: NavItem[], menuType: "main" | "others") => (
     <ul className="flex flex-col gap-1">
       {items.map((nav, index) => (
         <li key={nav.name}>
@@ -663,23 +410,6 @@ const AppSidebar: React.FC = () => {
                 )}
               </h2>
               {renderMenuItems(navItems, "main")}
-            </div>
-
-            <div>
-              <h2
-                className={`mb-4 flex text-xs leading-5 text-gray-400 uppercase ${
-                  !isExpanded && !isHovered
-                    ? "xl:justify-center"
-                    : "justify-start"
-                }`}
-              >
-                {isExpanded || isHovered || isMobileOpen ? (
-                  t("sidebar.groups.support")
-                ) : (
-                  <HorizontaLDots className="size-6" />
-                )}
-              </h2>
-              {renderMenuItems(supportItems, "support")}
             </div>
 
             <div>
