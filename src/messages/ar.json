@@ -1,0 +1,1063 @@
+{
+  "common": {
+    "home": "الرئيسية",
+    "edit": "تعديل",
+    "close": "إغلاق",
+    "saveChanges": "حفظ التغييرات",
+    "viewMore": "عرض المزيد",
+    "delete": "حذف",
+    "filter": "تصفية",
+    "seeAll": "عرض الكل",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء"
+  },
+  "sidebar": {
+    "groups": {
+      "menu": "القائمة",
+      "support": "الدعم",
+      "others": "أخرى"
+    },
+    "badges": {
+      "new": "جديد",
+      "pro": "احترافي"
+    },
+    "items": {
+      "dashboard": "لوحة التحكم",
+      "ecommerceHome": "التجارة الإلكترونية",
+      "analytics": "التحليلات",
+      "marketing": "التسويق",
+      "crm": "إدارة العملاء",
+      "stocks": "الأسهم",
+      "saas": "SaaS",
+      "logistics": "الخدمات اللوجستية",
+      "ai": "الذكاء الاصطناعي",
+      "sales": "المبيعات",
+      "finance": "المالية",
+      "aiAssistant": "مساعد الذكاء الاصطناعي",
+      "textGenerator": "مولد النصوص",
+      "imageGenerator": "مولد الصور",
+      "codeGenerator": "مولد الأكواد",
+      "videoGenerator": "مولد الفيديو",
+      "aiSettings": "إعدادات الذكاء الاصطناعي",
+      "ecommerce": "التجارة الإلكترونية",
+      "products": "المنتجات",
+      "addProduct": "إضافة منتج",
+      "billing": "الفوترة",
+      "invoices": "الفواتير",
+      "singleInvoice": "فاتورة واحدة",
+      "createInvoice": "إنشاء فاتورة",
+      "transactions": "المعاملات",
+      "singleTransaction": "معاملة واحدة",
+      "calendar": "التقويم",
+      "userProfile": "الملف الشخصي",
+      "task": "المهام",
+      "taskList": "القائمة",
+      "kanban": "كانبان",
+      "forms": "النماذج",
+      "formElements": "عناصر النموذج",
+      "formLayout": "تخطيط النموذج",
+      "tables": "الجداول",
+      "basicTables": "الجداول الأساسية",
+      "dataTables": "جداول البيانات",
+      "pages": "الصفحات",
+      "fileManager": "مدير الملفات",
+      "pricingTables": "جداول الأسعار",
+      "faq": "الأسئلة الشائعة",
+      "apiKeys": "مفاتيح API",
+      "integrations": "التكاملات",
+      "blankPage": "صفحة فارغة",
+      "error404": "خطأ 404",
+      "error500": "خطأ 500",
+      "error503": "خطأ 503",
+      "comingSoon": "قريبًا",
+      "maintenance": "الصيانة",
+      "successPage": "نجاح",
+      "layouts": "التخطيطات",
+      "layoutOne": "التخطيط الأول",
+      "layoutTwo": "التخطيط الثاني",
+      "layoutThree": "التخطيط الثالث",
+      "layoutFour": "التخطيط الرابع",
+      "layoutFive": "التخطيط الخامس",
+      "layoutSix": "التخطيط السادس",
+      "charts": "الرسوم البيانية",
+      "lineChart": "رسم بياني خطي",
+      "barChart": "رسم بياني شريطي",
+      "pieChart": "رسم بياني دائري",
+      "radarChart": "رسم بياني نقطي",
+      "radialChart": "رسم بياني شعاعي",
+      "maps": "الخرائط",
+      "mapsGoogle": "الخرائط",
+      "vectorMap": "الخريطة المتجهة",
+      "uiElements": "عناصر الواجهة",
+      "alerts": "التنبيهات",
+      "avatar": "الصورة الرمزية",
+      "badge": "الشارة",
+      "breadcrumb": "مسار التنقل",
+      "buttons": "الأزرار",
+      "buttonsGroup": "مجموعة الأزرار",
+      "cards": "البطاقات",
+      "carousel": "شريط التمرير",
+      "dropdowns": "القوائم المنسدلة",
+      "images": "الصور",
+      "links": "الروابط",
+      "listView": "القائمة",
+      "dialogs": "مربعات الحوار",
+      "notificationUi": "الإشعارات",
+      "pagination": "ترقيم الصفحات",
+      "popovers": "النوافذ العائمة",
+      "progressbar": "شريط التقدم",
+      "ribbons": "الشرائط",
+      "spinners": "مؤشرات التحميل",
+      "tabs": "علامات التبويب",
+      "tooltips": "تلميحات الأدوات",
+      "videos": "مقاطع الفيديو",
+      "authentication": "المصادقة",
+      "signIn": "تسجيل الدخول",
+      "signUp": "إنشاء حساب",
+      "resetPassword": "إعادة تعيين كلمة المرور",
+      "twoStepVerification": "التحقق بخطوتين",
+      "chat": "الدردشة",
+      "supportMenu": "الدعم",
+      "supportList": "قائمة الدعم",
+      "supportReply": "رد الدعم",
+      "email": "البريد الإلكتروني",
+      "inbox": "صندوق الوارد",
+      "inboxDetails": "التفاصيل",
+      "hr": "الموارد البشرية",
+      "emptyState": "حالة فارغة",
+      "variants01": "المتغير 01",
+      "variants02": "المتغير 02",
+      "variants03": "المتغير 03",
+      "variants04": "المتغير 04",
+      "variants05": "المتغير 05"
+    },
+    "widget": {
+      "title": "لوحة التحكم رقم 1 بـ Tailwind CSS",
+      "description": "قالب الإدارة الرائد بـ Tailwind CSS مع أكثر من 500 مكون وصفحة واجهة مستخدم.",
+      "purchasePlan": "شراء الخطة"
+    }
+  },
+  "header": {
+    "searchPlaceholder": "ابحث أو اكتب أمرًا...",
+    "toggleSidebar": "تبديل الشريط الجانبي",
+    "notifications": {
+      "title": "الإشعارات",
+      "requestsPermission": "يطلب الإذن لتغيير",
+      "project": "المشروع",
+      "minAgo": "منذ {count} دقيقة",
+      "hrAgo": "منذ {count} ساعة",
+      "viewAll": "عرض جميع الإشعارات"
+    }
+  },
+  "userDropdown": {
+    "editProfile": "تعديل الملف الشخصي",
+    "accountSettings": "إعدادات الحساب",
+    "support": "الدعم",
+    "language": "اللغة",
+    "signOut": "تسجيل الخروج"
+  },
+  "ecommerce": {
+    "title": "لوحة تحكم التجارة الإلكترونية",
+    "metrics": {
+      "customers": "العملاء",
+      "orders": "الطلبات"
+    },
+    "months": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul",
+      "aug": "Aug",
+      "sep": "Sep",
+      "oct": "Oct",
+      "nov": "Nov",
+      "dec": "Dec"
+    },
+    "monthlySales": {
+      "title": "المبيعات الشهرية",
+      "series": "المبيعات"
+    },
+    "monthlyTarget": {
+      "title": "الهدف الشهري",
+      "subtitle": "الهدف الذي حددته لكل شهر",
+      "earned": "لقد ربحت {amount} اليوم، وهو أعلى من الشهر الماضي. واصل عملك الرائع!",
+      "target": "الهدف",
+      "revenue": "الإيرادات",
+      "today": "اليوم"
+    },
+    "statistics": {
+      "title": "الإحصائيات",
+      "subtitle": "الهدف الذي حددته لكل شهر",
+      "overview": "نظرة عامة",
+      "sales": "المبيعات",
+      "revenue": "الإيرادات",
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "annually": "سنوي",
+      "selectDateRange": "اختر نطاق التاريخ"
+    },
+    "recentOrders": {
+      "title": "الطلبات الأخيرة",
+      "products": "المنتجات",
+      "category": "الفئة",
+      "price": "السعر",
+      "status": "الحالة",
+      "variants": "{count, plural, one {متغير واحد} two {متغيران} few {# متغيرات} many {# متغيرًا} other {# متغير}}",
+      "categories": {
+        "laptop": "حاسوب محمول",
+        "watch": "ساعة",
+        "smartphone": "هاتف ذكي",
+        "electronics": "إلكترونيات",
+        "accessories": "إكسسوارات"
+      },
+      "statuses": {
+        "delivered": "تم التوصيل",
+        "pending": "قيد الانتظار",
+        "canceled": "ملغي"
+      }
+    },
+    "demographic": {
+      "title": "التوزيع الديموغرافي للعملاء",
+      "subtitle": "عدد العملاء حسب الدولة",
+      "customers": "{count} عميل",
+      "usa": "USA",
+      "france": "France",
+      "yemen": "Yemen",
+      "uk": "UK"
+    }
+  },
+  "analytics": {
+    "metrics": {
+      "uniqueVisitors": "زوار فريدون",
+      "totalPageviews": "إجمالي مشاهدات الصفحة",
+      "bounceRate": "معدل الارتداد",
+      "visitDuration": "مدة الزيارة",
+      "vsLastMonth": "مقارنة بالشهر الماضي"
+    },
+    "barChart": {
+      "title": "التحليلات",
+      "subtitle": "تحليلات الزوار لآخر 30 يوماً",
+      "twelveMonths": "12 شهراً",
+      "thirtyDays": "30 يوماً",
+      "sevenDays": "7 أيام",
+      "twentyFourHours": "24 ساعة",
+      "visitors": "الزوار"
+    },
+    "topChannels": {
+      "title": "أهم القنوات",
+      "source": "المصدر",
+      "visitors": "الزوار",
+      "channelsReport": "تقرير القنوات"
+    },
+    "topPages": {
+      "title": "أهم الصفحات",
+      "source": "المصدر",
+      "pageview": "مشاهدة الصفحة",
+      "channelsReport": "تقرير القنوات"
+    },
+    "activeUsers": {
+      "title": "المستخدمون النشطون",
+      "liveVisitors": "زوار مباشرون",
+      "avgDaily": "المتوسط اليومي",
+      "avgWeekly": "المتوسط الأسبوعي",
+      "avgMonthly": "المتوسط الشهري"
+    },
+    "acquisitionChannels": {
+      "title": "قنوات الاكتساب",
+      "direct": "مباشر",
+      "organic": "عضوي",
+      "referral": "إحالة",
+      "total": "الإجمالي: 120 ألف"
+    },
+    "session": {
+      "title": "الجلسات حسب الجهاز",
+      "total": "الإجمالي"
+    },
+    "recentOrders": {
+      "title": "الطلبات الأخيرة",
+      "products": "المنتجات",
+      "category": "الفئة",
+      "country": "الدولة",
+      "cr": "معدل التحويل",
+      "value": "القيمة",
+      "categories": {
+        "uiKits": "مجموعات واجهة المستخدم",
+        "templates": "القوالب",
+        "saas": "SaaS"
+      },
+      "crDashboard": "لوحة التحكم"
+    }
+  },
+  "notFound": {
+    "error": "خطأ",
+    "message": "يبدو أننا لا نستطيع العثور على الصفحة التي تبحث عنها!",
+    "backHome": "العودة إلى الصفحة الرئيسية"
+  },
+  "marketing": {
+    "metrics": {
+      "avgClientRating": "متوسط تقييم العملاء",
+      "instagramFollowers": "متابعو إنستغرام",
+      "totalRevenue": "إجمالي الإيرادات",
+      "vsLastMonth": "مقارنة بالشهر الماضي"
+    },
+    "impressionChart": {
+      "title": "الانطباعات وحركة البيانات",
+      "totalRevenue": "إجمالي الإيرادات",
+      "sales": "المبيعات",
+      "revenue": "الإيرادات",
+      "selectDateRange": "تحديد النطاق الزمني"
+    },
+    "featuredCampaign": {
+      "title": "الحملات المميزة",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "products": "المنتجات",
+      "campaign": "الحملة",
+      "status": "الحالة",
+      "adsCampaign": "حملة إعلانية",
+      "campaigns": {
+        "growBrand": "نمّ علامتك التجارية عبر...",
+        "betterIdeas": "اصنع أفكارًا أفضل...",
+        "increaseTraffic": "زيادة زيارات موقعك..."
+      },
+      "statuses": {
+        "success": "ناجح",
+        "pending": "قيد الانتظار",
+        "failed": "فاشل"
+      }
+    },
+    "trafficStats": {
+      "title": "إحصائيات حركة المرور",
+      "today": "اليوم",
+      "week": "الأسبوع",
+      "month": "الشهر",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "newSubscribers": "مشتركون جدد",
+      "conversionRate": "معدل التحويل",
+      "pageBounceRate": "معدل الارتداد للصفحة",
+      "thenLastWeek": "عن الأسبوع الماضي",
+      "thanYesterday": "عن الأمس",
+      "thanLastMonth": "عن الشهر الماضي",
+      "newSales": "مبيعات جديدة"
+    },
+    "trafficSource": {
+      "title": "أهم مصادر الزيارات",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "viewAll": "عرض الكل"
+    }
+  },
+  "crm": {
+    "metrics": {
+      "activeDeal": "الصفقة النشطة",
+      "revenueTotal": "إجمالي الإيرادات",
+      "closedDeals": "الصفقات المغلقة",
+      "lastMonth": "الشهر الماضي"
+    },
+    "statistics": {
+      "title": "الإحصائيات",
+      "subtitle": "الهدف الذي حددته لكل شهر",
+      "avgYearlyProfit": "متوسط الربح السنوي",
+      "sales": "المبيعات",
+      "revenue": "الإيرادات",
+      "monthly": "شهري",
+      "quarterly": "فصلي",
+      "annually": "سنوي"
+    },
+    "estimatedRevenue": {
+      "title": "الإيرادات المقدرة",
+      "subtitle": "الهدف الذي حددته لكل شهر",
+      "goals": "أهداف يونيو",
+      "marketing": "التسويق",
+      "sales": "المبيعات"
+    },
+    "salesCategory": {
+      "title": "فئة المبيعات",
+      "affiliate": "التسويق بالعمولة",
+      "direct": "مباشر",
+      "adsense": "أدسنس",
+      "affiliateProgram": "برنامج التسويق بالعمولة",
+      "directBuy": "شراء مباشر",
+      "products": "منتجات",
+      "total": "الإجمالي",
+      "usedOf": "المستخدم من"
+    },
+    "upcomingSchedule": {
+      "title": "الجدول القادم",
+      "schedules": {
+        "item1": {
+          "title": "مؤتمر تحليلات الأعمال",
+          "description": "استكشاف مستقبل البيانات الموجهة +6 المزيد"
+        },
+        "item2": {
+          "title": "سبرنت الأعمال",
+          "description": "تقنيات من سبرنت الأعمال +2 المزيد"
+        },
+        "item3": {
+          "title": "اجتماع مراجعة العملاء",
+          "description": "رؤى من اجتماع مراجعة العملاء +8 المزيد"
+        }
+      }
+    },
+    "recentOrders": {
+      "title": "الطلبات الأخيرة",
+      "searchPlaceholder": "بحث...",
+      "dealId": "معرف الصفقة",
+      "customer": "العميل",
+      "productService": "المنتج/الخدمة",
+      "dealValue": "قيمة الصفقة",
+      "closeDate": "تاريخ الإغلاق",
+      "status": "الحالة",
+      "action": "الإجراء",
+      "products": {
+        "softwareLicense": "ترخيص البرمجيات",
+        "cloudHosting": "استضافة سحابية",
+        "webDomain": "نطاق ويب",
+        "sslCertificate": "شهادة SSL",
+        "premiumSupport": "دعم متميز"
+      },
+      "statuses": {
+        "complete": "مكتمل",
+        "pending": "قيد الانتظار",
+        "cancel": "ملغي"
+      },
+      "noOrders": "لم يتم العثور على طلبات",
+      "noOrdersDescription": "حاول ضبط البحث أو عامل التصفية للعثور على ما تبحث عنه."
+    }
+  },
+  "stocks": {
+    "title": "الأسهم",
+    "dividend": {
+      "title": "توزيعات الأرباح",
+      "series": "توزيعات الأرباح",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف"
+    },
+    "portfolioPerformance": {
+      "title": "أداء المحفظة",
+      "subtitle": "إليك إحصائيات أدائك لكل شهر",
+      "series": "أداء المحفظة",
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "annually": "سنوي"
+    },
+    "trendingStocks": {
+      "title": "الأسهم الرائجة",
+      "shortStock": "بيع على المكشوف",
+      "buyStock": "شراء السهم"
+    },
+    "watchlist": {
+      "title": "قائمة مراقبتي",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف"
+    },
+    "latestTransactions": {
+      "title": "أحدث المعاملات",
+      "searchPlaceholder": "بحث...",
+      "table": {
+        "name": "الاسم",
+        "date": "التاريخ",
+        "price": "السعر",
+        "category": "الفئة",
+        "status": "الحالة"
+      },
+      "actions": {
+        "bought": "شراء {symbol}",
+        "sell": "بيع {symbol}"
+      },
+      "categories": {
+        "finance": "المالية",
+        "technology": "تكنولوجيا",
+        "ecommerce": "التجارة الإلكترونية",
+        "media": "وسائل التواصل"
+      },
+      "statuses": {
+        "success": "ناجح",
+        "pending": "قيد الانتظار",
+        "failed": "فاشل"
+      }
+    }
+  },
+  "saas": {
+    "title": "SaaS",
+    "metrics": {
+      "overview": "نظرة عامة",
+      "totalRevenue": "إجمالي الإيرادات",
+      "activeUsers": "المستخدمون النشطون",
+      "clv": "القيمة الدائمة للعميل",
+      "cac": "تكلفة اكتساب العميل",
+      "weekly": "أسبوعي",
+      "monthly": "شهري",
+      "yearly": "سنوي",
+      "filter": "تصفية"
+    },
+    "churnRate": {
+      "title": "معدل التراجع",
+      "subtitle": "الرجوع إلى الخطة المجانية",
+      "thanLastWeek": "عن الأسبوع الماضي",
+      "series": "معدل التراجع",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف"
+    },
+    "userGrowth": {
+      "title": "نمو المستخدمين",
+      "subtitle": "تسجيلات جديدة من الموقع والتطبيق",
+      "thanLastWeek": "عن الأسبوع الماضي",
+      "series": "الإيرادات",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف"
+    },
+    "conversionFunnel": {
+      "title": "مسار التحويل",
+      "total": "الإجمالي: 120 ألف",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "series": {
+        "adImpression": "مرات ظهور الإعلانات",
+        "adImpressions": "مرات ظهور الإعلانات",
+        "websiteSession": "جلسات الموقع",
+        "appDownload": "تنزيلات التطبيق",
+        "newUsers": "مستخدمون جدد"
+      }
+    },
+    "recentInvoices": {
+      "title": "أحدث الفواتير",
+      "table": {
+        "serialNo": "الرقم التسلسلي:",
+        "closeDate": "تاريخ الإغلاق",
+        "user": "المستخدم",
+        "amount": "المبلغ",
+        "status": "الحالة"
+      },
+      "statuses": {
+        "complete": "مكتمل",
+        "pending": "قيد الانتظار",
+        "cancelled": "ملغي"
+      }
+    },
+    "productPerformance": {
+      "title": "أداء المنتج",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "tabs": {
+        "dailySales": "المبيعات اليومية",
+        "onlineSales": "المبيعات عبر الإنترنت",
+        "newUsers": "المستخدمون الجدد"
+      },
+      "digitalProduct": "منتج رقمي",
+      "physicalProduct": "منتج مادي",
+      "avgDailySales": "متوسط المبيعات اليومية",
+      "totalOnlineSales": "إجمالي المبيعات عبر الإنترنت",
+      "addedLastMonth": "أضيف الشهر الماضي",
+      "totalNewUsers": "إجمالي المستخدمين الجدد",
+      "series": {
+        "sales": "المبيعات",
+        "revenue": "الإيرادات"
+      }
+    },
+    "activities": {
+      "title": "الأنشطة",
+      "viewMore": "عرض المزيد",
+      "delete": "حذف",
+      "newInvoice": "فاتورة جديدة",
+      "createdInvoice": "أنشأ فاتورة"
+    }
+  },
+  "logistics": {
+    "title": "اللوجستيات",
+    "metrics": {
+      "totalOrders": "إجمالي الطلبات",
+      "ordersInTransit": "طلبات في الطريق"
+    },
+    "deliveryStatistics": {
+      "title": "إحصائيات التوصيل",
+      "subtitle": "إجمالي عدد عمليات التوصيل 70.5K",
+      "monthly": "شهري",
+      "yearly": "سنوي",
+      "shipment": "الشحنة",
+      "inTransit": "في الطريق",
+      "delivery": "التوصيل"
+    },
+    "revenueEarned": {
+      "totalRevenue": "إجمالي الإيرادات المحققة",
+      "shippedQuantities": "الكميات المشحونة",
+      "newSales": "مبيعات جديدة"
+    },
+    "deliveryVehicle": {
+      "title": "مركبات التوصيل",
+      "subtitle": "المركبات العاملة على الطريق",
+      "thanLastWeek": "عن الأسبوع الماضي",
+      "onRoute": "في الطريق"
+    },
+    "trackingDelivery": {
+      "title": "تتبع التوصيل",
+      "subtitle": "آخر سجل تسليم تمت مشاهدته"
+    },
+    "trackingProgress": {
+      "trackingId": "معرف التتبع",
+      "inTransit": "في الطريق",
+      "pickedUp": "تم الاستلام",
+      "delivered": "تم التوصيل"
+    },
+    "deliveryMan": {
+      "courier": "مندوب التوصيل"
+    },
+    "deliveriesActivity": {
+      "title": "أنشطة التوصيل",
+      "subtitle": "تتبع أنشطة الشحن الأخيرة الخاصة بك",
+      "tabs": {
+        "all": "جميع الشحنات",
+        "delivered": "تم التوصيل",
+        "inTransit": "في الطريق",
+        "pending": "قيد الانتظار",
+        "processing": "قيد المعالجة"
+      },
+      "filter": {
+        "button": "تصفية",
+        "category": "الفئة",
+        "searchCategory": "البحث في الفئة...",
+        "company": "الشركة",
+        "searchCompany": "البحث عن شركة...",
+        "apply": "تطبيق"
+      },
+      "table": {
+        "orderId": "معرف الطلب",
+        "category": "الفئة",
+        "company": "الشركة",
+        "arrivalTime": "وقت الوصول",
+        "route": "المسار",
+        "price": "السعر",
+        "status": "الحالة"
+      },
+      "categories": {
+        "furniture": "أثاث",
+        "clothing": "ملابس",
+        "books": "كتب",
+        "automotive": "سيارات",
+        "electronics": "إلكترونيات",
+        "health": "صحة",
+        "toys": "ألعاب",
+        "kitchen": "مطبخ",
+        "beauty": "جمال",
+        "sports": "رياضة"
+      },
+      "statuses": {
+        "delivered": "تم التوصيل",
+        "inTransit": "في الطريق",
+        "pending": "قيد الانتظار",
+        "processing": "قيد المعالجة",
+        "canceled": "ملغي"
+      },
+      "pagination": {
+        "showing": "عرض",
+        "to": "إلى",
+        "of": "من",
+        "page": "صفحة"
+      }
+    }
+  },
+  "aiDashboard": {
+    "stats": {
+      "users": "المستخدمون",
+      "projects": "المشاريع",
+      "revenue": "الإيرادات",
+      "paidUsers": "المستخدمون المشتركون",
+      "last30Days": "آخر 30 يوماً"
+    },
+    "userRevenue": {
+      "title": "إحصائيات المستخدمين والإيرادات",
+      "subtitle": "تصور التقدم والتفاعل شهراً بعد شهر.",
+      "users": "المستخدمون",
+      "revenue": "الإيرادات",
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "annually": "سنوي"
+    },
+    "apiToken": {
+      "title": "استخدامات رمز API",
+      "totalApiTokenUsed": "إجمالي رموز API المستخدمة",
+      "tokenUsed": "الرمز المستخدم",
+      "configuredKey": "{count, plural, one {تم تكوين مفتاح API واحد} other {تم تكوين {count} مفاتيح API}}",
+      "viewAllUsageDetails": "عرض كافة تفاصيل الاستخدام"
+    },
+    "userAnalytics": {
+      "title": "تحليلات المستخدمين",
+      "subtitle": "رؤى مستخدمي المنصة",
+      "totalUsers": "إجمالي المستخدمين",
+      "freeUsers": "المستخدمون المجانيون",
+      "paidUsers": "المستخدمون المشتركون",
+      "ofTotalUser": "من إجمالي المستخدمين",
+      "thisMonth": "هذا الشهر",
+      "fromLastMonth": "عن الشهر الماضي",
+      "thisYear": "هذا العام",
+      "fromLastYear": "عن العام الماضي"
+    },
+    "projectAnalytics": {
+      "title": "تحليلات المشاريع",
+      "subtitle": "عرض تفاصيل رؤى المشاريع",
+      "totalProjects": "إجمالي المشاريع",
+      "today": "اليوم",
+      "yesterday": "أمس",
+      "projectCreated": "تم إنشاء المشروع",
+      "thisMonth": "هذا الشهر",
+      "fromLastMonth": "عن الشهر الماضي",
+      "thisYear": "هذا العام",
+      "fromLastYear": "عن العام الماضي"
+    },
+    "recentTransactions": {
+      "title": "المعاملات الأخيرة",
+      "searchPlaceholder": "بحث...",
+      "filter": "تصفية",
+      "noTransactions": "لم يتم العثور على معاملات",
+      "noTransactionsDescription": "حاول ضبط البحث أو عامل التصفية للعثور على ما تبحث عنه.",
+      "table": {
+        "paidBy": "دفع بواسطة",
+        "packageName": "اسم الباقة",
+        "price": "السعر",
+        "paidDate": "تاريخ الدفع",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      },
+      "packages": {
+        "starterMonthly": "المبتدئ - شهري",
+        "growthYearly": "النمو - سنوي",
+        "premiumMonthly": "المميز - شهري"
+      },
+      "statuses": {
+        "active": "نشط",
+        "expired": "منتهي الصلاحية"
+      },
+      "pagination": {
+        "previous": "السابق",
+        "next": "التالي",
+        "pageOf": "صفحة {current} من {total}"
+      }
+    }
+  },
+  "sales": {
+    "salesStats": {
+      "title": "لوحة بيانات المبيعات",
+      "subtitle": "تتبع الإيرادات والأداء ونمو المبيعات في الوقت الفعلي",
+      "selectDateRange": "تحديد النطاق الزمني",
+      "export": "تصدير",
+      "totalRevenue": "إجمالي الإيرادات",
+      "totalSales": "إجمالي المبيعات",
+      "conversionRate": "معدل التحويل",
+      "refundRate": "معدل الاسترداد",
+      "vsLastMonth": "مقارنة بالشهر الماضي",
+      "newSales": "مبيعات جديدة"
+    },
+    "userRevenueStats": {
+      "title": "إحصائيات المستخدمين والإيرادات",
+      "subtitle": "تصور التقدم والتفاعل من شهر لآخر.",
+      "daily": "يومي",
+      "weekly": "أسبوعي",
+      "monthly": "شهري",
+      "onlineSales": "المبيعات عبر الإنترنت",
+      "offlineSales": "المبيعات في المتجر"
+    },
+    "revenueChart": {
+      "title": "تفاصيل الإيرادات",
+      "subtitle": "رؤى الإيرادات ونظرة عامة على الأداء",
+      "daily": "يومي",
+      "weekly": "أسبوعي",
+      "monthly": "شهري",
+      "online": "عبر الإنترنت",
+      "offline": "في المتجر"
+    },
+    "userRetention": {
+      "title": "الاحتفاظ بالمستخدمين",
+      "subtitle": "تفاعل المستخدم بمرور الوقت",
+      "increasedVsLastWeek": "زيادة مقارنة بالأسبوع الماضي"
+    },
+    "salesByChannel": {
+      "title": "المبيعات حسب القناة",
+      "subtitle": "نظرة عامة على أداء القنوات",
+      "increasedVsLastWeek": "زيادة مقارنة بالأسبوع الماضي",
+      "channels": {
+        "website": "الموقع الإلكتروني",
+        "email": "البريد الإلكتروني",
+        "socialMedia": "وسائل التواصل الاجتماعي"
+      },
+      "table": {
+        "channels": "القنوات",
+        "metric": "المقياس",
+        "total": "الإجمالي"
+      }
+    },
+    "salesByCountry": {
+      "title": "المبيعات حسب الدولة",
+      "subtitle": "نظرة عامة على المبيعات حسب الدولة",
+      "countries": {
+        "usa": "الولايات المتحدة",
+        "france": "فرنسا",
+        "japan": "اليابان",
+        "egypt": "مصر",
+        "germany": "ألمانيا"
+      }
+    },
+    "topProducts": {
+      "title": "أفضل المنتجات",
+      "searchPlaceholder": "بحث...",
+      "noProducts": "لم يتم العثور على منتجات",
+      "noProductsDescription": "حاول تغيير استعلام البحث.",
+      "table": {
+        "productName": "اسم المنتج",
+        "productId": "معرف المنتج",
+        "category": "الفئة",
+        "sales": "المبيعات",
+        "earnings": "الأرباح",
+        "stocks": "المخزون",
+        "status": "الحالة"
+      },
+      "products": {
+        "classicDenimJacket": "جاكيت جينز كلاسيكي",
+        "slimFitChinos": "بنطال تشينو سليم فيت",
+        "organicCottonTShirt": "تي شيرت قطن عضوي",
+        "leatherAnkleBoots": "حذاء كاحل جلدي",
+        "woolBlendScarf": "وشاح مزيج الصوف"
+      },
+      "variants": {
+        "threeSizes": "3 مقاسات",
+        "fourColors": "4 ألوان",
+        "fiveColors": "5 ألوان",
+        "sixSizes": "6 مقاسات",
+        "twoColors": "لونان"
+      },
+      "categories": {
+        "jacket": "جاكيت",
+        "pants": "بنطال",
+        "tShirt": "تي شيرت",
+        "footwear": "أحذية",
+        "accessory": "إكسسوار"
+      },
+      "statuses": {
+        "inStock": "متوفر بالمخزون",
+        "lowStock": "مخزون منخفض",
+        "outOfStock": "نفد المخزون"
+      }
+    }
+  },
+  "finance": {
+    "totalBalanceOverview": {
+      "title": "إجمالي الرصيد",
+      "overview": "نظرة عامة على أموالك الحالية",
+      "thanLastMonth": "مقارنة بالشهر الماضي",
+      "primaryAccount": "الحساب الأساسي:",
+      "seeDetails": "عرض التفاصيل",
+      "transfer": "تحويل",
+      "received": "استلام",
+      "balance": "الرصيد"
+    },
+    "stats": {
+      "totalBalance": "إجمالي الرصيد",
+      "monthlyIncome": "الدخل الشهري",
+      "totalSpent": "إجمالي المصروفات",
+      "savingRate": "معدل الادخار",
+      "thanLastMonth": "مقارنة بالشهر الماضي",
+      "goalProgress": "الهدف: 30% - 3.9% متبقية"
+    },
+    "cashflow": {
+      "title": "نظرة عامة على التدفق النقدي",
+      "totalRevenue": "إجمالي الإيرادات",
+      "income": "الدخل",
+      "expense": "المصروفات"
+    },
+    "spending": {
+      "title": "الإنفاق",
+      "yearly": "سنوي",
+      "monthly": "شهري",
+      "total": "الإجمالي",
+      "categories": {
+        "activity": "النشاط",
+        "onlinePurchases": "المشتريات عبر الإنترنت",
+        "groceries": "البقالة",
+        "digitalGoods": "السلع الرقمية",
+        "stationery": "القرطاسية",
+        "others": "أخرى"
+      }
+    },
+    "quickSend": {
+      "title": "إرسال سريع",
+      "sendFrom": "إرسال من",
+      "currency": "العملة",
+      "amount": "المبلغ",
+      "sendMoney": "إرسال الأموال"
+    },
+    "myCards": {
+      "title": "بطاقاتي",
+      "addCard": "إضافة بطاقة",
+      "virtualCard": "بطاقة افتراضية",
+      "recentTransactions": "المعاملات الأخيرة",
+      "seeAllTransactions": "عرض جميع المعاملات",
+      "transactions": {
+        "paymentReceived": "تم استلام الدفعة",
+        "cashbackDesc": "استرداد نقدي من Stellar Rewards",
+        "netflixSubscription": "اشتراك Netflix",
+        "netflixDesc": "رسوم اشتراك شهر سبتمبر",
+        "moneyReceived": "تم استلام الأموال",
+        "paypalDesc": "تم استلام الدفعة عبر PayPal",
+        "googleAds": "إعلانات Google",
+        "googleAdsDesc": "تم استلام الدفعة من إعلانات Google"
+      }
+    },
+    "transactionsTable": {
+      "title": "المعاملات الأخيرة",
+      "searchPlaceholder": "بحث...",
+      "filter": "تصفية",
+      "table": {
+        "orderId": "معرف الطلب",
+        "activity": "النشاط",
+        "price": "السعر",
+        "date": "التاريخ",
+        "status": "الحالة"
+      },
+      "activities": {
+        "hotelBooking": "حجز فندق",
+        "onlineShopping": "تسوق عبر الإنترنت",
+        "gamePurchase": "شراء لعبة",
+        "utilityBillPayment": "دفع فواتير الخدمات",
+        "onlineCourseEnrollment": "التسجيل في دورة تدريبية"
+      },
+      "statuses": {
+        "completed": "مكتمل",
+        "inProgress": "قيد التنفيذ"
+      }
+    }
+  },
+  "hr": {
+    "header": {
+      "title": "لوحة تحكم الموارد البشرية",
+      "subtitle": "إليك ما يحدث في جميع أنحاء فريقك.",
+      "dateRange": "16 أغسطس 2028 - 16 سبتمبر 2028",
+      "addMember": "إضافة عضو"
+    },
+    "quickStats": {
+      "title": "إحصائيات سريعة",
+      "monthly": "شهرياً",
+      "weekly": "أسبوعياً",
+      "yearly": "سنوياً",
+      "thanLastMonth": "عن الشهر الماضي",
+      "thanLastWeek": "عن الأسبوع الماضي",
+      "thanLastYear": "عن العام الماضي",
+      "totalEmployee": "إجمالي الموظفين",
+      "activeEmployee": "الموظفون النشطون",
+      "onLeave": "في إجازة",
+      "totalPayroll": "إجمالي الرواتب"
+    },
+    "attendanceOverview": {
+      "title": "نظرة عامة على الحضور",
+      "monthly": "شهرياً",
+      "weekly": "أسبوعياً",
+      "yearly": "سنوياً",
+      "days": {
+        "mon": "الإثنين",
+        "tue": "الثلاثاء",
+        "wed": "الأربعاء",
+        "thu": "الخميس",
+        "fri": "الجمعة",
+        "sat": "السبت",
+        "sun": "الأحد"
+      }
+    },
+    "employeeByDepartment": {
+      "title": "الموظفون حسب القسم",
+      "thanLastMonth": "عن الشهر الماضي",
+      "viewDetails": "عرض التفاصيل",
+      "exportData": "تصدير البيانات",
+      "departments": {
+        "engineering": "الهندسة",
+        "marketing": "التسويق",
+        "sales": "المبيعات",
+        "hr": "الموارد البشرية",
+        "finance": "المالية",
+        "others": "أخرى"
+      }
+    },
+    "interviewAndMeetings": {
+      "title": "المقابلات والاجتماعات",
+      "monthYear": "يناير 2027",
+      "joinNow": "الانضمام الآن",
+      "days": {
+        "mon": "الإثنين",
+        "tue": "الثلاثاء",
+        "wed": "الأربعاء",
+        "thu": "الخميس",
+        "fri": "الجمعة",
+        "sat": "السبت",
+        "sun": "الأحد"
+      },
+      "meetings": {
+        "productSync": "مزامنة فريق المنتج",
+        "frontendInterview": "مقابلات المرشحين - مطور واجهات أمامية"
+      }
+    },
+    "jobStatistics": {
+      "title": "إحصائيات الوظائف",
+      "monthly": "شهرياً",
+      "weekly": "أسبوعياً",
+      "yearly": "سنوياً",
+      "totalJob": "إجمالي الوظائف",
+      "activeJob": "وظائف نشطة",
+      "interview": "مقابلات",
+      "hired": "تم التعيين"
+    },
+    "employeeGrowth": {
+      "title": "نمو الموظفين",
+      "weekly": "أسبوعياً",
+      "monthly": "شهرياً",
+      "yearly": "سنوياً",
+      "series": "الموظفون",
+      "days": {
+        "sat": "السبت",
+        "sun": "الأحد",
+        "mon": "الإثنين",
+        "tue": "الثلاثاء",
+        "wed": "الأربعاء",
+        "thu": "الخميس",
+        "fri": "الجمعة"
+      }
+    },
+    "employeeDirectory": {
+      "title": "دليل الموظفين",
+      "searchPlaceholder": "بحث...",
+      "filter": "تصفية",
+      "noEmployeesTitle": "لم يتم العثور على موظفين",
+      "allDepartment": "جميع الأقسام",
+      "allStatus": "جميع الحالات",
+      "table": {
+        "users": "المستخدمون",
+        "department": "القسم",
+        "role": "الدور",
+        "status": "الحالة",
+        "joined": "تاريخ الانضمام",
+        "action": "الإجراء"
+      },
+      "departments": {
+        "all": "جميع الأقسام",
+        "engineering": "الهندسة",
+        "hr": "الموارد البشرية",
+        "sales": "المبيعات",
+        "marketing": "التسويق",
+        "finance": "المالية"
+      },
+      "statuses": {
+        "all": "جميع الحالات",
+        "active": "نشط",
+        "onboarding": "قيد الإعداد",
+        "onLeave": "في إجازة"
+      },
+      "roles": {
+        "seniorDeveloper": "مطور أول",
+        "juniorDeveloper": "مطور مبتدئ",
+        "hrSpecialist": "أخصائي موارد بشرية",
+        "accountExecutive": "مسؤول حسابات"
+      },
+      "noEmployees": "لم يتم العثور على موظفين يطابقون المعايير المحددة."
+    }
+  }
+}
