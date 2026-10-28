@@ -1,4 +1,9 @@
-import { Sidebar, SidebarContent, useSidebar } from "@/components/ui/sidebar";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  useSidebar,
+} from "@/components/ui/sidebar";
 import { useState } from "react";
 import { useLocation } from "react-router";
 import { navItems, othersItems, supportItems } from "./data";
@@ -87,8 +92,13 @@ export default function AppSidebar() {
             ))}
           </div>
         </nav>
-        {showContent ? <SidebarWidget /> : null}
       </SidebarContent>
+
+      {showContent && (
+        <SidebarFooter className="p-0 px-5 pt-1 pb-4">
+          <SidebarWidget />
+        </SidebarFooter>
+      )}
     </Sidebar>
   );
 }

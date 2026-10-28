@@ -35,7 +35,7 @@ export default function DangerItem({
           onClick={onAction}
           className={cn(
             variant === "danger-outline" &&
-              "border-red-300 text-red-500 shadow-theme-xs hover:bg-red-50 hover:text-red-600 dark:border-red-500/40 dark:text-red-400 dark:hover:bg-red-500/10",
+              "border-red-300 text-red-500 shadow-theme-xs hover:bg-red-50 hover:text-red-600 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-400 dark:hover:bg-red-500/20 dark:hover:text-red-600",
           )}
         >
           {icon}

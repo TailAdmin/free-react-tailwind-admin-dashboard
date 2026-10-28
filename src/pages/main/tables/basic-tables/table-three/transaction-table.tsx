@@ -52,10 +52,7 @@ export default function TransactionTable({
             >
               Status
             </TableCell>
-            <TableCell
-              isHeader
-              className="h-11 min-w-16 py-3 pe-5 sm:pe-6"
-            />
+            <TableCell isHeader className="h-11 min-w-16 py-3 pe-5 sm:pe-6" />
           </TableRow>
         </TableHead>
 

@@ -30,16 +30,12 @@ export const navItems: NavItem[] = [
   {
     key: "forms",
     icon: <ListIcon className="size-6" />,
-    subItems: [
-      { key: "formElements", path: "/form-elements", pro: false },
-    ],
+    subItems: [{ key: "formElements", path: "/form-elements", pro: false }],
   },
   {
     key: "tables",
     icon: <TableIcon className="size-6" />,
-    subItems: [
-      { key: "basicTables", path: "/basic-tables", pro: false },
-    ],
+    subItems: [{ key: "basicTables", path: "/basic-tables", pro: false }],
   },
   {
     key: "pages",

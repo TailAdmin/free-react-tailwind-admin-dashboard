@@ -1,10 +1,5 @@
 export type AnalyticsOrderCategory =
-  | "uiKits"
-  | "templates"
-  | "saas"
-  | "UI Kits"
-  | "Templates"
-  | "SaaS";
+  "uiKits" | "templates" | "saas" | "UI Kits" | "Templates" | "SaaS";
 
 export interface AnalyticsOrder {
   id: number;
