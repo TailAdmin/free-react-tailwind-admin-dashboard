@@ -1,55 +1,29 @@
-import { UsFlagIcon } from "@/icons";
-import type React from "react";
+import type { ComponentType, SVGProps } from "react";
 
-export const locales = ["en"] as const;
-export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = "en";
+// Direct imports (not the `@/icons` barrel) keep this module's graph small.
+import UsFlagIcon from "@/icons/flag-us.svg?react";
+
+import { type Locale, isRtl, routing } from "./routing";
 
 export interface Language {
   id: Locale;
+  /** Native display name. */
   name: string;
+  /** Short code shown in compact UI (e.g. the dropdown trigger). */
   shortName: string;
-  dir: "ltr" | "rtl";
-  FlagIcon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  FlagIcon: ComponentType<SVGProps<SVGSVGElement>>;
   badge?: string;
 }
 
-export const languages: Language[] = [
-  {
-    id: "en",
-    name: "English",
-    shortName: "English",
-    dir: "ltr",
-    FlagIcon: UsFlagIcon,
-  },
-  // {
-  //   id: "ar",
-  //   name: "Arabic (Saudi)",
-  //   shortName: "Arabic",
-  //   dir: "rtl",
-  //   FlagIcon: SaFlagIcon,
-  //   badge: "RTL",
-  // },
-  // {
-  //   id: "es",
-  //   name: "Español",
-  //   shortName: "Español",
-  //   dir: "ltr",
-  //   FlagIcon: EsFlagIcon,
-  // },
-  // {
-  //   id: "de",
-  //   name: "Deutsch",
-  //   shortName: "Deutsch",
-  //   dir: "ltr",
-  //   FlagIcon: DeFlagIcon,
-  // },
+export const languages: readonly Language[] = [
+  { id: "en", name: "English", shortName: "EN", FlagIcon: UsFlagIcon },
 ];
 
-export function getLanguage(locale: Locale): Language {
-  return languages.find((l) => l.id === locale) || languages[0];
-}
+const defaultLanguage = languages.find(
+  (l) => l.id === routing.defaultLocale,
+) as Language;
 
-export function isRtl(locale: Locale): boolean {
-  return getLanguage(locale).dir === "rtl";
-}
+export const getLanguage = (locale: Locale): Language =>
+  languages.find((l) => l.id === locale) ?? defaultLanguage;
+
+export { isRtl };
