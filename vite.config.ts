@@ -1,37 +1,21 @@
-import react from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
+import tailwindcss from "@tailwindcss/vite";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
+import path from "path";
 import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": "/src",
-    },
-  },
   plugins: [
     react(),
-    svgr({
-      svgrOptions: {
-        icon: true,
-        // This will transform your SVG to a React component
-        exportType: "named",
-        namedExport: "ReactComponent",
-      },
-    }),
+    svgr(),
+    tailwindcss(),
+    babel({ presets: [reactCompilerPreset()] }),
   ],
-  build: {
-    rolldownOptions: {
-      onwarn(warning, warn) {
-        // Skip eval warnings from react-jvectormap
-        if (
-          warning.code === "EVAL" &&
-          warning.id?.includes("@react-jvectormap")
-        ) {
-          return;
-        }
-        warn(warning);
-      },
+  resolve: {
+    alias: {
+      "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
 });

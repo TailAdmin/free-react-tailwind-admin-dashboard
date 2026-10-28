@@ -60,18 +60,18 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
 
 1. Install dependencies:
 
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
 2. Start the development server:
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    ```
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
 ## Components
 
@@ -109,6 +109,19 @@ All components are built with React and styled using Tailwind CSS for easy custo
 To learn more about pro version features and pricing, visit our [pricing page](https://tailadmin.com/pricing).
 
 ## Changelog
+
+### Version 2.5.0 - [October 28, 2026]
+
+- Added new HR dashboard.
+- Migrated UI primitives to `@base-ui/react` for fully accessible components.
+- Integrated `@tanstack/react-table` v9 for robust table interaction.
+- Updated AI Assistant pages with shared layout.
+- Moved AI Settings pages into dedicated subpage.
+- Integrated `react-hook-form` with `zod` schema validation across form elements.
+- Decreased custom CSS variables and color tokens.
+- Added micro-animations using `tw-animate-css`.
+- Configured dual-linter code quality pipeline combining `Oxlint` and `ESLint` alongside `Prettier`.
+- Upgraded internationalization (i18n) stack with `i18next-icu`.
 
 ### Version 2.4.0 - [September 13, 2026]
 

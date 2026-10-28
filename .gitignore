@@ -11,9 +11,11 @@ node_modules
 dist
 dist-ssr
 *.local
+.wrangler
 
 # Editor directories and files
-.commandcode
+.vscode/*
+!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -21,3 +23,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.commandcode

@@ -1,147 +1,106 @@
-# AGENTS.md — TailAdmin React Pro
+# AGENTS.md — TailAdmin React
 
-> React 19 admin dashboard template · Vite · Tailwind CSS v4 · react-i18next · ApexCharts · FullCalendar · Swiper
+React 19 admin dashboard template: Vite 8 · TypeScript ~6 · Tailwind CSS v4 · React Router 8 · Base UI · react-i18next. Client-only SPA with no backend, auth, or global store.
 
-## Repo Map
+## Commands
 
-```
+| Command            | Purpose                                |
+| ------------------ | -------------------------------------- |
+| `npm run dev`      | Vite dev server                        |
+| `npm run build`    | `tsc -b` + Vite production build       |
+| `npm run lint`     | Oxlint + ESLint (`lint:fast` = Oxlint) |
+| `npm run lint:fix` | Oxlint fixes, then ESLint fixes        |
+| `npm run format`   | Prettier across the repo               |
+
+There is no test suite. **Run `npm run build` and `npm run lint` after every change.**
+
+## Where Things Live
+
+```text
 src/
-├── App.tsx                    # root router — all routes registered here
-├── main.tsx                   # entry point: providers + CSS imports
-├── index.css                  # Tailwind v4 @theme tokens, @utility classes, third-party overrides
-├── pages/                     # route-level components (one file or folder per page)
-│   ├── Dashboard/             # dashboard variants: Ecommerce, Analytics, CRM, Sales, Finance…
-│   ├── AuthPages/             # SignIn, SignUp, ResetPassword, TwoStepVerification
-│   ├── Ecommerce/             # ProductList, AddProduct, Billing, Invoices, Transactions…
-│   ├── Forms/                 # FormElements, FormLayout
-│   ├── Tables/                # BasicTables, DataTables
-│   ├── Charts/                # LineChart, BarChart, PieChart, RadarChart, RadialChart
-│   ├── UiElements/            # Alerts, Badges, Buttons, Modals, Tabs, Tooltips…
-│   ├── Task/                  # TaskKanban, TaskList
-│   ├── Email/                 # EmailInbox, EmailDetails
-│   ├── Maps/                  # Maps, VectorMap
-│   ├── Ai/                    # AI generator pages (Text, Image, Code, Video) + AiSettings
-│   ├── Layouts/               # LayoutOne … LayoutSix (alternative sidebar demos)
-│   └── OtherPage/             # NotFound, ComingSoon, Maintenance, Success, 500, 503…
+├── App.tsx              # THE route registry (static imports, no lazy loading)
+├── main.tsx             # StrictMode → BrowserRouter → ThemeProvider → HelmetProvider
+│                        #   → I18nProvider → TooltipProvider → App
+├── index.css            # All Tailwind v4 config: @theme tokens, @utility classes,
+│                        #   dark variant, third-party CSS overrides
 ├── components/
-│   ├── ui/                    # primitives: alert/, avatar/, badge/, button/, card/,
-│   │                          #   carousel/, dropdown/, modal/, pagination/, table/, tabs/,
-│   │                          #   tooltip/, popover/, progressbar/, spinner/, ribbons/…
-│   ├── form/                  # Form, Label, Select, MultiSelect, date-picker + input/, switch/
-│   ├── common/                # shared widgets: PageBreadCrumb, ComponentCard, PageMeta,
-│   │                          #   ThemeToggleButton, ScrollToTop, TableDropdown, ChartTab…
-│   ├── header/                # AppHeader dropdowns (notifications, user menu, language…)
-│   └── <feature>/             # one folder per domain: ecommerce/, crm/, analytics/,
-│                              #   charts/, chats/, task/, invoice/, ai/, maps/…
-├── layout/                    # AppLayout (sidebar+header shell), AlternativeLayout,
-│                              #   AppSidebar, AppHeader, Backdrop, SidebarWidget
-├── context/                   # ThemeContext, SidebarContext, LanguageContext
-├── hooks/                     # useModal, useGoBack, useClickOutside
-├── i18n/                      # index.ts — i18next bootstrap (resources, defaultNS, fallbackLng)
-├── locales/                   # translation files: en/common.json, ar/common.json,
-│                              #   es/common.json, de/common.json
-├── icons/                     # .svg files + index.ts barrel (SVGR named exports)
-└── utils/                     # utility helpers
+│   ├── layout/app-layout/   # Dashboard shell (sidebar, header, Outlet)
+│   │   └── sidebar/data.tsx # Sidebar nav items (separate from routes)
+│   ├── layout/layout-*/     # Shells for the six /layout-* example pages
+│   ├── shared/              # Cross-route widgets: page-meta, page-breadcrumb,
+│   │                        #   component-card, header controls, …
+│   └── ui/                  # Flat Base UI primitives (button.tsx, dialog.tsx, …); no barrel
+├── pages/{main,others,support}/<feature>/   # Route features (categories only, see below)
+├── contexts/            # ThemeProvider / useTheme only
+├── hooks/<hook-name>.ts # Custom hooks
+├── i18n/                # i18next setup, hooks, locales (routing.ts), language metadata
+├── messages/{en,ar,es,de}.json
+├── icons/               # Shared SVG components + barrel; flag-*.svg via `?react`
+└── utils/               # cn(), get-initials
 ```
 
-## Stack
+Path alias: `@/*` → `src/*`.
 
-- **React 19** with strict **TypeScript** (~5.7), bundled by **Vite 8**.
-- **React Router v7** (`react-router`) for client-side routing via `BrowserRouter`.
-- **react-i18next v17** + **i18next v26** for internationalization and RTL support.
-- **Tailwind CSS v4** — configured entirely through `src/index.css`; **no `tailwind.config` file exists**.
-- **react-apexcharts** for charts, **@fullcalendar/react** for the calendar, **Swiper** for carousels.
-- **react-helmet-async** (`PageMeta`) for per-page `<title>` and `<meta description>`.
-- Path alias: `@/*` → `src/*` (configured in `tsconfig.app.json` + `vite.config.ts`).
-- Scripts: `npm run dev` (Vite dev server), `npm run build` (tsc + Vite), `npm run lint`.
-- Node >= 20.19.0 || >= 22.12.0 required (Vite 8 requirement).
+## Routing
 
-## Routing Conventions
+- `src/App.tsx` is the **only** source of routes. Folder structure does not generate URLs, and `pages/main`, `pages/others`, `pages/support` are organizational categories, **not** layout boundaries. Read `App.tsx` to see which layout wraps a page.
+- Layout groups in `App.tsx`:
+  - **`AppLayout`** (pathless): nearly all pages, including charts, maps, UI elements, and support. Nested layouts under it: `/ai-chat/*`, `/ai-settings/*` (index routes redirect to `text` / `account`), and the email `inbox-layout.tsx` (`/inbox`, `/inbox-details`). `AppLayout` applies full-height handling for `/ai-chat` and `/ai-settings`.
+  - **`AuthLayout`** (`pages/others/auth/layout.tsx`): `/signin`, `/signup`, `/reset-password`, `/two-step-verification`. Demo forms only; no guards or sessions.
+  - **No layout**: error/status pages (`/error-404`, `/error-500`, `/error-503`, `/coming-soon`, `/maintenance`, `/success`), `/layout-one`…`/layout-six` (own `SidebarProvider`), and the `/*` 404 fallback.
+- No dynamic params, locale-prefixed URLs, loaders, or actions. Import `Link`/hooks from `react-router`, never `react-router-dom`.
 
-- All routes are registered in `src/App.tsx` using `<Routes>` / `<Route>`.
-- Three layout groups:
-  - **`<AppLayout>`** — standard dashboard shell (sidebar + header). Most pages live here.
-  - **`<AlternativeLayout>`** — full-width shell for AI generator pages and AI settings.
-  - **No layout** — standalone pages: auth routes (`/signin`, `/signup`…), error pages, layout demos.
-- **New page** → create a file or folder under `src/pages/<Category>/MyPage.tsx`, then add a `<Route>` in `App.tsx` under the appropriate layout group.
-- Page files are **PascalCase** (`MyPage.tsx`) with a **default export**.
-- Colocate route-only sub-components inside the page folder. Reusable UI goes in `src/components/<feature>/`.
+### Adding a page
 
-## Conventions
+1. Create a kebab-case folder under the fitting `pages/` category. Entry is a default export from `index.tsx` (or `page.tsx` when wrapping reusable content with metadata). Some groups export through barrels (`pages/main/pages`, `pages/others/auth`, `pages/main/empty-state`, AI settings, email, support-tickets); follow the neighbor.
+2. Colocate page-only components, `data.ts`, `types.ts`, `schema.ts` in that folder. Do not create `src/components/<feature>/`.
+3. Add `PageMeta` (`@/components/shared/page-meta`); inner pages usually add `PageBreadcrumb` too.
+4. Register the route in `App.tsx` under the right layout.
+5. For navigation, add an entry to `components/layout/app-layout/sidebar/data.tsx` **and** its label key `sidebar.items.<key>` to all four message files. Active matching is exact-path, except a prefix match for `/ai-settings`.
 
-- **Component files**: PascalCase (`EcommerceMetrics.tsx`) with a **default export**.
-- **Hook files**: camelCase (`useModal.ts`).
-- **New reusable component** → `src/components/<feature>/` if domain-specific, else `src/components/common/` or `src/components/ui/`.
-- **New icon** → drop the `.svg` into `src/icons/`, add a named export to `src/icons/index.ts` using a PascalCase name (e.g., `export { ReactComponent as MyIcon } from "./my-icon.svg"`). Never inline SVG markup in components.
-- **Page meta (SEO)** → every page must render `<PageMeta title="…" description="…" />` (from `src/components/common/PageMeta.tsx`) as the first child.
-- **Breadcrumbs** → add `<PageBreadCrumb pageTitle="…" />` at the top of admin pages, matching existing pages.
-- **Demo sections** → wrap in `<ComponentCard title="…">` to match the UI element demo pages pattern.
-- Modals use the `useModal` hook (`isOpen`, `openModal`, `closeModal`, `toggleModal`).
-- Global state goes through the existing contexts (`useSidebar`, `useTheme`, `useLanguage`) — do not add new providers without a clear need.
-- Prefer primitives from `src/components/ui/` and `src/components/form/` over raw HTML or new third-party equivalents.
+## Components and State
 
-## Internationalization (react-i18next) Rules
+- Files/folders lower-kebab-case; components PascalCase. Pages default-export; primitives/utilities named-export.
+- Import primitives directly: `import { Button } from "@/components/ui/button";`.
+- Extend primitives with Base UI composition, `cva` variants, `data-slot` attributes, and `cn()`. Don't introduce another component library pattern.
+- Dialogs: controlled `open`/`onOpenChange` with `@/components/ui/dialog`. There is no `Modal` or `useModal`.
+- Theme: `useTheme` from `@/contexts` (`light` | `dark` | `auto`). Sidebar: `useSidebar` from `@/components/ui/sidebar`.
+- Forms: React Hook Form + Zod resolver + colocated schema + `Field`/`FieldLabel`/`FieldError` from `@/components/ui/field`.
+- Tables: TanStack Table **v9**. Copy patterns from `pages/main/tables/{basic-tables,data-tables}`, not from older-version docs.
+- UI demo sections use `ComponentCard`.
+- Tasks: local React state + React DnD (`HTML5Backend`); shared task UI in `pages/main/task/`, list/kanban specifics in their subfolders.
+- ApexCharts/FullCalendar are used directly; no SSR guards or lazy wrappers.
 
-- **Setup**: i18next is bootstrapped in `src/i18n/index.ts` and imported once in `src/main.tsx`. Do not re-initialize it.
-- **Supported locales**: `en`, `ar`, `es`, `de`. All share the single `"common"` namespace.
-- **Translation dictionaries**: `src/locales/<locale>/common.json`. When adding any user-facing string, add the key to **all four** locale files.
-- **Using translations**:
-  - In any component (all are client-side in Vite/React): use the `useTranslation` hook.
-    ```tsx
-    import { useTranslation } from "react-i18next";
-    const { t } = useTranslation(); // uses default "common" namespace
-    return <p>{t("myKey")}</p>;
-    ```
-  - Organize keys by feature namespace inside `common.json` (e.g., `"ecommerce": { "metrics": { "customers": "Customers" } }`), then access with `t("ecommerce.metrics.customers")`.
-- **Language switching**: Use `useLanguage()` from `src/context/LanguageContext.tsx`. Call `setLanguage(code)` — it updates i18next, `localStorage`, and `document.documentElement.lang`/`dir` automatically.
-- **RTL**: Arabic (`ar`) sets `dir="rtl"` on `<html>`. `LanguageContext` exposes `dir: "ltr" | "rtl"` for conditional logic. Use CSS logical properties everywhere (see Styling Rules) — the RTL flip is CSS-driven and requires no JS conditionals for layout.
+## i18n
 
-## Styling Rules
+- Never reinitialize i18next (`src/i18n/config.ts`; provider mounted once in `main.tsx`).
+- Locales `en` (fallback), `ar` (RTL), `es`, `de`. **Every new user-facing string goes into all four `src/messages/*.json` files.** ICU syntax for interpolation/plurals.
+- Use wrappers from `@/i18n`:
 
-- Tailwind CSS **v4** — the entire theme lives in `src/index.css` under `@theme`. **Never create a `tailwind.config.js/ts`**.
-- Always use theme tokens instead of hardcoded values:
-  - **Colors**: `brand`, `gray`, `blue-light`, `orange`, `success`, `error`, `warning` scales (`25`–`950`), plus `theme-pink-500` / `theme-purple-500`.
-  - **Typography**: `font-outfit`, `text-theme-xs/sm/xl`, `text-title-sm/md/lg/xl/2xl`.
-  - **Shadows**: `shadow-theme-xs/sm/md/lg/xl`, `shadow-focus-ring`, `shadow-slider-navigation`, `shadow-tooltip`, `shadow-datepicker`.
-  - **Breakpoints**: custom `2xsm` (375px), `xsm` (425px), `3xl` (2000px) alongside defaults.
-  - **Z-index**: `z-1`, `z-9`, `z-99`, `z-999`, `z-9999`, `z-99999`, `z-999999` tokens.
-- **Dark mode is class-based** (`@custom-variant dark (&:is(.dark *))`, toggled by `ThemeContext` adding/removing `.dark` on `<html>`). Every styled element must include its `dark:` variant.
-- **CSS Logical Properties for RTL & Internationalization**:
-  - Never use physical directional utilities when logical equivalents exist; physical `left`/`right` properties break the Arabic (`ar`) RTL layout:
-    - **Margins**: use `ms-*` / `me-*` instead of `ml-*` / `mr-*`.
-    - **Padding**: use `ps-*` / `pe-*` instead of `pl-*` / `pr-*`.
-    - **Positioning / Insets**: use `start-*` / `end-*` instead of `left-*` / `right-*`.
-    - **Borders**: use `border-s-*` / `border-e-*` instead of `border-l-*` / `border-r-*`.
-    - **Border Radius**: use `rounded-s-*` / `rounded-e-*` / `rounded-ss-*` / `rounded-se-*` / `rounded-es-*` / `rounded-ee-*` instead of `rounded-l-*` / `rounded-r-*`.
-    - **Text Alignment**: use `text-start` / `text-end` instead of `text-left` / `text-right`.
-  - **Directional Icons & Transforms**:
-    - Directional glyphs (back/forward arrows, breadcrumb chevrons, next/prev buttons) must flip in RTL: use `rtl:rotate-180` or `rtl:-scale-x-100`.
-    - Off-canvas drawers and sliding elements must mirror their translation (e.g., `-translate-x-full rtl:translate-x-full`).
-    - Use `ltr:*` / `rtl:*` modifiers only when a logical property does not exist or for third-party integration overrides.
-- Reusable `@utility` classes already defined in `index.css` (`menu-item`, `menu-item-active`, `menu-item-inactive`, `menu-item-icon`, `menu-dropdown-item`, `menu-dropdown-badge`, `custom-scrollbar`, `no-scrollbar`, …) — reuse them before creating new ones.
-- All third-party CSS overrides (ApexCharts, FullCalendar, Swiper, flatpickr, simplebar-react) live at the bottom of `index.css`. Add overrides there, matching the existing `@apply` style.
-- Never hardcode hex colors in `className`. Chart option objects (`ApexOptions.colors`) are the established exception — copy hex values from the `@theme` palette (e.g., `#465fff` = `brand-500`, `#12b76a` = `success-500`).
+  ```tsx
+  const t = useTranslations("feature.namespace");
+  ```
 
-## Component Rules
+  `getTranslations` outside components, `useLocale` / `useChangeLocale` for locale. There is no `useLanguage`.
 
-- **One feature, one folder**: page UI goes in `src/components/<feature>/`, split into focused, single-responsibility sub-components (e.g., `EcommerceMetrics.tsx`, `RecentOrders.tsx`). Avoid one monolithic file per page.
-- **Composition over prop drilling**: pass `children`, separate container/state logic from presentational components, extract large JSX sections into their own files, and define explicit typed prop interfaces per sub-component.
-- **Charts** (`react-apexcharts`): import lazily with `React.lazy` + `Suspense`, or guard with `if (typeof window === "undefined") return null`. Follow the pattern used in existing chart components before choosing an approach.
-- **FullCalendar** and **Swiper**: these are also browser-only — follow the existing pattern in `src/pages/Calendar.tsx` and carousel components respectively before importing directly.
-- **Icons**: always import from `@/icons` using the named export (e.g., `import { CalendarIcon } from "@/icons"`). SVGs are compiled to React components via `vite-plugin-svgr`. Never inline raw SVG markup in components.
-- **Page SEO**: always add `<PageMeta title="Page Title | TailAdmin" description="…" />` as the first element in every page component.
-- **Modals**: use `useModal` hook from `src/hooks/useModal.ts` and the `<Modal>` primitive from `src/components/ui/modal/`.
-- **Global state**: consume only via existing hooks — `useSidebar()`, `useTheme()`, `useLanguage()`.
+- Some legacy demo text is hardcoded. Don't copy that; translate new or touched UI.
 
-## Don'ts
+## Styling
 
-- Don't install new packages without asking the user.
-- Don't create a `tailwind.config.js` or `tailwind.config.ts` — Tailwind v4 is fully configured through `src/index.css`.
-- Don't hardcode hex colors or pixel values in `className` — always use `@theme` tokens.
-- Don't hardcode user-facing text — add keys to all four `src/locales/<locale>/common.json` files and use `t()`.
-- Don't use physical directional utilities (`ml-*`, `mr-*`, `pl-*`, `pr-*`, `left-*`, `right-*`, `border-l-*`, `border-r-*`, `rounded-l-*`, `rounded-r-*`, `text-left`, `text-right`) — always prefer CSS logical equivalents (`ms-*`, `me-*`, `ps-*`, `pe-*`, `start-*`, `end-*`, `border-s-*`, `border-e-*`, `rounded-s-*`, `rounded-e-*`, `text-start`, `text-end`).
-- Don't import `react-apexcharts`, `FullCalendar`, or `Swiper` at the module level without verifying they are safe to do so in that component's context — always check the existing pattern in that feature folder first.
-- Don't add new pages outside `src/pages/` or new routes outside `src/App.tsx`.
-- Don't add new context providers without a clear, broad need — prefer local state or composition.
-- Don't inline SVG markup in components — always add the `.svg` to `src/icons/` and export it from the barrel `index.ts`.
-- Don't use `styled-components`, CSS Modules, or any CSS-in-JS — Tailwind utility classes with `@utility` extensions in `index.css` are the only styling mechanism.
+- Tailwind v4 config lives only in `src/index.css`. Never add `tailwind.config.*`, CSS Modules, or CSS-in-JS.
+- Prefer `@theme` tokens (`brand-*`, `font-outfit`, `text-heading-*`, `text-title-*`, `shadow-theme-*`, custom breakpoints, z-index tokens) and existing `@utility` classes (`menu-item-*`, `menu-dropdown-*`, `nav-icon-item-*`, `custom-scrollbar`, `no-scrollbar`, …) before adding new ones. New utilities need matching groups in `src/utils/cn.ts`.
+- Always add `dark:` styles for new surfaces, text, borders, and states.
+- RTL: use logical utilities (`ms/me`, `ps/pe`, `inset-s/e`, `border-s/e`, `text-start/end`, logical radius) and `rtl:` variants to flip directional icons/transforms.
+- Third-party CSS overrides go in the matching section of `index.css`.
+
+## Icons and Assets
+
+- Shared icons: kebab-case `.tsx` component taking `IconProps`, exported from `src/icons/index.tsx`; import from `@/icons`. Feature-only icons may live in a colocated `icons.tsx`. Don't inline SVG markup in pages or primitives.
+- Flags are SVGR default imports: `import Flag from "./flag-x.svg?react"`.
+- `public/` assets use root-relative URLs (`/images/...`).
+
+## Boundaries
+
+- Ask before installing packages.
+- Don't add route-level code splitting, auth guards, new providers, or a second routing/navigation source of truth without an explicit requirement.
+- Promote code to `components/shared` or `components/ui` only when it is genuinely reused across routes.
