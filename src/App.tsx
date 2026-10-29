@@ -54,6 +54,9 @@ export default function App() {
         <Route path="/signup" element={<SignUpPage />} />
       </Route>
 
+      {/* Full-width / Error / Status Pages */}
+      <Route path="/error-404" element={<Error404Page />} />
+
       {/* Fallback Route */}
       <Route path="*" element={<Error404Page />} />
     </Routes>

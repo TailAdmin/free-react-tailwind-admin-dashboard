@@ -40,7 +40,10 @@ export const navItems: NavItem[] = [
   {
     key: "pages",
     icon: <PageIcon className="size-6" />,
-    subItems: [{ key: "blankPage", path: "/blank" }],
+    subItems: [
+      { key: "blankPage", path: "/blank" },
+      { key: "error404", path: "/error-404" },
+    ],
   },
 ];
 
