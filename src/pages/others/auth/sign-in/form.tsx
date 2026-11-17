@@ -8,11 +8,11 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import { Link } from "react-router";
 import { EyeCloseIcon, EyeIcon } from "@/icons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import { Link } from "react-router";
 import { signInSchema, type SignInFormData } from "./schema";
 
 export default function SignInFormFields() {
@@ -75,9 +75,9 @@ export default function SignInFormFields() {
               className="text-gray-500 dark:text-gray-400"
             >
               {showPassword ? (
-                <EyeIcon className="fill-current" />
+                <EyeIcon className="text-current" />
               ) : (
-                <EyeCloseIcon className="fill-current" />
+                <EyeCloseIcon className="text-current" />
               )}
             </InputGroupButton>
           </InputGroupAddon>

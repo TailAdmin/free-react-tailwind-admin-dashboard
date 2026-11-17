@@ -1,4 +1,5 @@
 import { SidebarHeader } from "@/components/ui/sidebar";
+import { cn } from "@/utils";
 import { Link } from "react-router";
 
 interface AppSidebarHeaderProps {
@@ -9,8 +10,14 @@ export default function AppSidebarHeader({
   showContent,
 }: AppSidebarHeaderProps) {
   return (
-    <SidebarHeader className="px-5 py-8">
-      <Link to="/">
+    <SidebarHeader className="px-5 pt-5 pb-8">
+      <Link
+        to="/"
+        className={cn(
+          "flex items-center",
+          !showContent ? "justify-center" : "justify-start",
+        )}
+      >
         {showContent ? (
           <>
             <img

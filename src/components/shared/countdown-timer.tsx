@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface CountdownTimerProps {
   targetDate: Date;
@@ -38,7 +38,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
 
   return (
     <div className="mb-10">
-      <div className="text-title-md mb-2 flex flex-wrap justify-center gap-2 font-bold text-brand-500 xl:text-title-lg dark:text-brand-400">
+      <div className="mb-2 flex flex-wrap justify-center gap-2 text-3xl font-bold text-brand-500 dark:text-brand-400">
         <div className="timer-box">
           <span>{formatTime(timeLeft.days)}</span>
         </div>
