@@ -242,6 +242,11 @@ layer(base);
 }
 
 /* third-party libraries CSS */
+.apexcharts-canvas,
+.apexcharts-canvas * {
+  direction: ltr !important;
+}
+
 .apexcharts-legend-text {
   @apply ps-5! text-gray-700! dark:text-gray-400!;
 }
@@ -382,27 +387,6 @@ layer(base);
   @apply w-6.5 rounded-xl;
 }
 
-.jvectormap-container {
-  @apply bg-gray-50! dark:bg-gray-900!;
-}
-
-.jvectormap-region.jvectormap-element {
-  @apply fill-gray-300! hover:fill-brand-500! dark:fill-gray-700! dark:hover:fill-brand-500!;
-}
-
-.jvectormap-marker.jvectormap-element {
-  @apply stroke-gray-200! dark:stroke-gray-800!;
-}
-
-.jvectormap-tip {
-  @apply border-none! bg-brand-500! px-2! py-1!;
-}
-
-.jvectormap-zoomin,
-.jvectormap-zoomout {
-  @apply hidden!;
-}
-
 .form-check-input:checked ~ span {
   @apply border-[6px] border-brand-500 bg-brand-500 dark:border-brand-500;
 }
@@ -441,6 +425,20 @@ layer(base);
 
 .flatpickr-calendar {
   @apply mt-2 rounded-xl! border! border-gray-200! bg-white! p-5! text-gray-500! shadow-none! 2xsm:w-auto! dark:border-white/5! dark:bg-gray-950! dark:text-gray-400! dark:shadow-theme-xl!;
+}
+
+[dir="rtl"] .flatpickr-calendar {
+  direction: rtl;
+}
+
+[dir="rtl"] .flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,
+[dir="rtl"] .flatpickr-months .flatpickr-next-month.flatpickr-prev-month {
+  @apply right-7! left-auto!;
+}
+
+[dir="rtl"] .flatpickr-months .flatpickr-prev-month.flatpickr-next-month,
+[dir="rtl"] .flatpickr-months .flatpickr-next-month.flatpickr-next-month {
+  @apply right-auto! left-7!;
 }
 
 .flatpickr-months .flatpickr-prev-month:hover svg,
@@ -734,109 +732,12 @@ pre[class*="language-"].line-numbers {
   @apply border border-transparent text-gray-500 hover:border-gray-200 hover:bg-white hover:text-brand-500 dark:text-gray-400 dark:hover:border-gray-800 dark:hover:bg-gray-900 dark:hover:text-brand-500;
 }
 
-/* Map two */
-#mapTwo .jvectormap-container {
-  @apply bg-transparent!;
-}
-.jvm-region.jvm-element {
-  @apply fill-gray-300! hover:fill-brand-500! dark:fill-gray-700! dark:hover:fill-brand-500!;
-}
-#mapTwo .jvectormap-region.jvectormap-element {
-  fill: #9cb9ff !important;
-  stroke: transparent !important;
-}
-#mapTwo .jvectormap-region.jvectormap-element:hover {
-  fill: #8098f9 !important;
-}
-.dark #mapTwo .jvectormap-region.jvectormap-element {
-  fill: #9cb9ff !important;
-}
-#mapTwo .jvectormap-region[data-code="US"] {
-  fill: #465fff !important;
-}
-#mapTwo .jvectormap-marker.jvectormap-element {
-  fill: #465fff !important;
-  stroke: #ffffff !important;
-  stroke-width: 1.5 !important;
-  fill-opacity: 1 !important;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
-}
-#mapTwo .jvectormap-marker.jvectormap-element:first-of-type {
-  stroke: #ffffff !important;
-  stroke-width: 2 !important;
-  filter: drop-shadow(0 0 3px rgba(70, 95, 255, 0.4))
-    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
-}
-
 .api-token-chart .apexcharts-tooltip {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* Customer Pin-Point Map */
-#mapCustomerPinPoint .jvm-region.jvm-element,
-#mapCustomerPinPoint .jvectormap-region.jvm-element,
-#mapCustomerPinPoint .jvectormap-region.jvectormap-element {
-  fill: #d0d5dd !important;
-  stroke: white !important;
-  stroke-width: 2 !important;
-}
-#mapCustomerPinPoint .jvm-region[data-code="US-CA"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-CA"] {
-  fill: #465fff !important;
-}
-#mapCustomerPinPoint .jvm-region[data-code="US-NY"],
-#mapCustomerPinPoint .jvm-region[data-code="US-FL"],
-#mapCustomerPinPoint .jvm-region[data-code="US-MI"],
-#mapCustomerPinPoint .jvm-region[data-code="US-WA"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-NY"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-FL"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-MI"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-WA"] {
-  fill: #3538cd !important;
-}
-#mapCustomerPinPoint .jvm-region[data-code="US-TX"],
-#mapCustomerPinPoint .jvm-region[data-code="US-IL"],
-#mapCustomerPinPoint .jvm-region[data-code="US-MO"],
-#mapCustomerPinPoint .jvm-region[data-code="US-PA"],
-#mapCustomerPinPoint .jvm-region[data-code="US-OH"],
-#mapCustomerPinPoint .jvm-region[data-code="US-GA"],
-#mapCustomerPinPoint .jvm-region[data-code="US-NC"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-TX"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-IL"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-MO"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-PA"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-OH"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-GA"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-NC"] {
-  fill: #8098f9 !important;
-}
-#mapCustomerPinPoint .jvm-region[data-code="US-CO"],
-#mapCustomerPinPoint .jvm-region[data-code="US-AZ"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-CO"],
-#mapCustomerPinPoint .jvectormap-region[data-code="US-AZ"] {
-  fill: #9cb9ff !important;
-}
-#mapCustomerPinPoint .jvm-region.jvm-element:hover,
-#mapCustomerPinPoint .jvectormap-region.jvectormap-element:hover {
-  fill: #465fff !important;
-}
-.dark #mapCustomerPinPoint .jvm-region.jvm-element,
-.dark #mapCustomerPinPoint .jvectormap-region.jvm-element,
-.dark #mapCustomerPinPoint .jvectormap-region.jvectormap-element {
-  fill: #374151 !important;
-  stroke: #1f2937 !important;
-}
-
-/* Customer map markers: solid filled circles with white ring */
-#mapCustomerPinPoint .jvm-marker.jvm-element,
-#mapCustomerPinPoint .jvectormap-marker.jvectormap-element {
-  fill: #465fff !important;
-  stroke: white !important;
-  stroke-width: 2 !important;
-  fill-opacity: 1 !important;
-}
 .ai-settings-range {
   @apply h-2 w-full cursor-pointer appearance-none rounded-full bg-gray-200 outline-hidden dark:bg-gray-800;
 }
