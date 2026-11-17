@@ -110,6 +110,15 @@ To learn more about pro version features and pricing, visit our [pricing page](h
 
 ## Changelog
 
+### Version 2.5.1 - [November 17, 2026]
+
+- Added shared `useVectorMapTheme` hook and refactored `VectorMap` for theme-aware (light/dark) regions, markers, and tooltips.
+- Moved vector map and demographic card data into colocated `data.ts` files.
+- Improved RTL support for sliders, progress bars, buttons, alerts, charts, and `flatpickr` calendars.
+- Added hash-link scrolling support to `ScrollToTop`.
+- Updated Alert, Button Group, Dropdown, and Progress Bar components and their UI element examples.
+- Fixed noted style and responsiveness issues across dashboards, forms, and chart components.
+
 ### Version 2.5.0 - [October 28, 2026]
 
 - Added new HR dashboard.
